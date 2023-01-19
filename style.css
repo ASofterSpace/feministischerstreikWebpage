@@ -41,7 +41,11 @@
 }
 
 
-/* font sizes */
+/* fonts */
+
+div {
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+}
 
 div.hero_link_row > span, div.hero_text {
 	font-weight: bold;
@@ -192,6 +196,8 @@ div.main_column {
 	max-width: 500pt;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 10pt;
+	padding-right: 10pt;
 }
 
 div.hero, div.regular_text_block, div.picture_link_block {
@@ -220,4 +226,41 @@ div.footer > img {
 	position: absolute;
 	right: 10%;
 	top: 0;
+}
+
+/* adjustments based on screen size */
+
+@media only screen and (max-width : 70em) {
+	div.hero_text {
+		font-size: 200%;
+	}
+}
+
+@media only screen and (max-width : 50em) {
+	div.hero_text {
+		font-size: 150%;
+	}
+}
+
+@media only screen and (max-width : 40em) {
+	div.hero_text {
+		font-size: 125%;
+	}
+
+	div.hero_link_row {
+		font-size: 80%;
+	}
+
+	div.hero > div.button {
+		bottom: 20pt;
+	}
+
+	div.columns_two > div {
+		width: 100%;
+	}
+
+	div.columns_two > div.right {
+		float: unset;
+	}
+
 }

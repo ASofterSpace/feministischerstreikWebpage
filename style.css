@@ -1,0 +1,18 @@
+img.hero {
+	width: 100%;
+}
+
+div.columns_two > div {
+	width: 47%;
+	display: inline-block;
+}
+
+div.linkpic > img {
+	width: 100%;
+}
+
+div.main_column {
+	max-width: 500pt;
+	margin-left: auto;
+	margin-right: auto;
+}

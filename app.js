@@ -210,5 +210,12 @@ window.start = function() {
 	}
 };
 
+
+// enforce https:// if possible
+if (window.location.href.indexOf("http://") == 0) {
+	window.location.href = "https://" + window.location.href.substring(7);
+}
+
+
 // start on the home page (start call 1/2, in case the js is loaded last)
 window.start();

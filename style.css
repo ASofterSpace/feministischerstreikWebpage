@@ -254,6 +254,10 @@ div.footer > img {
 		font-size: 150%;
 	}
 
+	div.regular_text_block {
+		font-size: 125%;
+	}
+
 	div.hero > div.button {
 		bottom: 30pt;
 		font-size: 110%;
@@ -286,6 +290,10 @@ div.footer > img {
 }
 
 @media only screen and (max-width : 30em) {
+	div.regular_text_block {
+		font-size: 100%;
+	}
+
 	div.hero > div.button {
 		bottom: 10pt;
 		font-size: 90%;

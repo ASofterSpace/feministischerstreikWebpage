@@ -1,18 +1,217 @@
-img.hero {
+/* colors */
+
+.black {
+	background-color: #000000;
+}
+
+.text_black {
+	color: #000000;
+}
+
+.white {
+	background-color: #ffffff;
+}
+
+.text_white {
+	color: #ffffff;
+}
+
+.purple {
+	background-color: #710880;
+}
+
+.text_purple, div.regular_text_block {
+	color: #710880;
+}
+
+.yellow, div.button {
+	background-color: #f8ac00;
+}
+
+.text_yellow {
+	color: #f8ac00;
+}
+
+.mint {
+	background-color: #00ffc5;
+}
+
+.text_mint {
+	color: #00ffc5;
+}
+
+
+/* font sizes */
+
+div.hero_link_row > span, div.hero_text {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+div.hero_text {
+	font-size: 300%;
+}
+
+div.regular_text_block {
+	font-weight: bold;
+	font-size: 150%;
+}
+
+div.button {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 125%;
+}
+
+div.footer {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+/* links */
+
+span.link, div.button {
+	cursor: pointer;
+}
+
+span.link:hover, div.button:hover {
+	text-decoration: underline;
+}
+
+
+/* structural */
+
+body {
+	margin: 0;
+}
+
+img {
+	/* get rid of empty area below images */
+	display: block;
+}
+
+div.hero {
+	position: relative;
+}
+
+div.hero > div.button {
+	left: unset;
+	top: unset;
+	right: 10%;
+	bottom: 40pt;
+}
+
+div.hero_link_row {
+	position: absolute;
+	top: 5pt;
+	text-align: center;
 	width: 100%;
 }
 
-div.columns_two > div {
-	width: 47%;
+div.hero_link_row > span {
+	margin-left: 10pt;
+	margin-right: 10pt;
+}
+
+img.hero {
+	width: 100%;
+	opacity: 0.5;
+}
+
+img.hero_logo {
+	width: 15%;
+	position: absolute;
+	right: 61%;
+	top: 0;
+	bottom: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+div.hero_text {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 40%;
+}
+
+div.button {
 	display: inline-block;
+	transform: rotate(-2deg);
+	padding: 3pt 12pt;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 19pt;
+	width: 200pt;
+}
+
+div.button.two_rows {
+	height: 36pt;
+}
+
+div.button.slim {
+	width: 100pt;
+}
+
+div.columns_two {
+	clear: both;
+}
+
+div.columns_two > div {
+	width: 49%;
+	display: inline-block;
+}
+
+div.columns_two > div.right {
+	float: right;
+}
+
+div.linkpic {
+	position: relative;
+	margin-bottom: 5pt;
 }
 
 div.linkpic > img {
 	width: 100%;
+	opacity: 0.5;
 }
 
 div.main_column {
 	max-width: 500pt;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+div.hero, div.regular_text_block, div.picture_link_block {
+	margin-bottom: 50pt;
+}
+
+div.regular_text_block {
+	word-break: break-word;
+	hyphens: auto;
+	text-align: justify;
+}
+
+div.footer {
+	text-align: center;
+	margin-bottom: 50pt;
+	position: relative;
+}
+
+div.footer > span.link {
+	line-height: 70pt;
+	vertical-align: top;
+}
+
+div.footer > img {
+	height: 70pt;
+	position: absolute;
+	right: 10%;
+	top: 0;
 }

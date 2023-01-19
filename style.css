@@ -131,9 +131,15 @@ img.hero_logo {
 
 div.hero_text {
 	position: absolute;
-	top: 50%;
-	bottom: 50%;
 	left: 40%;
+}
+
+div.hero_text.top_row {
+	bottom: 50%;
+}
+
+div.hero_text.bottom_row {
+	top: 50%;
 }
 
 div.button {

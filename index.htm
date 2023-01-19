@@ -13,40 +13,27 @@
 	<div class="hero purple">
 		<img class="hero" src="./pictures/hero.jpg" alt="background image of women holding hands" />
 		<div class="hero_link_row text_white">
-			<span class="link">Start</span>
-			<span class="link">Über uns</span>
-			<span class="link">Feministischer Streik</span>
-			<span class="link">Mitmachen &amp; unterstützen</span>
-			<span class="link">Kontakt</span>
-			<span class="link">Archiv</span>
+			<span class="link" onclick="navigate('home')">Start</span>
+			<span class="link" onclick="navigate('about_us')">Über uns</span>
+			<span class="link" onclick="navigate('fem_streik')">Feministischer Streik</span>
+			<span class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
+			<span class="link" onclick="navigate('kontakt')">Kontakt</span>
+			<span class="link" onclick="navigate('archiv')">Archiv</span>
 			<span class="link" style="margin-right: 0;">EN,</span>
 			<span class="link" style="margin: 0;">DE,</span>
 			<span class="link" style="margin-left: 0;">ES</span>
 		</div>
 
 		<img class="hero_logo" src="./pictures/logo_white.png" />
-		<div class="hero_text text_white">Feministischer Streik Bundesweit</div>
+		<div class="hero_text text_white top_row">Feministischer Streik</div>
+		<div class="hero_text text_white bottom_row">Bundesweit</div>
 
 		<div class="button slim text_purple">Mitmachen</div>
 	</div>
 
 	<div class="main_column">
 
-		<div class="regular_text_block">
-			Herzlich willkommen auf der Internetseite des bundesweiten
-			Feministischen Streik Bündnis‘. Hier findest du
-			verschiedene Informationen unter anderem zu unseren
-			Inhalten, wie wir organisiert sind und wie du selbst aktiv
-			werden und dich vernetzen kannst. Wir, das ist ein
-			Zusammenschluss verschiedener feministischer Streikgruppen
-			und -bündnisse, die sich deutschlandweit
-			vernetzen und vor Ort jeweils eigenständig arbeiten.
-			Gemeinsam kämpfen wir für die Überwindung kapitalistischer
-			und patriarchaler Verhältnisse hin zu einer
-			Gesellschaft, in der nicht die Sicherung von Profiten,
-			sondern gegenseitige Fürsorge im Mittelpunkt steht.
-			Der Feministische Streik ist für uns ein wichtiges Mittel
-			auf dem Weg dahin - werde Teil davon!
+		<div class="regular_text_block" id="main_text">
 		</div>
 
 		<div class="picture_link_block">
@@ -79,10 +66,10 @@
 	</div>
 
 	<div class="footer yellow text_purple">
-		<span class="link">Impressum</span>
+		<span class="link" onclick="navigate('impressum')">Impressum</span>
 		<span>&nbsp;</span>
 		<span>&nbsp;</span>
-		<span class="link">Datenschutz</span>
+		<span class="link" onclick="navigate('datenschutz')">Datenschutz</span>
 		<span>&nbsp;</span>
 		<span>&nbsp;</span>
 		<span>&nbsp;</span>
@@ -90,6 +77,13 @@
 		<span>&nbsp;</span>
 		<img src="./pictures/logo_purple.png" />
 	</div>
+
+	<script type="text/javascript">
+		// start on the home page (start call 2/2, in case the js is loaded first)
+		if (window.navigate) {
+			window.navigate("home");
+		}
+	</script>
 
 </body>
 </html>

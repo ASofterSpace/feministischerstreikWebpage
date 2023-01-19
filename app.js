@@ -2,6 +2,16 @@ window.currentPage = null;
 window.currentLang = 'de';
 
 window.navigate = function(where) {
+	var changedDueToLanguage = false;
+	window.navigate(where, changedDueToLanguage);
+};
+
+window.navigate = function(where, changedDueToLanguage) {
+
+	// update history so that the url bar reflects the currently selected subpage
+	if ((window.currentPage != null) && ((window.currentPage != where) || changedDueToLanguage)) {
+		window.history.pushState({}, "", "?page=" + where + "&lang=" + window.currentLang);
+	}
 
 	window.currentPage = where;
 
@@ -140,7 +150,7 @@ window.navigate = function(where) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					main_text.innerText =
+					main_text.innerHTML =
 						"Herausgeber*in:<br>" +
 						"A Softer Space DE, Inhaber Tom Moya Schau<br>" +
 						"Bad Nauheimer Str. 4<br>" +
@@ -179,9 +189,26 @@ window.navigate = function(where) {
 };
 
 window.selectLang = function(lang) {
-	window.currentLang = lang;
-	window.navigate(window.currentPage);
+	if (window.currentLang != lang) {
+		window.currentLang = lang;
+		var changedDueToLanguage = true;
+		window.navigate(window.currentPage, changedDueToLanguage);
+	}
+};
+
+window.start = function() {
+	var params = new URLSearchParams(location.search);
+	var lang = params.get("lang");
+	if (lang != null) {
+		window.currentLang = lang;
+	}
+	var page = params.get("page");
+	if (page != null) {
+		window.navigate(page);
+	} else {
+		window.navigate("home");
+	}
 };
 
 // start on the home page (start call 1/2, in case the js is loaded last)
-window.navigate("home");
+window.start();

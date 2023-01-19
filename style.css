@@ -71,11 +71,11 @@ div.footer {
 
 /* links */
 
-span.link, div.button {
+span.link, div.link, div.button {
 	cursor: pointer;
 }
 
-span.link:hover, div.button:hover {
+span.link:hover, div.link:hover, div.link:hover > div.button, div.button:hover {
 	text-decoration: underline;
 }
 

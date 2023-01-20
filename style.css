@@ -235,7 +235,7 @@ div.footer > span.link {
 }
 
 div.footer > img {
-	height: 70pt;
+	height: 100%;
 	position: absolute;
 	right: 10%;
 	top: 0;

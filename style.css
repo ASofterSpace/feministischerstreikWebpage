@@ -20,7 +20,7 @@
 	background-color: #710880;
 }
 
-.text_purple, div.regular_text_block {
+.text_purple, div.regular_text_block, a, a:visited {
 	color: #710880;
 }
 
@@ -28,7 +28,7 @@
 	background-color: #f8ac00;
 }
 
-.text_yellow {
+.text_yellow, a:hover {
 	color: #f8ac00;
 }
 
@@ -63,6 +63,12 @@ div {
 	font-weight: bold;
 }
 
+h1 {
+	font-family: LeagueSpartan-Bold, AvenirNextLTPro-Bold, Tahoma, Verdana, Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
 div.hero_link_row > span, div.hero_text {
 	text-transform: uppercase;
 }
@@ -81,12 +87,23 @@ div.button {
 	font-size: 125%;
 }
 
+div.quote {
+	text-align: center;
+	font-style: italic;
+	font-size: 110%;
+}
+
 div.footer {
 	text-transform: uppercase;
 }
 
 
 /* links */
+
+a {
+	cursor: pointer;
+	text-decoration: underline;
+}
 
 span.link, div.link, div.button {
 	cursor: pointer;
@@ -157,6 +174,10 @@ div.hero_text.top_row {
 
 div.hero_text.bottom_row {
 	top: 50%;
+}
+
+div.quote {
+	margin-bottom: 30pt;
 }
 
 div.button {

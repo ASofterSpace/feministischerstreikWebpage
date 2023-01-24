@@ -184,8 +184,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Kontakt";
-					main_text.innerText =
-						"Kontaktiere uns gern - sobald wir hier Kontaktdaten hinterlegen. ;)";
+					main_text.innerHTML =
+						"Bei Interesse und Fragen, meldet euch bei uns:<br>" +
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a>";
 					break;
 			}
 			break;
@@ -228,8 +229,11 @@ window.navigate = function(where, changedDueToLanguage) {
 						"64289 Darmstadt<br>" +
 						"Deutschland<br>" +
 						"<br>" +
-						"Kontakt:<br>" +
-						"<a href='mailto:moya@asofterspace.com'>moya@asofterspace.com</a>";
+						"Kontakt bezüglich der Webseite selbst:<br>" +
+						"<a href='mailto:moya@asofterspace.com'>moya@asofterspace.com</a><br>" +
+						"<br>" +
+						"Kontakt zum Feministischen Streik:<br>" +
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a>";
 					break;
 			}
 			break;

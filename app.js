@@ -20,8 +20,14 @@ window.navigate = function(where, changedDueToLanguage) {
 		return;
 	}
 
+	var onMainpage = false;
+	var title = "";
+	var heroImg = "hero";
+
 	switch (where) {
+
 		case "home":
+			onMainpage = true;
 			switch (window.currentLang) {
 				case 'en':
 					main_text.innerText =
@@ -55,7 +61,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 			}
 			break;
+
 		case "about_us":
+			heroImg = "section_aboutus";
 			switch (window.currentLang) {
 				case 'en':
 					main_text.innerText =
@@ -66,8 +74,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Über uns";
 					main_text.innerHTML =
-						"<h1>Über uns</h1>" +
 						"Wir sind ein Zusammenschluss verschiedener feministischer Streikgruppen " +
 						"und -bündnisse, die sich deutschlandweit vernetzen und vor Ort jeweils " +
 						"eigenständig arbeiten. Wir sind ein Zusammenschluss aus verschiedenen " +
@@ -103,7 +111,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 			}
 			break;
+
 		case "fem_streik":
+			heroImg = "section_femstreik";
 			switch (window.currentLang) {
 				case 'en':
 					main_text.innerText =
@@ -114,8 +124,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Informationen zum Feministischen Streik";
 					main_text.innerHTML =
-						"<h1>Informationen zum Feministischen Streik</h1>" +
 						"Ein feministischer Streik verbindet sowohl ökonomische " +
 						"als auch politische Anliegen. Wie bei einem klassischen gewerkschaftlichen " +
 						"Streik legen wir beim feministischen Streik unsere Arbeit nieder – " +
@@ -142,7 +152,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 			}
 			break;
+
 		case "mitmachen":
+			heroImg = "section_mitmachen";
 			switch (window.currentLang) {
 				case 'en':
 					main_text.innerText =
@@ -153,11 +165,13 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Mitmachen";
 					main_text.innerText =
 						"Du magst bei uns mitmachen? Ja super - wir freuen uns auf dich!";
 					break;
 			}
 			break;
+
 		case "kontakt":
 			switch (window.currentLang) {
 				case 'en':
@@ -169,12 +183,15 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Kontakt";
 					main_text.innerText =
 						"Kontaktiere uns gern - sobald wir hier Kontaktdaten hinterlegen. ;)";
 					break;
 			}
 			break;
+
 		case "archiv":
+			heroImg = "section_archiv";
 			switch (window.currentLang) {
 				case 'en':
 					main_text.innerText =
@@ -185,11 +202,13 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Archiv";
 					main_text.innerText =
 						"Unser Archiv ist aktuell noch leer - aber das ändert sich bald!";
 					break;
 			}
 			break;
+
 		case "impressum":
 			switch (window.currentLang) {
 				case 'en':
@@ -201,6 +220,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Impressum";
 					main_text.innerHTML =
 						"Herausgeber*in:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
@@ -213,6 +233,7 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 			}
 			break;
+
 		case "datenschutz":
 			switch (window.currentLang) {
 				case 'en':
@@ -224,6 +245,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
+					title = "Datenschutz";
 					main_text.innerText =
 						"Wir nutzen keinerlei Cookies, verwenden keine Dienste Dritter, " +
 						"loggen keine Daten, und haben daher schlichtweg keine Daten von Ihnen. " +
@@ -231,10 +253,27 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 			}
 			break;
+
 		default:
 			console.log("Ooops - navigating to a page that does not exist: '" + where + "'!");
 			break;
 	}
+
+	if (onMainpage) {
+		document.getElementById("hero_container").style.height = "32vw";
+		document.getElementById("hero_logo_img").style.display = "block";
+		document.getElementById("hero_text_mainpage_top").style.display = "block";
+		document.getElementById("hero_text_mainpage_bottom").style.display = "block";
+		document.getElementById("hero_text_subpages").style.display = "none";
+	} else {
+		document.getElementById("hero_container").style.height = "24vw";
+		document.getElementById("hero_logo_img").style.display = "none";
+		document.getElementById("hero_text_mainpage_top").style.display = "none";
+		document.getElementById("hero_text_mainpage_bottom").style.display = "none";
+		document.getElementById("hero_text_subpages").innerText = title;
+		document.getElementById("hero_text_subpages").style.display = "block";
+	}
+	document.getElementById("hero_img").src = "./pictures/" + heroImg + ".jpg";
 
 	window.scrollTo(0, 0);
 };

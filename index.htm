@@ -19,8 +19,8 @@
 </head>
 
 <body class="white">
-	<div class="hero purple">
-		<img class="hero" src="./pictures/hero.jpg" alt="background image of women holding hands" />
+	<div class="hero purple" id="hero_container">
+		<img id="hero_img" alt="background image" />
 		<div class="hero_link_row text_white">
 			<span class="link" onclick="navigate('home')">Start</span>
 			<span class="link" onclick="navigate('about_us')">Über uns</span>
@@ -31,9 +31,10 @@
 			<span class="link" onclick="selectLang('en')" style="margin-right: 0;">EN,</span>&nbsp;<span class="link" onclick="selectLang('de')" style="margin: 0;">DE,</span>&nbsp;<span class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
 		</div>
 
-		<img class="hero_logo" src="./pictures/logo_white.png" />
-		<div class="hero_text text_white top_row">Feministischer Streik</div>
-		<div class="hero_text text_white bottom_row">Bundesweit</div>
+		<img id="hero_logo_img" src="./pictures/logo_white.png" alt="logo" />
+		<div class="hero_text text_white top_row" id="hero_text_mainpage_top">Feministischer Streik</div>
+		<div class="hero_text text_white bottom_row" id="hero_text_mainpage_bottom">Bundesweit</div>
+		<div class="hero_text hero_subpage text_white" id="hero_text_subpages"></div>
 
 		<div class="button slim text_purple" onclick="navigate('mitmachen')">Mitmachen</div>
 	</div>
@@ -77,7 +78,7 @@
 		<span>&nbsp;</span>
 		<span>&nbsp;</span>
 		<span class="link footer_link_bottom" onclick="navigate('datenschutz')">Datenschutz</span>
-		<img src="./pictures/logo_purple.png" />
+		<img src="./pictures/logo_purple.png" alt="logo" />
 	</div>
 
 	<script type="text/javascript">

@@ -127,6 +127,7 @@ img {
 
 div.hero {
 	position: relative;
+	overflow: clip;
 }
 
 div.hero > div.button {
@@ -148,12 +149,18 @@ div.hero_link_row > span {
 	margin-right: 10pt;
 }
 
-img.hero {
+img#hero_img {
 	width: 100%;
 	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
-img.hero_logo {
+img#hero_logo_img {
 	width: 15%;
 	position: absolute;
 	right: 61%;
@@ -174,6 +181,15 @@ div.hero_text.top_row {
 
 div.hero_text.bottom_row {
 	top: 50%;
+}
+
+div.hero_text.hero_subpage {
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 50%;
+	bottom: unset;
+	margin-top: -0.5em;
 }
 
 div.quote {

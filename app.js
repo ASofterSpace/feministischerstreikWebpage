@@ -23,6 +23,7 @@ window.navigate = function(where, changedDueToLanguage) {
 	var onMainpage = false;
 	var title = "";
 	var heroImg = "hero";
+	var largeText = null;
 
 	switch (where) {
 
@@ -30,21 +31,21 @@ window.navigate = function(where, changedDueToLanguage) {
 			onMainpage = true;
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This is the main landing page. It has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					main_text.innerHTML =
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
-						"Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
+						"<p class='large'>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
 						"zu unseren Inhalten, wie wir organisiert sind und wie du selbst aktiv werden " +
-						"und dich vernetzen kannst.<br><br>" +
-						"Wir, das ist ein Zusammenschluss verschiedener feministischer Streikgruppen " +
+						"und dich vernetzen kannst.</p>" +
+						"<p class='large'>Wir, das ist ein Zusammenschluss verschiedener feministischer Streikgruppen " +
 						"und -bündnisse, die sich deutschlandweit vernetzen und vor Ort jeweils " +
 						"eigenständig arbeiten. Wir sind diejenigen, die den Großteil an Sorgearbeit " +
 						"in der Gesellschaft leisten: Kindererziehung, Pflege, Soziale Arbeit, Sexarbeit, " +
@@ -52,12 +53,12 @@ window.navigate = function(where, changedDueToLanguage) {
 						"zuhause und im Ehrenamt. Dabei erleben wir, dass die Bedingungen für diese " +
 						"Arbeiten immer schlechter werden und wir immer näher an unsere Belastungsgrenzen " +
 						"kommen, doch statt eines Ausgleichs bekommen wir wenig Lohn, sind häufiger von " +
-						"Altersarmut betroffen und Gewalt gegen uns verschärft sich fortwährend.<br><br>" +
-						"Gemeinsam kämpfen wir für die Überwindung kapitalistischer und patriarchaler " +
+						"Altersarmut betroffen und Gewalt gegen uns verschärft sich fortwährend.</p>" +
+						"<p class='large'>Gemeinsam kämpfen wir für die Überwindung kapitalistischer und patriarchaler " +
 						"Verhältnisse hin zu einer Gesellschaft, in der nicht die Sicherung von Profiten, " +
 						"sondern gegenseitige Fürsorge im Mittelpunkt steht.<br>" +
 						"Der Feministische Streik ist für uns ein wichtiges Mittel auf dem Weg dahin - " +
-						"werde Teil davon!";
+						"werde Teil davon!</p>";
 					break;
 			}
 			break;
@@ -66,22 +67,22 @@ window.navigate = function(where, changedDueToLanguage) {
 			heroImg = "section_aboutus";
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Über uns";
-					main_text.innerHTML =
+					largeText =
 						"Wir sind ein Zusammenschluss verschiedener feministischer Streikgruppen " +
 						"und -bündnisse, die sich deutschlandweit vernetzen und vor Ort jeweils " +
 						"eigenständig arbeiten. Wir sind ein Zusammenschluss aus verschiedenen " +
 						"feministischen Gruppen in ganz Deutschland, die sich auf den feministischen " +
 						"Streik als gemeinsames Mittel zur Durchsetzung politischer Forderungen und " +
-						"einer langfristigen Organisierung von unten fokussiert.<br><br>" +
+						"einer langfristigen Organisierung von unten fokussiert.\n" +
 						"Die bundesweite Vernetzung ist in verschiedenen Komissionen organisiert. " +
 						"Zum Beispiel für Terminkoordination, Mails, Design und Website. " +
 						"Kurzfristig kommen wir auch in themenspezifischen Arbeitsgruppen zusammen. " +
@@ -89,7 +90,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Strategien, unterstützen uns in unseren Aufbauprozessen und ziehen Kraft aus " +
 						"unserer gemeinsamen Bewegung. Zwischen uns herrscht nicht in allen inhaltlichen " +
 						"und politischen Punkten Einigkeit - weshalb ihr vielleicht auch in Teilen auf " +
-						"unterschiedliche Begriffe oder Bezugspunkte stoßt.<br><br>" +
+						"unterschiedliche Begriffe oder Bezugspunkte stoßt.\n" +
 						"Was wir jedoch gemeinsam haben ist: Die bundesweite Vernetzung will eine gemeinsame " +
 						"Strategie zur (Re-)Etablierung des politischen Streiks in Deutschland entwickeln, " +
 						"der dabei bezahlte und unbezahlte Sorgearbeit und alle gesellschaftlichen Bereiche " +
@@ -97,7 +98,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"den Fokus rückt. Um als feministische Linke an Ausdruckskraft und Stärke zu gewinnen, " +
 						"sind wir der Überzeugung, dass wir eine langfristige und nachhaltige Organisierung " +
 						"benötigen, die über Städte und schlussendlich über nationale Grenzen hinweg agieren " +
-						"muss.<br><br>" +
+						"muss.\n" +
 						"Der 8. März ist bisher unser gemeinsamer zentraler Aktionstag, an dem wir Menschen in " +
 						"bezahlter und unbezahlter Care-Arbeit zusammenbringen, den öffentlichen Raum mit " +
 						"feministischen Themen besetzen und kollektiv bundesweit und international sichtbar " +
@@ -105,7 +106,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"solidarisch Tarifstreiks und andere progressive Kämpfe. Wir schließen uns dabei mit " +
 						"vielen anderen Akteur*innen auf lokaler und bundesweiter Ebene zusammen, arbeiten in " +
 						"oder mit Gewerkschaften, sozialpolitischen, klimapolitischen, antirassistischen und " +
-						"vielen weiteren Initiativen.<br><br>" +
+						"vielen weiteren Initiativen.\n" +
 						"Alle Gruppen und Initiativen, die sich der Idee eines feministischen Streiks verbunden " +
 						"fühlen und aktiv daran mitarbeiten wollen, sind herzlich eingeladen sich anzuschließen.";
 					break;
@@ -116,16 +117,16 @@ window.navigate = function(where, changedDueToLanguage) {
 			heroImg = "section_femstreik";
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Informationen zum Feministischen Streik";
-					main_text.innerHTML =
+					largeText =
 						"Ein feministischer Streik verbindet sowohl ökonomische " +
 						"als auch politische Anliegen. Wie bei einem klassischen gewerkschaftlichen " +
 						"Streik legen wir beim feministischen Streik unsere Arbeit nieder – " +
@@ -135,14 +136,14 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Veränderung unserer Lebensumstände: gegen Gewalt an Frauen, trans*, inter* " +
 						"und nicht-binären Personen, binäre Geschlechterrollen und neoliberale Sparpolitik. " +
 						"Dafür, dass reproduktive Arbeiten einen wichtigeren Stellenwert in der Gesellschaft " +
-						"erhalten und für alle durch alle gesorgt wird.<br><br>" +
+						"erhalten und für alle durch alle gesorgt wird.\n" +
 						"Streik heißt Verweigerung! Im feministischen Streik verweigern wir uns dabei aber nicht " +
 						"nur der Ausführung unserer abgewerteten und missachteten Arbeit, sondern auch anderer " +
 						"gesellschaftlicher Zwänge - und das erfordert von uns das Erproben von Utopien. " +
 						"Wenn wir die Individualisierung von Sorgearbeit bestreiken, erfordert das unweigerlich " +
 						"kollektivierte Formen der Zubereitung von Mahlzeiten, der Pflege und Kinderbetreuung. " +
 						"Wir müssen neue Arten von Beziehungsarbeit erlernen, auch über gesellschaftliche " +
-						"Spaltungslinien hinweg- und das schon im Hier und Jetzt.<br><br>" +
+						"Spaltungslinien hinweg- und das schon im Hier und Jetzt.\n" +
 						"Doch wir dürfen nicht dem Trugschluss verfallen, dass alles passiere allein durch " +
 						"das Niederlegen von Arbeit. Stattdessen müssen wir das Üben dieser Utopien als Teil " +
 						"unserer Praxis begreifen, anstatt es in eine ferne, bessere Zukunft zu verlagern. " +
@@ -157,16 +158,16 @@ window.navigate = function(where, changedDueToLanguage) {
 			heroImg = "section_mitmachen";
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Mitmachen";
-					main_text.innerText =
+					largeText =
 						"Du magst bei uns mitmachen? Ja super - wir freuen uns auf dich!";
 					break;
 			}
@@ -175,18 +176,18 @@ window.navigate = function(where, changedDueToLanguage) {
 		case "kontakt":
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Kontakt";
 					main_text.innerHTML =
-						"Bei Interesse und Fragen, meldet euch bei uns:<br>" +
-						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a>";
+						"<p class='large'>Bei Interesse und Fragen, meldet euch bei uns:<br>" +
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p>";
 					break;
 			}
 			break;
@@ -195,17 +196,116 @@ window.navigate = function(where, changedDueToLanguage) {
 			heroImg = "section_archiv";
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Archiv";
-					main_text.innerText =
-						"Unser Archiv ist aktuell noch leer - aber das ändert sich bald!";
+					main_text.innerHTML =
+						"<p class='large'>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
+						"nachlesen.</p>" +
+						"<h2>Aufruf zum 8. März 2023</h2>" +
+						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
+						"und Femizide hat 2015 die feministische Streikbewegung Argentiniens die Welt entflammt. In " +
+						"wenigen Jahren wuchs diese Bewegung rasant an. Der Slogan „Jin Jiyan Azadi“ (Frauen Leben " +
+						"Freiheit) der revolutionären kurdischen Bewegung hallt aktuell in der ganzen Welt wieder. Von " +
+						"Lateinamerika über Rojava (Nord-Ost-Syrien) und Teheran bis nach Europa stehen Frauen und " +
+						"Queers/FLINTAs auf und rebellieren. " +
+						"Gemeinsam kämpfen sie für eine Gesellschaft, in der ein " +
+						"gutes Leben möglich ist.</p>" +
+						"<p><a onclick='navigate(\"2023_8m_aufruf\")'>Weiterlesen...</a></p>";
+					break;
+			}
+			break;
+
+		case "2023_8m_aufruf":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText =
+						"This page has not yet been translated, sorry!";
+					break;
+				case 'es':
+					largeText =
+						"Este texto aún no ha sido traducido, lo sentimos.";
+					break;
+				default:
+					title = "Aufruf zum 8. März 2023";
+					main_text.innerHTML =
+						"<h2 class='button text_white'>DIE KRISEN STECKEN IM SYSTEM - FEMINISTISCH STREIKEN - WELTWEIT</h2>" +
+						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
+						"und Femizide hat 2015 die feministische Streikbewegung Argentiniens die Welt entflammt. In " +
+						"wenigen Jahren wuchs diese Bewegung rasant an. Der Slogan „Jin Jiyan Azadi“ (Frauen Leben " +
+						"Freiheit) der revolutionären kurdischen Bewegung hallt aktuell in der ganzen Welt wieder. Von " +
+						"Lateinamerika über Rojava (Nord-Ost-Syrien) und Teheran bis nach Europa stehen Frauen und " +
+						"Queers/<a class='text_black' href='#footnote-1'>FLINTAs<sup>1</sup></a> auf und rebellieren. " +
+						"Gemeinsam kämpfen sie für eine Gesellschaft, in der ein " +
+						"gutes Leben möglich ist.</p>" +
+						"<p>Die gesellschaftlichen Widersprüche spitzen sich massiv zu: Weltweit finden kriegerische " +
+						"Auseinandersetzung im Interesse der Herrschenden statt und ein Ende der Klimazerstörung ist " +
+						"auch nicht in Sicht. Momentan trifft uns Lohnabhängige die Wirtschaftskrise hart: Die Inflation ist " +
+						"bereits auf eine Rekordhöhe von über 10% gestiegen. Die Preise für Lebensmittel gehen steil " +
+						"nach oben, mehr als zwei Millionen Menschen müssen Essensspenden von der Tafel holen. Die " +
+						"Gaspreise haben sich zeitweise verdreifacht. Und auf der anderen Seite fahren Konzerne dicke " +
+						"Profite ein: Lebensmittel- und Energiekonzerne machen trotz Krise Milliarden an Gewinnen. Es " +
+						"findet eine spürbare Umverteilung des gesellschaftlichen Reichtums von unten nach oben statt.</p>" +
+						"<p>Es hat System, dass sich diese Krise auf Frauen und Queers/FLINTAs härter auswirkt: Von niedrigen " +
+						"Löhnen sind vor allem wir betroffen. Viele von uns arbeiten gerade mal für den Mindestlohn oder " +
+						"nicht viel mehr - im Alter wartet auf uns die Armut. Einsparungen im sozialstaatlichen Bereich " +
+						"werden vor allem für Frauen und Queers/FLINTAs ein Problem werden, denn diese sind auf diese " +
+						"Angebote besonders angewiesen. Und gerade gegen die erstarkende Rechte wird es darum " +
+						"gehen müssen schon erkämpfte Errungenschaften zu verteidigen. Hinzu kommt die Ausbeutung " +
+						"und Unterdrückung im Privaten: Wir leisten einen Großteil der unbezahlten Haus- und Sorgearbeit. " +
+						"Und Gewalt gegen Frauen und Queers/FLINTAs steigt seit Jahren.</p>" +
+						"<p>All das sind wichtige Gründe, am 8. März, dem internationalen feministischen Kampftag/" +
+						"Frauenkampftag auf die Straße zu gehen.</p>" +
+						"<h2>Tarifverhandlungen im öffentlichen Dienst: Gemeinsam feministisch streiken!</h2>" +
+						"<p>Konkret werden unsere Kämpfe zum Beispiel in Tarifrunden. 2023 wird in der Tarifrunde des " +
+						"öffentlichen Dienstes um Geld verhandelt, welches die Beschäftigten dringend benötigen. Auch " +
+						"in der Pflege wird es wieder Arbeitskämpfe geben. Gerade in Krisenzeiten sind diese Kämpfe " +
+						"besonders wichtig um Existenzen zu sichern. Es geht um die Situation der Beschäftigten, um " +
+						"vernünftige Arbeitsbedingungen und Entlohnung, insbesondere in den unteren Lohngruppen. Die " +
+						"Mitarbeitenden in der Pflege und im Öffentlichen Dienst stemmen die staatliche Daseinsfürsorge: " +
+						"Von der Abfallwirtschaft, über die öffentliche Verwaltung bis hin zu den Kindertagesstätten und " +
+						"den öffentlichen Kliniken. Alles Tätigkeiten, die für ein menschliches Leben in dieser Gesellschaft " +
+						"wichtig sind.</p>" +
+						"<p>Außerdem: Viele Frauen und Queers/FLINTAs sind im Öffentlichen Dienst beschäftigt. Es sind " +
+						"insbesondere die historisch „weiblichen“ Berufe, wie im Sozial- und Erziehungsdienst, in der " +
+						"Pflege oder in der Reinigung, die prekär bezahlt werden oder in denen die Arbeitsbedingungen " +
+						"schlecht und die Anerkennung gering sind.</p>" +
+						"<p>Während der Staat Gaskonzerne subventioniert und das Militär mit 100 Milliarden aufrüstet, droht " +
+						"der weitere Abbau sozialer Dienstleistungen und gesellschaftlich organisierter Sorgearbeit. " +
+						"Wenn öffentliche Betreuungsmöglichkeiten wegfallen, dann nimmt die unbezahlte Care-Arbeit " +
+						"zu, die meist auf den Schultern von Frauen und Queers/FLINTAs lastet.</p>" +
+						"<p>Die kapitalistische Gesellschaft hat kein Interesse ein gutes Leben für alle zu organisieren " +
+						"und eine vollumfängliche kostenlose öffentliche Daseinsfürsorge zu garantieren. Um sich " +
+						"die Reproduktionsarbeit nichts kosten zulassen wird auf eine patriarchale Arbeitsteilung " +
+						"zurückgegriffen. Der Kapitalismus ist auf die systematische Ausbeutung und Unterdrückung " +
+						"von uns allen angewiesen und wird das Patriarchat nicht freiwillig aufgeben. Deshalb ist unser " +
+						"antipatriarchaler Kampf auch antikapitalistisch. Dafür ist es wichtig, Arbeits- und feministische/" +
+						"Frauenkämpfe miteinander zu verbinden. Wir sind doppelt so mächtig, wenn wir uns zusammen " +
+						"schließen und gemeinsam streiken. Wir wollen ein gutes Leben, das wir uns auch leisten können, " +
+						"wir wollen kollektive und gemeinschaftliche Daseinsfürsorge sowie mehr selbstbestimmte Zeit.</p>" +
+						"<h2>Mit dem feministischen Streik hin zum guten Leben</h2>" +
+						"<p>Eine bessere Gesellschaft können wir uns nur selbst erkämpfen. Schließen wir uns zusammen, " +
+						"um der kapitalistischen Vereinzelung, Krieg und Krise die Stirn zu bieten und zu zeigen, dass wir " +
+						"viele sind!</p>" +
+						"<p>Wir kämpfen für mehr als bessere Löhne. Wir kämpfen solidarisch mit den vielfältigen " +
+						"internationalen Bewegungen für eine bessere Welt in Rojava, Teheran und Argentinien. Gegen " +
+						"patriarchale Gewalt und für eine Veränderung hin zu einer Gesellschaft, in der gegenseitige " +
+						"Fürsorge und eine bedarfsorientierte und demokratische Produktionsweise im Mittelpunkt " +
+						"stehen. Die Welt, in der wir leben möchten, wird nur ohne Kapitalismus zu haben sein und die " +
+						"Abschaffung dieser Wirtschaftsweise ist ohne Frauen und Queers/FLINTAs nicht zu machen. Wir " +
+						"kämpfen für eine solidarische Gesellschaft, in der wir ein selbstbestimmtes und sicheres Leben " +
+						"führen können. Eine Gesellschaft, in der die Unterdrückung des Menschen durch den Menschen " +
+						"der Geschichte angehört.</p>" +
+						"<p><a id='footnote-1' name='footnote-1'></a>1: FLINTA für Frauen, Lesben, Inter, Trans, Agender</p>" +
+						"<p class='download_block'><a target='_blank' href='files/2023/FStreik-8M-2023.pdf'><img class='download_sign' src='pictures/download.png'/>" +
+						"8M 2023 Aufruf als PDF herunterladen</a></p>";
 					break;
 			}
 			break;
@@ -213,17 +313,17 @@ window.navigate = function(where, changedDueToLanguage) {
 		case "impressum":
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Impressum";
 					main_text.innerHTML =
-						"Herausgeber*in:<br>" +
+						"<p class='large'>Herausgeber*in:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
 						"Bad Nauheimer Str. 4<br>" +
 						"64289 Darmstadt<br>" +
@@ -233,7 +333,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"<a href='mailto:moya@asofterspace.com'>moya@asofterspace.com</a><br>" +
 						"<br>" +
 						"Kontakt zum Feministischen Streik:<br>" +
-						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a>";
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p>";
 					break;
 			}
 			break;
@@ -241,18 +341,18 @@ window.navigate = function(where, changedDueToLanguage) {
 		case "datenschutz":
 			switch (window.currentLang) {
 				case 'en':
-					main_text.innerText =
+					largeText =
 						"This page has not yet been translated, sorry!";
 					break;
 				case 'es':
-					main_text.innerText =
+					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
 					title = "Datenschutz";
-					main_text.innerText =
+					largeText =
 						"Wir nutzen keinerlei Cookies, verwenden keine Dienste Dritter, " +
-						"loggen keine Daten, und haben daher schlichtweg keine Daten von Ihnen. " +
+						"loggen keine Daten, und haben daher schlichtweg keine Daten von Ihnen.\n" +
 						"Glück gehabt!";
 					break;
 			}
@@ -261,6 +361,10 @@ window.navigate = function(where, changedDueToLanguage) {
 		default:
 			console.log("Ooops - navigating to a page that does not exist: '" + where + "'!");
 			break;
+	}
+
+	if (largeText != null) {
+		main_text.innerHTML = "<p class='large'>" + largeText.split("\n").join("</p><p class='large'>") + "</p>";
 	}
 
 	if (onMainpage) {

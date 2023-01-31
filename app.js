@@ -208,7 +208,7 @@ window.navigate = function(where, changedDueToLanguage) {
 					main_text.innerHTML =
 						"<p class='large'>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
-						"<h2>Aufruf zum 8. März 2023</h2>" +
+						"<h2>Aufruf 2023</h2>" +
 						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
 						"und Femizide hat 2015 die feministische Streikbewegung Argentiniens die Welt entflammt. In " +
 						"wenigen Jahren wuchs diese Bewegung rasant an. Der Slogan „Jin Jiyan Azadi“ (Frauen Leben " +
@@ -218,6 +218,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Gemeinsam kämpfen sie für eine Gesellschaft, in der ein " +
 						"gutes Leben möglich ist.</p>" +
 						"<p><a onclick='navigate(\"2023_8m_aufruf\")'>Weiterlesen...</a></p>";
+						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
+						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
 					break;
 			}
 			break;
@@ -234,7 +236,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Aufruf zum 8. März 2023";
+					title = "Aufruf 2023";
 					main_text.innerHTML =
 						"<h2 class='button text_white'>DIE KRISEN STECKEN IM SYSTEM - FEMINISTISCH STREIKEN - WELTWEIT</h2>" +
 						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
@@ -368,13 +370,13 @@ window.navigate = function(where, changedDueToLanguage) {
 	}
 
 	if (onMainpage) {
-		document.getElementById("hero_container").style.height = "32vw";
+		document.getElementById("hero_container").className = 'hero purple hero_large';
 		document.getElementById("hero_logo_img").style.display = "block";
 		document.getElementById("hero_text_mainpage_top").style.display = "block";
 		document.getElementById("hero_text_mainpage_bottom").style.display = "block";
 		document.getElementById("hero_text_subpages").style.display = "none";
 	} else {
-		document.getElementById("hero_container").style.height = "24vw";
+		document.getElementById("hero_container").className = 'hero purple hero_slim';
 		document.getElementById("hero_logo_img").style.display = "none";
 		document.getElementById("hero_text_mainpage_top").style.display = "none";
 		document.getElementById("hero_text_mainpage_bottom").style.display = "none";

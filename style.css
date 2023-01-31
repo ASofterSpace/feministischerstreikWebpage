@@ -174,8 +174,19 @@ div.hero_link_row > span {
 	margin-right: 10pt;
 }
 
+div.hero_large {
+	height: 32vw;
+}
+
+div.hero_slim {
+	height: 24vw;
+}
+
 img#hero_img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	overflow: hidden;
 	opacity: 0.5;
 	position: absolute;
 	top: 0;
@@ -222,6 +233,12 @@ img.download_sign {
 	display: inline;
 	vertical-align: middle;
 	margin-right: 8pt;
+}
+
+img.button_8m {
+	display: inline;
+	height: 20pt;
+	vertical-align: middle;
 }
 
 p.download_block {
@@ -279,6 +296,12 @@ div.columns_two > div.right {
 	float: right;
 }
 
+div.pull_up_left {
+	position: absolute;
+	left: -45%;
+	top: 0;
+}
+
 div.linkpic {
 	position: relative;
 	margin-bottom: 5pt;
@@ -290,6 +313,7 @@ div.linkpic > img {
 }
 
 div.main_column {
+	position: relative;
 	max-width: 500pt;
 	margin-left: auto;
 	margin-right: auto;
@@ -326,10 +350,26 @@ div.footer > img {
 
 /* adjustments based on screen size */
 
+@media only screen and (max-width : 80em) {
+	div.pull_up_left {
+		position: unset;
+	}
+
+}
+
 @media only screen and (max-width : 70em) {
 	div.hero_text {
 		font-size: 200%;
 	}
+
+	div.hero_large {
+		height: 36vw;
+	}
+
+	div.hero_slim {
+		height: 27vw;
+	}
+
 }
 
 @media only screen and (max-width : 50em) {
@@ -358,6 +398,19 @@ div.footer > img {
 		font-size: 110%;
 		height: 17pt;
 	}
+
+	div.hero > div.button > img.button_8m {
+		height: 18pt;
+	}
+
+	div.hero_large {
+		height: 40vw;
+	}
+
+	div.hero_slim {
+		height: 32vw;
+	}
+
 }
 
 @media only screen and (max-width : 40em) {
@@ -375,6 +428,10 @@ div.footer > img {
 		height: 14.5pt;
 	}
 
+	div.hero > div.button > img.button_8m {
+		height: 16pt;
+	}
+
 	div.columns_two > div {
 		width: 100%;
 	}
@@ -387,6 +444,15 @@ div.footer > img {
 		text-align: left;
 		padding-left: 5%;
 	}
+
+	div.hero_large {
+		height: 44vw;
+	}
+
+	div.hero_slim {
+		height: 35vw;
+	}
+
 }
 
 @media only screen and (max-width : 30em) {
@@ -412,6 +478,10 @@ div.footer > img {
 		height: 13pt;
 	}
 
+	div.hero > div.button > img.button_8m {
+		height: 15pt;
+	}
+
 	div.footer > span.footer_link_top, div.footer > span.footer_link_bottom {
 		position: absolute;
 		left: 5%;
@@ -425,4 +495,13 @@ div.footer > img {
 	div.footer > span.footer_link_bottom {
 		bottom: 22%;
 	}
+
+	div.hero_large {
+		height: 48vw;
+	}
+
+	div.hero_slim {
+		height: 38vw;
+	}
+
 }

@@ -1,6 +1,125 @@
 window.currentPage = null;
 window.currentLang = 'de';
 
+window.data_8m = {
+	map: {
+		width: 1689,
+		height: 2232,
+		locations: {
+			"Berlin": {
+				"title": "Feministischer Streik Berlin",
+				"short": "ber",
+				"x": 1313,
+				"y": 690,
+				"mail": "feministischer-streik-berlin@systemli.org",
+				"insta": "feministischer_streik_berlin",
+				"facebook": "FeministischerStreikBerlin",
+				"twitter": "FemStreik",
+			},
+			"Hannover": {
+				"title": "Feministischer Rat Hannover",
+				"short": "han",
+				"x": 720,
+				"y": 762,
+				"mail": "feministisch_streiken@riseup.net",
+				"insta": "femrat_hannover",
+				"facebook": "FeministischerRatHannover",
+			},
+			"Oberhausen (NRW)": {
+				"title": "Frauen-Plenum Oberhausen",
+				"short": "ohn",
+				"x": 174,
+				"y": 985,
+				"web": "frauen-plenum-oberhausen.de",
+				"mail": "info@frauen-plenum-ob.de",
+			},
+			"Leipzig": {
+				"title": "8. März Bündnis Leipzig",
+				"short": "lzg",
+				"x": 1151,
+				"y": 1058,
+				"mail": "streik8m_leipzig@riseup.net",
+				"insta": "8m_leipzig",
+			},
+			"Kassel": {
+				"title": "Arbeitsgruppe feministischer Streik Kassel",
+				"short": "kas",
+				"x": 652,
+				"y": 1076,
+				"mail": "feministischerstreikks@riseup.net",
+			},
+			"Köln": {
+				"title": "8M Bündnis Köln",
+				"short": "cgn",
+				"x": 184,
+				"y": 1156,
+				"mail": "8mcgn@riseup.net",
+				"insta": "8m_buendnis_koeln",
+			},
+			"Frankfurt am Main": {
+				"title": "Feministisches Streikkollektiv Frankfurt",
+				"short": "ffm",
+				"x": 489,
+				"y": 1413,
+				"web": "fstreikfrankfurt.noblogs.org",
+				"mail": "fstreik_ffm@riseup.net",
+				"insta": "Fstreik_FFM",
+				"facebook": "FstreikFFM",
+			},
+			"Darmstadt": {
+				"title": "Feministischer Streik Darmstadt",
+				"short": "dar",
+				"x": 495,
+				"y": 1484,
+				"insta": "feministischer_streik_da",
+			},
+			"Nürnberg": {
+				"title": "FLINTA* Komitee für einen feministischen Streik in Nürnberg",
+				"short": "nur",
+				"x": 936,
+				"y": 1585,
+				"mail": "fq-streik-nbg@riseup.net",
+			},
+			"Stuttgart": {
+				"title": "Aktionsbündnis 8. März Stuttgart",
+				"short": "stg",
+				"x": 570,
+				"y": 1763,
+				"web": "aktionfrauen.wordpress.com",
+				"mail": "aktion-frauen@riseup.net",
+				"insta": "aktion_frauen",
+			},
+			"Augsburg": {
+				"title": "Feministisches Streikkomitee Augsburg (F*Streik Aux)",
+				"short": "aux",
+				"x": 913,
+				"y": 1944,
+				"web": "frauenstreikaux.blackblogs.org",
+				"mail": "f-streik-aux@riseup.net",
+				"insta": "feministischer.streik_aux",
+				"facebook": "Feministisches Streikkomitee Augsburg",
+			},
+			"München": {
+				"title": "Feministischer Streik München",
+				"short": "mun",
+				"x": 1006,
+				"y": 1990,
+				"mail": "frauenstreik.muenchen@gmail.com",
+				"insta": "feministischer.streik_muenchen",
+			},
+			"Freiburg": {
+				"title": "Feministischer & Frauenstreik Freiburg",
+				"short": "fbg",
+				"x": 288,
+				"y": 1991,
+				"web": "www.fstreik-freiburg.de",
+				"mail": "fstreik-freiburg@riseup.net",
+				"insta": "feminististundfrauenstreikfr",
+			},
+		}
+	}
+};
+
 window.navigate = function(where) {
 	var changedDueToLanguage = false;
 	window.navigate(where, changedDueToLanguage);
@@ -167,8 +286,79 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Mitmachen";
-					largeText =
-						"Du magst bei uns mitmachen? Ja super - wir freuen uns auf dich!";
+
+					var html =
+						"<img id='map' alt='Landkarte mit den verschiedenen Lokalgruppen' src='pictures/map.png' />" +
+						"<div id='map-hover-box'></div>" +
+						"<p>An diesen Orten kannst du mitmachen:</p>";
+
+					for (const locName in window.data_8m.map.locations) {
+						var loc = window.data_8m.map.locations[locName];
+						html += "<h2 id='location-" + loc.short + "'>" + loc.title + "</h2>";
+						html += "<p>";
+						if (loc.web) {
+							html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+						}
+						if (loc.mail) {
+							html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+						}
+						if (loc.insta) {
+							html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+						}
+						if (loc.facebook) {
+							html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+						}
+						if (loc.twitter) {
+							html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+						}
+						html = html.substring(0, html.length - 4);
+						html += "</p>";
+					}
+
+					main_text.innerHTML = html;
+
+					document.getElementById('map').addEventListener('mousemove', (e) => {
+						var map = document.getElementById('map');
+						var f = window.data_8m.map.width / map.clientWidth;
+
+						for (const locName in window.data_8m.map.locations) {
+							var loc = window.data_8m.map.locations[locName];
+							if ((loc.x - 5 < f*e.offsetX) && (loc.x + 35 > f*e.offsetX) &&
+								(loc.y - 79 < f*e.offsetY) && (loc.y > f*e.offsetY)) {
+								console.log("in:" + locName);
+								var hoverBox = document.getElementById('map-hover-box');
+								var html = loc.title;
+								html += "<p style='margin-bottom: 0;'>";
+								if (loc.web) {
+									html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+								}
+								if (loc.mail) {
+									html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+								}
+								if (loc.insta) {
+									html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+								}
+								if (loc.facebook) {
+									html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+								}
+								if (loc.twitter) {
+									html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+								}
+								html = html.substring(0, html.length - 4);
+								html += "</p>";
+								hoverBox.innerHTML = html;
+								if (loc.x > window.data_8m.map.width / 2) {
+									hoverBox.style.left = "unset";
+									hoverBox.style.right = ((window.data_8m.map.width + 50 - loc.x) / f) + "px";
+								} else {
+									hoverBox.style.left = ((loc.x + 100) / f) + "px";
+									hoverBox.style.right = "unset";
+								}
+								hoverBox.style.top = ((loc.y - 100) / f) + "px";
+								hoverBox.style.display = "block";
+							}
+						}
+					});
 					break;
 			}
 			break;

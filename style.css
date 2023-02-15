@@ -68,7 +68,7 @@ div, h2, div#main_text > p.large, div#main_text > div.quote {
 	font-weight: bold;
 }
 
-div#main_text > p {
+div#main_text > p, div#map-hover-box > p {
 	font-family: AvenirNextLTPro-Regular, LeagueSpartan-Bold, Tahoma, Verdana, Arial, sans-serif;
 	font-weight: unset;
 }
@@ -239,6 +239,20 @@ img.button_8m {
 	display: inline;
 	height: 20pt;
 	vertical-align: middle;
+}
+
+img#map {
+	width: 100%;
+}
+
+div#map-hover-box {
+	position: absolute;
+	display: none;
+	width: 50%;
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 8pt;
+	padding: 8pt;
+	text-align: left;
 }
 
 p.download_block {

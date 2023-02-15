@@ -114,7 +114,7 @@ window.data_8m = {
 				"y": 1991,
 				"web": "www.fstreik-freiburg.de",
 				"mail": "fstreik-freiburg@riseup.net",
-				"insta": "feminististundfrauenstreikfr",
+				"insta": "feministundfrauenstreikfr",
 			},
 		}
 	}
@@ -320,43 +320,53 @@ window.navigate = function(where, changedDueToLanguage) {
 					document.getElementById('map').addEventListener('mousemove', (e) => {
 						var map = document.getElementById('map');
 						var f = window.data_8m.map.width / map.clientWidth;
+						var minDistLoc = null;
+						// this is the minimum distance, if the cursor is further away, nothing is shown
+						var minDistance = 60*60;
 
 						for (const locName in window.data_8m.map.locations) {
 							var loc = window.data_8m.map.locations[locName];
-							if ((loc.x - 5 < f*e.offsetX) && (loc.x + 35 > f*e.offsetX) &&
-								(loc.y - 79 < f*e.offsetY) && (loc.y > f*e.offsetY)) {
-								console.log("in:" + locName);
-								var hoverBox = document.getElementById('map-hover-box');
-								var html = loc.title;
-								html += "<p style='margin-bottom: 0;'>";
-								if (loc.web) {
-									html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
-								}
-								if (loc.mail) {
-									html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
-								}
-								if (loc.insta) {
-									html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
-								}
-								if (loc.facebook) {
-									html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
-								}
-								if (loc.twitter) {
-									html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
-								}
-								html = html.substring(0, html.length - 4);
-								html += "</p>";
-								hoverBox.innerHTML = html;
-								if (loc.x > window.data_8m.map.width / 2) {
-									hoverBox.style.left = "unset";
-									hoverBox.style.right = ((window.data_8m.map.width + 50 - loc.x) / f) + "px";
-								} else {
-									hoverBox.style.left = ((loc.x + 100) / f) + "px";
-									hoverBox.style.right = "unset";
-								}
-								hoverBox.style.top = ((loc.y - 100) / f) + "px";
-								hoverBox.style.display = "block";
+							var distX = (loc.x + 15) - f*e.offsetX;
+							var distY = (loc.y - 40) - f*e.offsetY;
+							var distance = distX*distX + distY*distY;
+							if (distance < minDistance) {
+								minDistance = distance;
+								minDistLoc = loc;
 							}
+						}
+
+						if (minDistLoc != null) {
+							var loc = minDistLoc;
+							var hoverBox = document.getElementById('map-hover-box');
+							var html = loc.title;
+							html += "<p style='margin-bottom: 0;'>";
+							if (loc.web) {
+								html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+							}
+							if (loc.mail) {
+								html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+							}
+							if (loc.insta) {
+								html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+							}
+							if (loc.facebook) {
+								html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+							}
+							if (loc.twitter) {
+								html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+							}
+							html = html.substring(0, html.length - 4);
+							html += "</p>";
+							hoverBox.innerHTML = html;
+							if (loc.x > window.data_8m.map.width / 2) {
+								hoverBox.style.left = "unset";
+								hoverBox.style.right = ((window.data_8m.map.width + 50 - loc.x) / f) + "px";
+							} else {
+								hoverBox.style.left = ((loc.x + 100) / f) + "px";
+								hoverBox.style.right = "unset";
+							}
+							hoverBox.style.top = ((loc.y - 100) / f) + "px";
+							hoverBox.style.display = "block";
 						}
 					});
 					break;

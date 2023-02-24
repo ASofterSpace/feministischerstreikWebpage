@@ -30,7 +30,7 @@ window.data_8m = {
 				"short": "ohn",
 				"x": 174,
 				"y": 985,
-				"web": "frauen-plenum-oberhausen.de",
+				"web": "frauen-plenum-ob.de",
 				"mail": "info@frauen-plenum-ob.de",
 			},
 			"Leipzig": {
@@ -48,13 +48,31 @@ window.data_8m = {
 				"y": 1076,
 				"mail": "feministischerstreikks@riseup.net",
 			},
+			"Jena": {
+				"title": "Feministischer Streik Jena",
+				"short": "jen",
+				"x": 1033,
+				"y": 1159,
+				"web": "femstreikenjena.noblogs.org",
+				"mail": "frauen_streik-jena@riseup.net",
+				"insta": "feministischer_streik_jena",
+				"facebook": "frauen.streik.jena",
+			},
 			"Köln": {
 				"title": "8M Bündnis Köln",
 				"short": "cgn",
 				"x": 184,
-				"y": 1156,
+				"y": 1163,
 				"mail": "8mcgn@riseup.net",
 				"insta": "8m_buendnis_koeln",
+			},
+			"Bonn": {
+				"title": "Feministischer Streik Bonn - Feministisches Streikbündnis",
+				"short": "bnn",
+				"x": 214,
+				"y": 1214,
+				"mail": "frauenstreik-bonn@riseup.net",
+				"insta": "feministischer_streik_bonn",
 			},
 			"Frankfurt am Main": {
 				"title": "Feministisches Streikkollektiv Frankfurt",
@@ -71,7 +89,9 @@ window.data_8m = {
 				"short": "dar",
 				"x": 495,
 				"y": 1484,
+				"mail": "fstreik-da@riseup.net",
 				"insta": "feministischer_streik_da",
+				"facebook": "fstreikda",
 			},
 			"Nürnberg": {
 				"title": "FLINTA* Komitee für einen feministischen Streik in Nürnberg",
@@ -134,8 +154,8 @@ window.navigate = function(where, changedDueToLanguage) {
 
 	window.currentPage = where;
 
-	var main_text = document.getElementById("main_text");
-	if (!main_text) {
+	var main_container = document.getElementById("main_container");
+	if (!main_container) {
 		return;
 	}
 
@@ -143,6 +163,7 @@ window.navigate = function(where, changedDueToLanguage) {
 	var title = "";
 	var heroImg = "hero";
 	var largeText = null;
+	var containerHTML = null;
 
 	switch (where) {
 
@@ -158,13 +179,14 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					main_text.innerHTML =
+					containerHTML =
+						"<div id='main_text'>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
-						"<p class='large'>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
+						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
 						"zu unseren Inhalten, wie wir organisiert sind und wie du selbst aktiv werden " +
 						"und dich vernetzen kannst.</p>" +
-						"<p class='large'>Wir, das ist ein Zusammenschluss verschiedener feministischer Streikgruppen " +
+						"<p>Wir, das ist ein Zusammenschluss verschiedener feministischer Streikgruppen " +
 						"und -bündnisse, die sich deutschlandweit vernetzen und vor Ort jeweils " +
 						"eigenständig arbeiten. Wir sind diejenigen, die den Großteil an Sorgearbeit " +
 						"in der Gesellschaft leisten: Kindererziehung, Pflege, Soziale Arbeit, Sexarbeit, " +
@@ -173,11 +195,47 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Arbeiten immer schlechter werden und wir immer näher an unsere Belastungsgrenzen " +
 						"kommen, doch statt eines Ausgleichs bekommen wir wenig Lohn, sind häufiger von " +
 						"Altersarmut betroffen und Gewalt gegen uns verschärft sich fortwährend.</p>" +
-						"<p class='large'>Gemeinsam kämpfen wir für die Überwindung kapitalistischer und patriarchaler " +
+						"<p>Gemeinsam kämpfen wir für die Überwindung kapitalistischer und patriarchaler " +
 						"Verhältnisse hin zu einer Gesellschaft, in der nicht die Sicherung von Profiten, " +
 						"sondern gegenseitige Fürsorge im Mittelpunkt steht.<br>" +
 						"Der Feministische Streik ist für uns ein wichtiges Mittel auf dem Weg dahin - " +
-						"werde Teil davon!</p>";
+						"werde Teil davon!</p>" +
+						"</div>" +
+
+						"<div class=\"picture_link_block\">" +
+							"<div class=\"columns_two pull_up_left\">" +
+								"<div class=\"linkpic left purple link\" onclick=\"navigate('2023_8m_aufruf')\">" +
+									"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
+									"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> in Aktion</div>" +
+								"</div>" +
+							"</div>" +
+
+							"<div class=\"columns_two\">" +
+								"<div class=\"linkpic left purple link\" onclick=\"navigate('mitmachen')\">" +
+									"<img src=\"./pictures/section_mitmachen.jpg\" />" +
+									"<div class=\"button text_white two_rows midi\">Mitmachen &amp; unterstützen</div>" +
+								"</div>" +
+							"</div>" +
+
+							"<div class=\"columns_two\">" +
+								"<div class=\"linkpic right purple link\" onclick=\"navigate('archiv')\">" +
+									"<img src=\"./pictures/section_archiv.jpg\" />" +
+									"<div class=\"button text_white slim\">Archiv</div>" +
+								"</div>" +
+							"</div>" +
+
+							"<div class=\"columns_two\">" +
+								"<div class=\"linkpic left purple link\" onclick=\"navigate('fem_streik')\">" +
+									"<img src=\"./pictures/section_femstreik.jpg\" />" +
+									"<div class=\"button text_white\">Feministischer Streik</div>" +
+								"</div>" +
+
+								"<div class=\"linkpic right purple link\" onclick=\"navigate('about_us')\">" +
+									"<img src=\"./pictures/section_aboutus.jpg\" />" +
+									"<div class=\"button text_white slim\">Über uns</div>" +
+								"</div>" +
+							"</div>" +
+						"</div>";
 					break;
 			}
 			break;
@@ -288,6 +346,7 @@ window.navigate = function(where, changedDueToLanguage) {
 					title = "Mitmachen";
 
 					var html =
+						"<div id='main_text'>" +
 						"<img id='map' alt='Landkarte mit den verschiedenen Lokalgruppen' src='pictures/map.png' />" +
 						"<div id='map-hover-box'></div>" +
 						"<p>An diesen Orten kannst du mitmachen:</p>";
@@ -314,61 +373,9 @@ window.navigate = function(where, changedDueToLanguage) {
 						html = html.substring(0, html.length - 4);
 						html += "</p>";
 					}
+					html += "</div>";
 
-					main_text.innerHTML = html;
-
-					document.getElementById('map').addEventListener('mousemove', (e) => {
-						var map = document.getElementById('map');
-						var f = window.data_8m.map.width / map.clientWidth;
-						var minDistLoc = null;
-						// this is the minimum distance, if the cursor is further away, nothing is shown
-						var minDistance = 60*60;
-
-						for (const locName in window.data_8m.map.locations) {
-							var loc = window.data_8m.map.locations[locName];
-							var distX = (loc.x + 15) - f*e.offsetX;
-							var distY = (loc.y - 40) - f*e.offsetY;
-							var distance = distX*distX + distY*distY;
-							if (distance < minDistance) {
-								minDistance = distance;
-								minDistLoc = loc;
-							}
-						}
-
-						if (minDistLoc != null) {
-							var loc = minDistLoc;
-							var hoverBox = document.getElementById('map-hover-box');
-							var html = loc.title;
-							html += "<p style='margin-bottom: 0;'>";
-							if (loc.web) {
-								html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
-							}
-							if (loc.mail) {
-								html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
-							}
-							if (loc.insta) {
-								html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
-							}
-							if (loc.facebook) {
-								html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
-							}
-							if (loc.twitter) {
-								html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
-							}
-							html = html.substring(0, html.length - 4);
-							html += "</p>";
-							hoverBox.innerHTML = html;
-							if (loc.x > window.data_8m.map.width / 2) {
-								hoverBox.style.left = "unset";
-								hoverBox.style.right = ((window.data_8m.map.width + 50 - loc.x) / f) + "px";
-							} else {
-								hoverBox.style.left = ((loc.x + 100) / f) + "px";
-								hoverBox.style.right = "unset";
-							}
-							hoverBox.style.top = ((loc.y - 100) / f) + "px";
-							hoverBox.style.display = "block";
-						}
-					});
+					containerHTML = html;
 					break;
 			}
 			break;
@@ -385,9 +392,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Kontakt";
-					main_text.innerHTML =
-						"<p class='large'>Bei Interesse und Fragen, meldet euch bei uns:<br>" +
-						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p>";
+					containerHTML =
+						"<div id='main_text'><p>Bei Interesse und Fragen, meldet euch bei uns:<br>" +
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p></div>";
 					break;
 			}
 			break;
@@ -405,8 +412,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Archiv";
-					main_text.innerHTML =
-						"<p class='large'>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
+					containerHTML =
+						"<div id='main_text'>" +
+						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 						"<h2>Aufruf 2023</h2>" +
 						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
@@ -417,7 +425,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Queers/FLINTAs auf und rebellieren. " +
 						"Gemeinsam kämpfen sie für eine Gesellschaft, in der ein " +
 						"gutes Leben möglich ist.</p>" +
-						"<p><a onclick='navigate(\"2023_8m_aufruf\")'>Weiterlesen...</a></p>";
+						"<p><a onclick='navigate(\"2023_8m_aufruf\")'>Weiterlesen...</a></p>" +
+						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
 					break;
@@ -437,7 +446,8 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Aufruf 2023";
-					main_text.innerHTML =
+					containerHTML =
+						"<div id='main_text'>" +
 						"<h2 class='button text_white'>DIE KRISEN STECKEN IM SYSTEM - FEMINISTISCH STREIKEN - WELTWEIT</h2>" +
 						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
 						"und Femizide hat 2015 die feministische Streikbewegung Argentiniens die Welt entflammt. In " +
@@ -507,7 +517,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"der Geschichte angehört.</p>" +
 						"<p><a id='footnote-1' name='footnote-1'></a>1: FLINTA für Frauen, Lesben, Inter, Trans, Agender</p>" +
 						"<p class='download_block'><a target='_blank' href='files/2023/FStreik-8M-2023.pdf'><img class='download_sign' src='pictures/download.png'/>" +
-						"8M 2023 Aufruf als PDF herunterladen</a></p>";
+						"8M 2023 Aufruf als PDF herunterladen</a></p>" +
+						"</div>";
 					break;
 			}
 			break;
@@ -524,8 +535,9 @@ window.navigate = function(where, changedDueToLanguage) {
 					break;
 				default:
 					title = "Impressum";
-					main_text.innerHTML =
-						"<p class='large'>Herausgeber*in:<br>" +
+					containerHTML =
+						"<div id='main_text'>" +
+						"<p>Herausgeber*in:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
 						"Bad Nauheimer Str. 4<br>" +
 						"64289 Darmstadt<br>" +
@@ -535,7 +547,8 @@ window.navigate = function(where, changedDueToLanguage) {
 						"<a href='mailto:moya@asofterspace.com'>moya@asofterspace.com</a><br>" +
 						"<br>" +
 						"Kontakt zum Feministischen Streik:<br>" +
-						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p>";
+						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p>" +
+						"</div>";
 					break;
 			}
 			break;
@@ -566,7 +579,71 @@ window.navigate = function(where, changedDueToLanguage) {
 	}
 
 	if (largeText != null) {
-		main_text.innerHTML = "<p class='large'>" + largeText.split("\n").join("</p><p class='large'>") + "</p>";
+		containerHTML = "<div id='main_text'>" +
+			"<p>" + largeText.split("\n").join("</p><p>") + "</p>" +
+			"</div>";
+	}
+
+	if (!onMainpage) {
+		containerHTML = containerHTML.replaceAll("<div id='main_text'>", "<div id='main_text'><h1>" + title + "</h1>");
+	}
+
+	main_container.innerHTML = containerHTML;
+
+	var mapEl = document.getElementById('map');
+	if (mapEl) {
+		mapEl.addEventListener('mousemove', (e) => {
+			var map = document.getElementById('map');
+			var f = window.data_8m.map.width / map.clientWidth;
+			var minDistLoc = null;
+			// this is the minimum distance, if the cursor is further away, nothing is shown
+			var minDistance = 60*60;
+
+			for (const locName in window.data_8m.map.locations) {
+				var loc = window.data_8m.map.locations[locName];
+				var distX = (loc.x + 15) - f*e.offsetX;
+				var distY = (loc.y - 40) - f*e.offsetY;
+				var distance = distX*distX + distY*distY;
+				if (distance < minDistance) {
+					minDistance = distance;
+					minDistLoc = loc;
+				}
+			}
+
+			if (minDistLoc != null) {
+				var loc = minDistLoc;
+				var hoverBox = document.getElementById('map-hover-box');
+				var html = loc.title;
+				html += "<p style='margin-bottom: 0;'>";
+				if (loc.web) {
+					html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+				}
+				if (loc.mail) {
+					html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+				}
+				if (loc.insta) {
+					html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+				}
+				if (loc.facebook) {
+					html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+				}
+				if (loc.twitter) {
+					html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+				}
+				html = html.substring(0, html.length - 4);
+				html += "</p>";
+				hoverBox.innerHTML = html;
+				if (loc.x > window.data_8m.map.width / 2) {
+					hoverBox.style.left = "unset";
+					hoverBox.style.right = ((window.data_8m.map.width + 50 - loc.x) / f) + "px";
+				} else {
+					hoverBox.style.left = ((loc.x + 100) / f) + "px";
+					hoverBox.style.right = "unset";
+				}
+				hoverBox.style.top = ((loc.y - 100) / f) + "px";
+				hoverBox.style.display = "block";
+			}
+		});
 	}
 
 	if (onMainpage) {
@@ -574,14 +651,11 @@ window.navigate = function(where, changedDueToLanguage) {
 		document.getElementById("hero_logo_img").style.display = "block";
 		document.getElementById("hero_text_mainpage_top").style.display = "block";
 		document.getElementById("hero_text_mainpage_bottom").style.display = "block";
-		document.getElementById("hero_text_subpages").style.display = "none";
 	} else {
 		document.getElementById("hero_container").className = 'hero purple hero_slim';
 		document.getElementById("hero_logo_img").style.display = "none";
 		document.getElementById("hero_text_mainpage_top").style.display = "none";
 		document.getElementById("hero_text_mainpage_bottom").style.display = "none";
-		document.getElementById("hero_text_subpages").innerText = title;
-		document.getElementById("hero_text_subpages").style.display = "block";
 	}
 	document.getElementById("hero_img").src = "./pictures/" + heroImg + ".jpg";
 

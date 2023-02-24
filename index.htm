@@ -17,13 +17,16 @@
 	<link rel="icon" href="pictures/logo_purple_192x192.png" sizes="192x192" />
 	<link rel="apple-touch-icon" href="pictures/logo_purple_180x180.png" />
 	<meta name="msapplication-TileImage" content="pictures/logo_purple_270x270.png" />
-	<link href="style.css?v=14" media="all" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="app.js?v=14"></script>
+	<link href="style.css?v=15" media="all" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="app.js?v=15"></script>
 </head>
 
 <body class="white">
 	<div class="hero purple" id="hero_container">
 		<img id="hero_img" alt="background image" />
+		<div class="hero_lang_container text_white">
+			<span class="link" onclick="selectLang('en')" style="margin-right: 0;">EN</span><span class="lang_sep">|</span><span class="link" onclick="selectLang('de')" style="margin: 0;">DE</span><span class="lang_sep">|</span><span class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
+		</div>
 		<div class="hero_link_row text_white">
 			<span class="link" onclick="navigate('home')">Start</span>
 			<span class="link" onclick="navigate('about_us')">Über uns</span>
@@ -31,56 +34,16 @@
 			<span class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
 			<span class="link" onclick="navigate('kontakt')">Kontakt</span>
 			<span class="link" onclick="navigate('archiv')">Archiv</span>
-			<span class="link" onclick="selectLang('en')" style="margin-right: 0;">EN,</span>&nbsp;<span class="link" onclick="selectLang('de')" style="margin: 0;">DE,</span>&nbsp;<span class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
 		</div>
 
 		<img id="hero_logo_img" src="./pictures/logo_white.png" alt="logo" />
 		<div class="hero_text text_white top_row" id="hero_text_mainpage_top">Feministischer Streik</div>
 		<div class="hero_text text_white bottom_row" id="hero_text_mainpage_bottom">Bundesweit</div>
-		<div class="hero_text hero_subpage text_white" id="hero_text_subpages"></div>
 
 		<div class="button midi text_purple" onclick="navigate('2023_8m_aufruf')"><img class="button_8m" src='pictures/logo_purple_on_yellow_thick_tiny.png'/> in Aktion</div>
 	</div>
 
-	<div class="main_column">
-
-		<div id="main_text">
-		</div>
-
-		<div class="picture_link_block">
-			<div class="columns_two pull_up_left">
-				<div class="linkpic left purple link" onclick="navigate('2023_8m_aufruf')">
-					<img src="./pictures/section_2023_8m_aufruf_cut.jpg" />
-					<div class="button text_white midi"><img class="button_8m" src='pictures/logo_white.png'/> in Aktion</div>
-				</div>
-			</div>
-
-			<div class="columns_two">
-				<div class="linkpic left purple link" onclick="navigate('mitmachen')">
-					<img src="./pictures/section_mitmachen.jpg" />
-					<div class="button text_white two_rows midi">Mitmachen &amp; unterstützen</div>
-				</div>
-			</div>
-
-			<div class="columns_two">
-				<div class="linkpic right purple link" onclick="navigate('archiv')">
-					<img src="./pictures/section_archiv.jpg" />
-					<div class="button text_white slim">Archiv</div>
-				</div>
-			</div>
-
-			<div class="columns_two">
-				<div class="linkpic left purple link" onclick="navigate('fem_streik')">
-					<img src="./pictures/section_femstreik.jpg" />
-					<div class="button text_white">Feministischer Streik</div>
-				</div>
-
-				<div class="linkpic right purple link" onclick="navigate('about_us')">
-					<img src="./pictures/section_aboutus.jpg" />
-					<div class="button text_white slim">Über uns</div>
-				</div>
-			</div>
-		</div>
+	<div id="main_container" class="main_column">
 	</div>
 
 	<div class="footer yellow text_purple">

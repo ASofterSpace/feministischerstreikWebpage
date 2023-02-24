@@ -162,16 +162,28 @@ div.hero > div.button {
 	bottom: 40pt;
 }
 
-div.hero_link_row {
+div.hero_link_row, div.hero_lang_container {
 	position: absolute;
 	top: 5pt;
+	/* make space for the language picker at the top right - and left as well to keep it centered */
+	left: 90pt;
+	right: 90pt;
 	text-align: center;
-	width: 100%;
+}
+
+div.hero_lang_container {
+	right: 10pt;
+	text-align: right;
 }
 
 div.hero_link_row > span {
 	margin-left: 10pt;
 	margin-right: 10pt;
+}
+
+span.lang_sep {
+	margin-left: 3pt;
+	margin-right: 3pt;
 }
 
 div.hero_large {
@@ -217,15 +229,6 @@ div.hero_text.top_row {
 
 div.hero_text.bottom_row {
 	top: 50%;
-}
-
-div.hero_text.hero_subpage {
-	left: 0;
-	right: 0;
-	text-align: center;
-	top: 50%;
-	bottom: unset;
-	margin-top: -0.5em;
 }
 
 img.download_sign {
@@ -436,8 +439,13 @@ div.footer > img {
 		font-size: 125%;
 	}
 
-	div.hero_link_row {
+	div.hero_link_row, div.hero_lang_container {
 		font-size: 80%;
+	}
+
+	div.hero_link_row {
+		left: 10pt;
+		right: 70pt;
 	}
 
 	div.hero > div.button {

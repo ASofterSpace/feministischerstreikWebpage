@@ -163,6 +163,9 @@ window.data_8m = {
 		section_datenschutz_de: "Datenschutz",
 		section_datenschutz_en: "Privacy Policy",
 		section_datenschutz_es: "Protección de Datos",
+		section_in_action_de: "in Aktion",
+		section_in_action_en: "in action",
+		section_in_action_es: "en acción",
 		section_2023_8m_aufruf_de: "Aufruf 2023",
 		section_2023_8m_aufruf_en: "",
 		section_2023_8m_aufruf_es: "",
@@ -221,9 +224,9 @@ window.redisplay = function() {
 	var largeText = null;
 	var containerHTML = null;
 
-	this.resetLangsel('en');
-	this.resetLangsel('de');
-	this.resetLangsel('es');
+	resetLangsel('en');
+	resetLangsel('de');
+	resetLangsel('es');
 	var langselCur = document.getElementById('langsel_' + window.currentLang);
 	if (langselCur) {
 		langselCur.className = 'selected link';
@@ -240,8 +243,9 @@ window.redisplay = function() {
 		mainselCur.className = 'selected link';
 	}
 
-	document.getElementById('footersel_impressum').innerText = window.data_8m.texts['section_impressum_' + window.currentLang];
-	document.getElementById('footersel_datenschutz').innerText = window.data_8m.texts['section_datenschutz_' + window.currentLang];
+	document.getElementById('label_in_action').innerText = getText("section_in_action");
+	document.getElementById('footersel_impressum').innerText = getText("section_impressum");
+	document.getElementById('footersel_datenschutz').innerText = getText("section_datenschutz");
 
 	switch (window.currentPage) {
 
@@ -311,7 +315,7 @@ window.redisplay = function() {
 					"<div class=\"columns_two pull_up_left\">" +
 						"<div class=\"linkpic left purple link\" onclick=\"navigate('2023_8m_aufruf')\">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
-							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> in Aktion</div>" +
+							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
 						"</div>" +
 					"</div>" +
 
@@ -483,19 +487,19 @@ window.redisplay = function() {
 		case "kontakt":
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					containerHTML =
+						"<div id='main_text'><p>If you are interested or have any questions, please contact us:";
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					containerHTML =
+						"<div id='main_text'><p>Si está interesado o tiene alguna pregunta, póngase en contacto con nosotros:";
 					break;
 				default:
 					containerHTML =
-						"<div id='main_text'><p>Bei Interesse und Fragen, meldet euch bei uns:<br>" +
-						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p></div>";
+						"<div id='main_text'><p>Bei Interesse und Fragen, meldet euch bei uns:";
 					break;
 			}
+			containerHTML += "<br><a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p></div>";
 			break;
 
 		case "archiv":

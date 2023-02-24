@@ -778,21 +778,23 @@ window.redisplay = function() {
 		document.getElementById("hero_container").className = 'hero purple hero_large';
 		document.getElementById("hero_logo_img").style.display = "block";
 		document.getElementById("hero_text_mainpage_top").style.display = "block";
-		document.getElementById("hero_text_mainpage_top").innerText = window.data_8m.texts['hero_text_mainpage_top_' + window.currentLang];
+		document.getElementById("hero_text_mainpage_top").innerText = getText('hero_text_mainpage_top');
 		document.getElementById("hero_text_mainpage_bottom").style.display = "block";
-		document.getElementById("hero_text_mainpage_bottom").innerText = window.data_8m.texts['hero_text_mainpage_bottom_' + window.currentLang];
+		document.getElementById("hero_text_mainpage_bottom").innerText = getText('hero_text_mainpage_bottom');
+		document.title = getTextPlain('hero_text_mainpage_top') + " " + getTextPlain('hero_text_mainpage_bottom');
 	} else {
 		document.getElementById("hero_container").className = 'hero purple hero_slim';
 		document.getElementById("hero_logo_img").style.display = "none";
 		document.getElementById("hero_text_mainpage_top").style.display = "none";
 		document.getElementById("hero_text_mainpage_bottom").style.display = "none";
+		document.title = getTextPlain('hero_text_mainpage_top') + ": " + getTextPlain("section_" + window.currentPage);
 	}
 	document.getElementById("hero_img").src = "./pictures/" + heroImg + ".jpg";
 
 	window.scrollTo(0, 0);
 };
 
-window.getHtml = function(which) {
+window.getTextPlain = function(which) {
 	return window.data_8m.texts[which + "_" + window.currentLang];
 };
 

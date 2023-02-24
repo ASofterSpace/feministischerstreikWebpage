@@ -165,6 +165,25 @@ window.navigate = function(where, changedDueToLanguage) {
 	var largeText = null;
 	var containerHTML = null;
 
+	document.getElementById('langsel_en').className = 'link';
+	document.getElementById('langsel_de').className = 'link';
+	document.getElementById('langsel_es').className = 'link';
+	var langselCur = document.getElementById('langsel_' + window.currentLang);
+	if (langselCur) {
+		langselCur.className = 'selected link';
+	}
+
+	document.getElementById('mainsel_home').className = 'link';
+	document.getElementById('mainsel_about_us').className = 'link';
+	document.getElementById('mainsel_fem_streik').className = 'link';
+	document.getElementById('mainsel_mitmachen').className = 'link';
+	document.getElementById('mainsel_kontakt').className = 'link';
+	document.getElementById('mainsel_archiv').className = 'link';
+	var mainselCur = document.getElementById('mainsel_' + where);
+	if (mainselCur) {
+		mainselCur.className = 'selected link';
+	}
+
 	switch (where) {
 
 		case "home":
@@ -302,7 +321,7 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Informationen zum Feministischen Streik";
+					title = "Feministischer Streik";
 					largeText =
 						"Ein feministischer Streik verbindet sowohl ökonomische " +
 						"als auch politische Anliegen. Wie bei einem klassischen gewerkschaftlichen " +
@@ -343,12 +362,13 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Mitmachen";
+					title = "Mitmachen &amp; Unterstützen";
 
 					var html =
 						"<div id='main_text'>" +
+						"<h2 style='margin-top:0;'>Finde deine Stadt</h2>" +
 						"<img id='map' alt='Landkarte mit den verschiedenen Lokalgruppen' src='pictures/map.png' />" +
-						"<div id='map-hover-box'></div>" +
+						"<div id='map-hover-box' class='yellow'></div>" +
 						"<p>An diesen Orten kannst du mitmachen:</p>";
 
 					for (const locName in window.data_8m.map.locations) {

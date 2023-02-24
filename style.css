@@ -12,7 +12,7 @@
 	background-color: #ffffff;
 }
 
-.text_white, div#main_text > h2.text_white {
+.text_white, div#main_text > h2.text_white, div#map-hover-box > p > a:hover, span.link:hover, div.link:hover, div.link:hover > div.button.text_purple, div.button.text_purple:hover {
 	color: #ffffff;
 }
 
@@ -20,7 +20,7 @@
 	background-color: #710880;
 }
 
-.text_purple, div#main_text, div#main_text > p.large, a, a:visited, a.text_black:hover {
+.text_purple, div#main_text, div#main_text > p.large, a, a:visited, a.text_black:hover, div.link:hover > div.button.text_white, div.button.text_white:hover {
 	color: #710880;
 }
 
@@ -63,12 +63,12 @@ h1, div.hero_text {
 	font-weight: bold;
 }
 
-div, h2, div#main_text > p.large, div#main_text > div.quote {
+div, h2, div#main_text > p.large, div#main_text > div.quote, div.hero_link_row > span.selected, div.hero_lang_container > span.selected {
 	font-family: AvenirNextLTPro-Bold, LeagueSpartan-Bold, Tahoma, Verdana, Arial, sans-serif;
 	font-weight: bold;
 }
 
-div#main_text > p, div#map-hover-box > p {
+div#main_text > p, div#map-hover-box > p, div.hero_link_row, div.hero_lang_container {
 	font-family: AvenirNextLTPro-Regular, LeagueSpartan-Bold, Tahoma, Verdana, Arial, sans-serif;
 	font-weight: unset;
 }
@@ -132,10 +132,6 @@ a {
 
 span.link, div.link, div.button {
 	cursor: pointer;
-}
-
-span.link:hover, div.link:hover, div.link:hover > div.button, div.button:hover {
-	text-decoration: underline;
 }
 
 
@@ -252,8 +248,6 @@ div#map-hover-box {
 	position: absolute;
 	display: none;
 	width: 50%;
-	background: rgba(255, 255, 255, 0.85);
-	border-radius: 8pt;
 	padding: 8pt;
 	text-align: left;
 }
@@ -363,10 +357,10 @@ div.footer > span {
 }
 
 div.footer > img {
-	height: 100%;
+	height: 88%;
 	position: absolute;
 	right: 10%;
-	top: 0;
+	top: 6%;
 }
 
 /* adjustments based on screen size */

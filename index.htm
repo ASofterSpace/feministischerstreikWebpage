@@ -24,16 +24,16 @@
 <body class="white">
 	<div class="hero purple" id="hero_container">
 		<img id="hero_img" alt="background image" />
-		<div class="hero_lang_container text_white">
-			<span class="link" onclick="selectLang('en')" style="margin-right: 0;">EN</span><span class="lang_sep">|</span><span class="link" onclick="selectLang('de')" style="margin: 0;">DE</span><span class="lang_sep">|</span><span class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
+		<div class="hero_lang_container text_yellow">
+			<span id='langsel_en' class="link" onclick="selectLang('en')" style="margin-right: 0;">EN</span><span class="lang_sep">|</span><span id='langsel_de' class="link" onclick="selectLang('de')" style="margin: 0;">DE</span><span class="lang_sep">|</span><span id='langsel_es' class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
 		</div>
-		<div class="hero_link_row text_white">
-			<span class="link" onclick="navigate('home')">Start</span>
-			<span class="link" onclick="navigate('about_us')">Über uns</span>
-			<span class="link" onclick="navigate('fem_streik')">Feministischer Streik</span>
-			<span class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
-			<span class="link" onclick="navigate('kontakt')">Kontakt</span>
-			<span class="link" onclick="navigate('archiv')">Archiv</span>
+		<div class="hero_link_row text_yellow">
+			<span id='mainsel_home' class="link" onclick="navigate('home')">Start</span>
+			<span id='mainsel_about_us' class="link" onclick="navigate('about_us')">Über uns</span>
+			<span id='mainsel_fem_streik' class="link" onclick="navigate('fem_streik')">Feministischer Streik</span>
+			<span id='mainsel_mitmachen' class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
+			<span id='mainsel_kontakt' class="link" onclick="navigate('kontakt')">Kontakt</span>
+			<span id='mainsel_archiv' class="link" onclick="navigate('archiv')">Archiv</span>
 		</div>
 
 		<img id="hero_logo_img" src="./pictures/logo_white.png" alt="logo" />

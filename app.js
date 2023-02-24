@@ -137,22 +137,79 @@ window.data_8m = {
 				"insta": "feministundfrauenstreikfr",
 			},
 		}
+	},
+	texts: {
+		section_home_de: "Start",
+		section_home_en: "Home",
+		section_home_es: "Comienzo",
+		section_about_us_de: "Über uns",
+		section_about_us_en: "About us",
+		section_about_us_es: "Sobre nosotros",
+		section_fem_streik_de: "Feministischer Streik",
+		section_fem_streik_en: "Feminist Strike",
+		section_fem_streik_es: "Huelga Feminista",
+		section_mitmachen_de: "Mitmachen & Unterstützen",
+		section_mitmachen_en: "Participate & Support",
+		section_mitmachen_es: "Participa y Apoya",
+		section_kontakt_de: "Kontakt",
+		section_kontakt_en: "Contact",
+		section_kontakt_es: "Contacto",
+		section_archiv_de: "Archiv",
+		section_archiv_en: "Archive",
+		section_archiv_es: "Archivo",
+		section_impressum_de: "Impressum",
+		section_impressum_en: "Legal Disclaimer",
+		section_impressum_es: "Imprimir",
+		section_datenschutz_de: "Datenschutz",
+		section_datenschutz_en: "Privacy Policy",
+		section_datenschutz_es: "Protección de Datos",
+		section_2023_8m_aufruf_de: "Aufruf 2023",
+		section_2023_8m_aufruf_en: "",
+		section_2023_8m_aufruf_es: "",
+		hero_text_mainpage_top_de: "Feministischer Streik",
+		hero_text_mainpage_top_en: "Feminist Strike",
+		hero_text_mainpage_top_es: "Huelga Feminista",
+		hero_text_mainpage_bottom_de: "Bundesweit",
+		hero_text_mainpage_bottom_en: "Nationwide",
+		hero_text_mainpage_bottom_es: "a Escala Nacional",
+		map_find_de: "Finde deine Stadt!",
+		map_find_en: "Find your city!",
+		map_find_es: "Encuentra tu ciudad!",
+		map_alt_de: "Landkarte mit den verschiedenen Lokalgruppen",
+		map_alt_en: "Map showing the different local groups",
+		map_alt_es: "Mapa con los diferentes grupos locales",
+		map_intro_de: "An diesen Orten kannst du mitmachen:",
+		map_intro_en: "You can participate in these places:",
+		map_intro_es: "Puedes participar en estos lugares:",
+		map_link_web_de: "Web",
+		map_link_web_en: "Website",
+		map_link_web_es: "Sitio web",
+		map_link_mail_de: "Mail",
+		map_link_mail_en: "E-mail",
+		map_link_mail_es: "E-mail",
+		map_link_insta_de: "Instagram",
+		map_link_insta_en: "Instagram",
+		map_link_insta_es: "Instagram",
+		map_link_facebook_de: "Facebook",
+		map_link_facebook_en: "Facebook",
+		map_link_facebook_es: "Facebook",
+		map_link_twitter_de: "Twitter",
+		map_link_twitter_en: "Twitter",
+		map_link_twitter_es: "Twitter"
 	}
 };
 
 window.navigate = function(where) {
-	var changedDueToLanguage = false;
-	window.navigate(where, changedDueToLanguage);
-};
-
-window.navigate = function(where, changedDueToLanguage) {
-
-	// update history so that the url bar reflects the currently selected subpage
-	if ((window.currentPage != null) && ((window.currentPage != where) || changedDueToLanguage)) {
-		window.history.pushState({}, "", "?p=" + where + "&l=" + window.currentLang);
-	}
 
 	window.currentPage = where;
+
+	// update history so that the url bar reflects the currently selected subpage
+	window.history.pushState({}, "", "?p=" + where + "&l=" + window.currentLang);
+
+	window.redisplay();
+};
+
+window.redisplay = function() {
 
 	var main_container = document.getElementById("main_container");
 	if (!main_container) {
@@ -160,38 +217,59 @@ window.navigate = function(where, changedDueToLanguage) {
 	}
 
 	var onMainpage = false;
-	var title = "";
 	var heroImg = "hero";
 	var largeText = null;
 	var containerHTML = null;
 
-	document.getElementById('langsel_en').className = 'link';
-	document.getElementById('langsel_de').className = 'link';
-	document.getElementById('langsel_es').className = 'link';
+	this.resetLangsel('en');
+	this.resetLangsel('de');
+	this.resetLangsel('es');
 	var langselCur = document.getElementById('langsel_' + window.currentLang);
 	if (langselCur) {
 		langselCur.className = 'selected link';
 	}
 
-	document.getElementById('mainsel_home').className = 'link';
-	document.getElementById('mainsel_about_us').className = 'link';
-	document.getElementById('mainsel_fem_streik').className = 'link';
-	document.getElementById('mainsel_mitmachen').className = 'link';
-	document.getElementById('mainsel_kontakt').className = 'link';
-	document.getElementById('mainsel_archiv').className = 'link';
-	var mainselCur = document.getElementById('mainsel_' + where);
+	resetMainsel('home');
+	resetMainsel('about_us');
+	resetMainsel('fem_streik');
+	resetMainsel('mitmachen');
+	resetMainsel('kontakt');
+	resetMainsel('archiv');
+	var mainselCur = document.getElementById('mainsel_' + window.currentPage);
 	if (mainselCur) {
 		mainselCur.className = 'selected link';
 	}
 
-	switch (where) {
+	document.getElementById('footersel_impressum').innerText = window.data_8m.texts['section_impressum_' + window.currentLang];
+	document.getElementById('footersel_datenschutz').innerText = window.data_8m.texts['section_datenschutz_' + window.currentLang];
+
+	switch (window.currentPage) {
 
 		case "home":
 			onMainpage = true;
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This is the main landing page. It has not yet been translated, sorry!";
+					containerHTML =
+						"<div id='main_text'>" +
+						"<div class='quote'>“When we strike, the world stands still!”</div>" +
+						"<p>Welcome to the website of the Feminist Strike Alliance. " +
+						"Here you will find various infos, among other things, about our content, " +
+						"how we are organized and how you can become active and network.</p>" +
+						"<p>We are an Alliance of different feminist strike groups and alliances " +
+						"that network throughout Germany and work independently on the ground. " +
+						"We are the ones who do most of the care work in society: " +
+						"raising children, care, social work, sex work, emotional care and housework; " +
+						"whether paid at work or unpaid at home and in voluntary work. " +
+						"We experience that the conditions for this work are getting worse and worse " +
+						"and we are getting closer and closer to our limits, but instead of compensation " +
+						"we get little pay, are more often affected by poverty in old age and violence " +
+						"against us is getting worse and worse.</p>" +
+						"<p>Together we are fighting to overcome capitalist and patriarchal relations " +
+						"towards a society in which the focus is not on securing " +
+						"profits but on caring for each other. " +
+						"For us, the Feminist Strike is an important means on the way to this goal - " +
+						"become part of it!</p>" +
+						"</div>";
 					break;
 				case 'es':
 					largeText =
@@ -219,44 +297,44 @@ window.navigate = function(where, changedDueToLanguage) {
 						"sondern gegenseitige Fürsorge im Mittelpunkt steht.<br>" +
 						"Der Feministische Streik ist für uns ein wichtiges Mittel auf dem Weg dahin - " +
 						"werde Teil davon!</p>" +
-						"</div>" +
-
-						"<div class=\"picture_link_block\">" +
-							"<div class=\"columns_two pull_up_left\">" +
-								"<div class=\"linkpic left purple link\" onclick=\"navigate('2023_8m_aufruf')\">" +
-									"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
-									"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> in Aktion</div>" +
-								"</div>" +
-							"</div>" +
-
-							"<div class=\"columns_two\">" +
-								"<div class=\"linkpic left purple link\" onclick=\"navigate('mitmachen')\">" +
-									"<img src=\"./pictures/section_mitmachen.jpg\" />" +
-									"<div class=\"button text_white two_rows midi\">Mitmachen &amp; unterstützen</div>" +
-								"</div>" +
-							"</div>" +
-
-							"<div class=\"columns_two\">" +
-								"<div class=\"linkpic right purple link\" onclick=\"navigate('archiv')\">" +
-									"<img src=\"./pictures/section_archiv.jpg\" />" +
-									"<div class=\"button text_white slim\">Archiv</div>" +
-								"</div>" +
-							"</div>" +
-
-							"<div class=\"columns_two\">" +
-								"<div class=\"linkpic left purple link\" onclick=\"navigate('fem_streik')\">" +
-									"<img src=\"./pictures/section_femstreik.jpg\" />" +
-									"<div class=\"button text_white\">Feministischer Streik</div>" +
-								"</div>" +
-
-								"<div class=\"linkpic right purple link\" onclick=\"navigate('about_us')\">" +
-									"<img src=\"./pictures/section_aboutus.jpg\" />" +
-									"<div class=\"button text_white slim\">Über uns</div>" +
-								"</div>" +
-							"</div>" +
 						"</div>";
 					break;
 			}
+			containerHTML +=
+				"<div class=\"picture_link_block\">" +
+					"<div class=\"columns_two pull_up_left\">" +
+						"<div class=\"linkpic left purple link\" onclick=\"navigate('2023_8m_aufruf')\">" +
+							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
+							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> in Aktion</div>" +
+						"</div>" +
+					"</div>" +
+
+					"<div class=\"columns_two\">" +
+						"<div class=\"linkpic left purple link\" onclick=\"navigate('mitmachen')\">" +
+							"<img src=\"./pictures/section_mitmachen.jpg\" />" +
+							"<div class=\"button text_white two_rows midi\">" + getText("section_mitmachen") + "</div>" +
+						"</div>" +
+					"</div>" +
+
+					"<div class=\"columns_two\">" +
+						"<div class=\"linkpic right purple link\" onclick=\"navigate('archiv')\">" +
+							"<img src=\"./pictures/section_archiv.jpg\" />" +
+							"<div class=\"button text_white slim\">" + getText("section_archiv") + "</div>" +
+						"</div>" +
+					"</div>" +
+
+					"<div class=\"columns_two\">" +
+						"<div class=\"linkpic left purple link\" onclick=\"navigate('fem_streik')\">" +
+							"<img src=\"./pictures/section_femstreik.jpg\" />" +
+							"<div class=\"button text_white\">" + getText("section_fem_streik") + "</div>" +
+						"</div>" +
+
+						"<div class=\"linkpic right purple link\" onclick=\"navigate('about_us')\">" +
+							"<img src=\"./pictures/section_aboutus.jpg\" />" +
+							"<div class=\"button text_white slim\">" + getText("section_about_us") + "</div>" +
+						"</div>" +
+					"</div>" +
+				"</div>";
 			break;
 
 		case "about_us":
@@ -264,14 +342,17 @@ window.navigate = function(where, changedDueToLanguage) {
 			switch (window.currentLang) {
 				case 'en':
 					largeText =
-						"This page has not yet been translated, sorry!";
+						"We are a alliance of various feminist strike groups and alliances that network throughout Germany and each work independently on the ground. We are an alliance of different feminist groups throughout Germany that focuses on the feminist strike as a common means of asserting political demands and long-term organizing from below.\n" +
+						"The countrywide networking is organized in different committees. For example for coordination of dates, mails, design and website. At short notice, we also come together in topic-specific working groups. We meet online as well as in presence. We discuss, develop strategies, support each other in our building processes and draw strength from our common movement. We do not agree on all content-related and political points - which is why you may come across different terms or points of reference.\n" +
+						"What we have in common, however, is that the countrywide network wants to develop a common strategy for the (re-)establishment of the political strike in Germany, which focuses on paid and unpaid care work and all social areas in which women, trans*, inter* and non-binary persons are significantly active. In order to gain expression and strength as a feminist left, we are convinced that we need long-term and sustainable organizing that must operate across cities and ultimately across national borders.\n" +
+						"March 8 has so far been our common central day of action, where we want to bring together people in paid and unpaid care work, occupy public space with feminist issues, and be collectively visible countrywide and internationally. Throughout the year, we organize joint actions, support collective bargaining strikes and other progressive struggles in solidarity. We join forces with many other actors on a local and national level, work in or with trade unions, socio-political, climate-political, anti-racist and many other initiatives.\n" +
+						"All groups and initiatives that feel connected to the idea of a feminist strike and want to actively work on it are welcome to join.";
 					break;
 				case 'es':
 					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Über uns";
 					largeText =
 						"Wir sind ein Zusammenschluss verschiedener feministischer Streikgruppen " +
 						"und -bündnisse, die sich deutschlandweit vernetzen und vor Ort jeweils " +
@@ -314,14 +395,15 @@ window.navigate = function(where, changedDueToLanguage) {
 			switch (window.currentLang) {
 				case 'en':
 					largeText =
-						"This page has not yet been translated, sorry!";
+						"A feminist strike combines both economic and political concerns. As in a classic trade union strike, in a feminist strike we refuse to do  work - but in doing so we generate not only economic, but also social pressure. We then fight not only for a concrete improvement of our working conditions, but also for a profound change of our living conditions: against violence against women, trans*, inter* and non-binary persons,binary gender roles and neoliberal austerity policies. For reproductive work to be given a more important place in society and for all to be provided for by all.\n" +
+						"Strike means refusal! In the feminist strike, we not only refuse to carry out our devalued and disregarded work, but also other social constraints - and this requires us to test utopias. If we strike at the individualization of care work, this inevitably requires collectivized forms of meal preparation, caregiving, and childcare. We need to learn new kinds of relational work, even across social divides- and already in the here and now.\n" +
+						"But we must not fall into the fallacy that everything happens just by refusing to go to work. Instead, we must understand the practice of these utopias as part of our practice, rather than relegating it to a distant, better future. Only if we consider all social and collective dimensions in this struggle can the feminist strike as a tool unfold its many facets and lead us to success!";
 					break;
 				case 'es':
 					largeText =
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Feministischer Streik";
 					largeText =
 						"Ein feministischer Streik verbindet sowohl ökonomische " +
 						"als auch politische Anliegen. Wie bei einem klassischen gewerkschaftlichen " +
@@ -352,52 +434,38 @@ window.navigate = function(where, changedDueToLanguage) {
 
 		case "mitmachen":
 			heroImg = "section_mitmachen";
-			switch (window.currentLang) {
-				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
-					break;
-				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
-					break;
-				default:
-					title = "Mitmachen &amp; Unterstützen";
+			var html =
+				"<div id='main_text'>" +
+				"<h2 style='margin-top:0;'>" + window.data_8m.texts["map_find_" + window.currentLang] + "</h2>" +
+				"<p>" + window.data_8m.texts["map_intro_" + window.currentLang] + "</p>" +
+				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png' />" +
+				"<div id='map-hover-box' class='yellow'></div>";
 
-					var html =
-						"<div id='main_text'>" +
-						"<h2 style='margin-top:0;'>Finde deine Stadt</h2>" +
-						"<img id='map' alt='Landkarte mit den verschiedenen Lokalgruppen' src='pictures/map.png' />" +
-						"<div id='map-hover-box' class='yellow'></div>" +
-						"<p>An diesen Orten kannst du mitmachen:</p>";
-
-					for (const locName in window.data_8m.map.locations) {
-						var loc = window.data_8m.map.locations[locName];
-						html += "<h2 id='location-" + loc.short + "'>" + loc.title + "</h2>";
-						html += "<p>";
-						if (loc.web) {
-							html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
-						}
-						if (loc.mail) {
-							html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
-						}
-						if (loc.insta) {
-							html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
-						}
-						if (loc.facebook) {
-							html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
-						}
-						if (loc.twitter) {
-							html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
-						}
-						html = html.substring(0, html.length - 4);
-						html += "</p>";
-					}
-					html += "</div>";
-
-					containerHTML = html;
-					break;
+			for (const locName in window.data_8m.map.locations) {
+				var loc = window.data_8m.map.locations[locName];
+				html += "<h2 id='location-" + loc.short + "'>" + loc.title + "</h2>";
+				html += "<p>";
+				if (loc.web) {
+					html += window.data_8m.texts["map_link_web_" + window.currentLang] + ": <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+				}
+				if (loc.mail) {
+					html += window.data_8m.texts["map_link_mail_" + window.currentLang] + ": <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+				}
+				if (loc.insta) {
+					html += window.data_8m.texts["map_link_insta_" + window.currentLang] + ": <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+				}
+				if (loc.facebook) {
+					html += window.data_8m.texts["map_link_facebook_" + window.currentLang] + ": <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+				}
+				if (loc.twitter) {
+					html += window.data_8m.texts["map_link_twitter_" + window.currentLang] + ": <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+				}
+				html = html.substring(0, html.length - 4);
+				html += "</p>";
 			}
+			html += "</div>";
+
+			containerHTML = html;
 			break;
 
 		case "kontakt":
@@ -411,7 +479,6 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Kontakt";
 					containerHTML =
 						"<div id='main_text'><p>Bei Interesse und Fragen, meldet euch bei uns:<br>" +
 						"<a href='mailto:fstreik_bundesweit@riseup.net'>fstreik_bundesweit@riseup.net</a></p></div>";
@@ -431,7 +498,6 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Archiv";
 					containerHTML =
 						"<div id='main_text'>" +
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
@@ -465,7 +531,6 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Aufruf 2023";
 					containerHTML =
 						"<div id='main_text'>" +
 						"<h2 class='button text_white'>DIE KRISEN STECKEN IM SYSTEM - FEMINISTISCH STREIKEN - WELTWEIT</h2>" +
@@ -554,7 +619,6 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Impressum";
 					containerHTML =
 						"<div id='main_text'>" +
 						"<p>Herausgeber*in:<br>" +
@@ -584,7 +648,6 @@ window.navigate = function(where, changedDueToLanguage) {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					title = "Datenschutz";
 					largeText =
 						"Wir nutzen keinerlei Cookies, verwenden keine Dienste Dritter, " +
 						"loggen keine Daten, und haben daher schlichtweg keine Daten von Ihnen.\n" +
@@ -605,7 +668,8 @@ window.navigate = function(where, changedDueToLanguage) {
 	}
 
 	if (!onMainpage) {
-		containerHTML = containerHTML.replaceAll("<div id='main_text'>", "<div id='main_text'><h1>" + title + "</h1>");
+		containerHTML = containerHTML.replaceAll("<div id='main_text'>",
+			"<div id='main_text'><h1>" + getText("section_" + window.currentPage) + "</h1>");
 	}
 
 	main_container.innerHTML = containerHTML;
@@ -636,19 +700,19 @@ window.navigate = function(where, changedDueToLanguage) {
 				var html = loc.title;
 				html += "<p style='margin-bottom: 0;'>";
 				if (loc.web) {
-					html += "Web: <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+					html += window.data_8m.texts["map_link_web_" + window.currentLang] + ": <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
 				}
 				if (loc.mail) {
-					html += "Mail: <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+					html += window.data_8m.texts["map_link_mail_" + window.currentLang] + ": <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
 				}
 				if (loc.insta) {
-					html += "Instagram: <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+					html += window.data_8m.texts["map_link_insta_" + window.currentLang] + ": <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
 				}
 				if (loc.facebook) {
-					html += "Facebook: <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+					html += window.data_8m.texts["map_link_facebook_" + window.currentLang] + ": <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
 				}
 				if (loc.twitter) {
-					html += "Twitter: <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+					html += window.data_8m.texts["map_link_twitter_" + window.currentLang] + ": <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
 				}
 				html = html.substring(0, html.length - 4);
 				html += "</p>";
@@ -670,7 +734,9 @@ window.navigate = function(where, changedDueToLanguage) {
 		document.getElementById("hero_container").className = 'hero purple hero_large';
 		document.getElementById("hero_logo_img").style.display = "block";
 		document.getElementById("hero_text_mainpage_top").style.display = "block";
+		document.getElementById("hero_text_mainpage_top").innerText = window.data_8m.texts['hero_text_mainpage_top_' + window.currentLang];
 		document.getElementById("hero_text_mainpage_bottom").style.display = "block";
+		document.getElementById("hero_text_mainpage_bottom").innerText = window.data_8m.texts['hero_text_mainpage_bottom_' + window.currentLang];
 	} else {
 		document.getElementById("hero_container").className = 'hero purple hero_slim';
 		document.getElementById("hero_logo_img").style.display = "none";
@@ -682,15 +748,38 @@ window.navigate = function(where, changedDueToLanguage) {
 	window.scrollTo(0, 0);
 };
 
-window.selectLang = function(lang) {
-	if (window.currentLang != lang) {
-		window.currentLang = lang;
-		var changedDueToLanguage = true;
-		window.navigate(window.currentPage, changedDueToLanguage);
+window.getHtml = function(which) {
+	return window.data_8m.texts[which + "_" + window.currentLang];
+};
+
+window.getText = function(which) {
+	return window.data_8m.texts[which + "_" + window.currentLang].split("&").join("&amp;");
+};
+
+window.resetLangsel = function(lang) {
+	var langselEl = document.getElementById('langsel_' + lang);
+	if (langselEl) {
+		langselEl.className = 'link';
 	}
 };
 
-window.start = function() {
+window.resetMainsel = function(which) {
+	var mainselEl = document.getElementById('mainsel_' + which);
+	if (mainselEl) {
+		mainselEl.className = 'link';
+		mainselEl.innerText = window.data_8m.texts["section_" + which + "_" + window.currentLang];
+	}
+};
+
+window.selectLang = function(lang) {
+	window.currentLang = lang;
+	window.navigate(window.currentPage);
+};
+
+window.interpretUrl = function() {
+	window.currentLang = "de";
+	window.currentPage = "home";
+
 	var params = new URLSearchParams(location.search);
 	var lang = params.get("l");
 	if (lang == null) {
@@ -699,15 +788,24 @@ window.start = function() {
 	if (lang != null) {
 		window.currentLang = lang;
 	}
+
 	var page = params.get("p");
 	if (page == null) {
 		page = params.get("page");
 	}
 	if (page != null) {
-		window.navigate(page);
-	} else {
-		window.navigate("home");
+		window.currentPage = page;
 	}
+
+	window.redisplay();
+};
+
+window.start = function() {
+	window.interpretUrl();
+
+	// ensure that upon clicking "back" and "forward" in the browser, something actually happens ;)
+	window.addEventListener('popstate', window.interpretUrl);
+	window.addEventListener('replacestate', window.interpretUrl);
 };
 
 

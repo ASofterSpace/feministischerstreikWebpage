@@ -230,6 +230,11 @@ window.redisplay = function() {
 	var langselCur = document.getElementById('langsel_' + window.currentLang);
 	if (langselCur) {
 		langselCur.className = 'selected link';
+	} else {
+		window.setTimeout(function() {
+			window.currentLang = "de";
+			window.redisplay();
+		}, 20);
 	}
 
 	resetMainsel('home');
@@ -701,8 +706,12 @@ window.redisplay = function() {
 			break;
 
 		default:
-			console.log("Ooops - navigating to a page that does not exist: '" + where + "'!");
-			break;
+			console.log("Ooops - navigating to a page that does not exist: '" + window.currentPage + "'!");
+			window.setTimeout(function() {
+				window.currentPage = "home";
+				window.redisplay();
+			}, 20);
+			return;
 	}
 
 	if (largeText != null) {
@@ -795,11 +804,15 @@ window.redisplay = function() {
 };
 
 window.getTextPlain = function(which) {
-	return window.data_8m.texts[which + "_" + window.currentLang];
+	var result = window.data_8m.texts[which + "_" + window.currentLang];
+	if (result) {
+		return result;
+	}
+	return "";
 };
 
 window.getText = function(which) {
-	return window.data_8m.texts[which + "_" + window.currentLang].split("&").join("&amp;");
+	return getTextPlain(which).split("&").join("&amp;");
 };
 
 window.resetLangsel = function(lang) {

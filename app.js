@@ -269,9 +269,10 @@ window.redisplay = function() {
 	if (menuband_background && menuband_links) {
 		var contentHeight = (menuband_links.offsetTop * 2) + menuband_links.offsetHeight;
 		menuband_background.style.height = contentHeight + "px";
-		var hero_img = document.getElementById("hero_img");
-		if (hero_img) {
-			hero_img.style.top = contentHeight + "px";
+		var hero_container = document.getElementById("hero_container");
+		if (hero_container) {
+			hero_container.style.top = contentHeight + "px";
+			hero_container.style.marginBottom = (contentHeight + 40) + "px";
 		}
 	}
 

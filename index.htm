@@ -17,25 +17,26 @@
 	<link rel="icon" href="pictures/logo_purple_192x192.png" sizes="192x192" />
 	<link rel="apple-touch-icon" href="pictures/logo_purple_180x180.png" />
 	<meta name="msapplication-TileImage" content="pictures/logo_purple_270x270.png" />
-	<link href="style.css?v=16" media="all" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="app.js?v=16"></script>
+	<link href="style.css?v=18" media="all" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="app.js?v=18"></script>
 </head>
 
 <body class="white">
+	<div id="menuband_background" class="purple">&nbsp;</div>
+	<div class="hero_lang_container text_white" style="top: 10pt;">
+		<span id='langsel_en' class="link" onclick="selectLang('en')" style="margin-right: 0;">EN</span><span class="lang_sep">|</span><span id='langsel_de' class="link" onclick="selectLang('de')" style="margin: 0;">DE</span><span class="lang_sep">|</span><span id='langsel_es' class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
+	</div>
+	<div id="menuband_links" class="hero_link_row text_white" style="top: 10pt;">
+		<span id='mainsel_home' class="link" onclick="navigate('home')">Start</span>
+		<span id='mainsel_about_us' class="link" onclick="navigate('about_us')">Über uns</span>
+		<span id='mainsel_fem_streik' class="link" onclick="navigate('fem_streik')">Feministischer Streik</span>
+		<span id='mainsel_mitmachen' class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
+		<span id='mainsel_kontakt' class="link" onclick="navigate('kontakt')">Kontakt</span>
+		<span id='mainsel_archiv' class="link" onclick="navigate('archiv')">Archiv</span>
+	</div>
+
 	<div class="hero purple" id="hero_container">
 		<img id="hero_img" alt="background image" />
-		<div id="menuband_background" class="purple">&nbsp;</div>
-		<div class="hero_lang_container text_white" style="top: 10pt;">
-			<span id='langsel_en' class="link" onclick="selectLang('en')" style="margin-right: 0;">EN</span><span class="lang_sep">|</span><span id='langsel_de' class="link" onclick="selectLang('de')" style="margin: 0;">DE</span><span class="lang_sep">|</span><span id='langsel_es' class="link" onclick="selectLang('es')" style="margin-left: 0;">ES</span>
-		</div>
-		<div id="menuband_links" class="hero_link_row text_white" style="top: 10pt;">
-			<span id='mainsel_home' class="link" onclick="navigate('home')">Start</span>
-			<span id='mainsel_about_us' class="link" onclick="navigate('about_us')">Über uns</span>
-			<span id='mainsel_fem_streik' class="link" onclick="navigate('fem_streik')">Feministischer Streik</span>
-			<span id='mainsel_mitmachen' class="link" onclick="navigate('mitmachen')">Mitmachen &amp; unterstützen</span>
-			<span id='mainsel_kontakt' class="link" onclick="navigate('kontakt')">Kontakt</span>
-			<span id='mainsel_archiv' class="link" onclick="navigate('archiv')">Archiv</span>
-		</div>
 
 		<img id="hero_logo_img" src="./pictures/logo_white.png" alt="logo" />
 		<div class="hero_text text_white top_row" id="hero_text_mainpage_top">Feministischer Streik</div>

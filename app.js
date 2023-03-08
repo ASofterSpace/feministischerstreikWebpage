@@ -252,6 +252,17 @@ window.redisplay = function() {
 	document.getElementById('footersel_impressum').innerText = getText("section_impressum");
 	document.getElementById('footersel_datenschutz').innerText = getText("section_datenschutz");
 
+	var main_nav_container = document.getElementById('main_nav_container');
+	main_nav_container.style.display = 'none';
+
+	var bodyWidth = document.getElementsByTagName('body')[0].clientWidth;
+	var mainWidth = main_container.clientWidth;
+	var mainWidthInner = mainWidth - 26.66;
+	var old_main_text = document.getElementById('main_text');
+	if (old_main_text) {
+		mainWidthInner = old_main_text.clientWidth;
+	}
+
 	switch (window.currentPage) {
 
 		case "home":
@@ -315,39 +326,75 @@ window.redisplay = function() {
 						"</div>";
 					break;
 			}
-			containerHTML +=
-				"<div class=\"picture_link_block\">" +
-					"<div class=\"columns_two pull_up_left\">" +
-						"<div class=\"linkpic left purple link\" onclick=\"navigate('2023_8m_aufruf')\">" +
+
+			// single column underneath the middle
+			var styleStr = "";
+			var linkStyleStr = "style=\"width: 250pt; max-width: 100%;\"";
+			var linkStyleStrRight = linkStyleStr;
+			var leftLinksClass = "middle_links";
+			var rightLinksClass = "middle_links";
+
+			if (bodyWidth > mainWidth * 2) {
+				// body width more than double: left and right column around the middle
+				main_nav_container.style.display = 'block';
+				var leftRightWidth = (bodyWidth - mainWidth) / 2;
+				var leftRightMaxWidth = mainWidthInner / 2;
+				styleStr = "style=\"width: " + leftRightWidth + "px;\"";
+				linkStyleStr = "style=\"width: 100%; max-width: " + leftRightMaxWidth + "px;\"";
+				linkStyleStrRight = linkStyleStr;
+				leftLinksClass = "left_links";
+				rightLinksClass = "right_links";
+			} else {
+				// body width less than double but above single: two columns underneath the middle
+				if (bodyWidth > mainWidth) {
+					linkStyleStr = "style=\"display: inline-block; width: 250pt; max-width: 49.5%;";
+					linkStyleStrRight = linkStyleStr + " float:right\"";
+					linkStyleStr += "\"";
+				}
+			}
+
+			var htmlBlock1 =
+					"<div class=\"picture_link_block " + leftLinksClass + "\" " + styleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('2023_8m_aufruf')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
 							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
-						"</div>" +
-					"</div>" +
+						"</div>";
 
-					"<div class=\"columns_two\">" +
-						"<div class=\"linkpic left purple link\" onclick=\"navigate('mitmachen')\">" +
-							"<img src=\"./pictures/section_mitmachen.jpg\" />" +
-							"<div class=\"button text_white two_rows midi\">" + getText("section_mitmachen") + "</div>" +
-						"</div>" +
-					"</div>" +
-
-					"<div class=\"columns_two\">" +
-						"<div class=\"linkpic right purple link\" onclick=\"navigate('archiv')\">" +
+			var htmlBlockArc =
+						"<div class=\"linkpic purple link\" onclick=\"navigate('archiv')\" " + linkStyleStrRight + ">" +
 							"<img src=\"./pictures/section_archiv.jpg\" />" +
 							"<div class=\"button text_white slim\">" + getText("section_archiv") + "</div>" +
-						"</div>" +
+						"</div>";
+
+			var htmlBlock2 =
 					"</div>" +
 
-					"<div class=\"columns_two\">" +
-						"<div class=\"linkpic left purple link\" onclick=\"navigate('fem_streik')\">" +
+					"<div class=\"picture_link_block " + rightLinksClass + "\" " + styleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('mitmachen')\" " + linkStyleStr + ">" +
+							"<img src=\"./pictures/section_mitmachen.jpg\" />" +
+							"<div class=\"button text_white two_rows midi\">" + getText("section_mitmachen") + "</div>" +
+						"</div>";
+
+			var htmlBlockFemS =
+						"<div class=\"linkpic purple link\" onclick=\"navigate('fem_streik')\" " + linkStyleStrRight + ">" +
 							"<img src=\"./pictures/section_femstreik.jpg\" />" +
 							"<div class=\"button text_white\">" + getText("section_fem_streik") + "</div>" +
-						"</div>" +
+						"</div>";
 
-						"<div class=\"linkpic right purple link\" onclick=\"navigate('about_us')\">" +
-							"<img src=\"./pictures/section_aboutus.jpg\" />" +
-							"<div class=\"button text_white slim\">" + getText("section_about_us") + "</div>" +
-						"</div>" +
+			var htmlBlock3 =
+					"</div>";
+
+			if (bodyWidth > mainWidth * 2) {
+				main_nav_container.innerHTML = htmlBlock1+htmlBlockArc+htmlBlock2+htmlBlockFemS+htmlBlock3;
+			} else {
+				containerHTML += htmlBlock1+htmlBlockFemS+htmlBlock2+htmlBlockArc+htmlBlock3;
+			}
+
+			containerHTML +=
+				"<div class=\"picture_link_block middle_links last_before_footer\">" +
+					"<div class=\"linkpic purple link\" onclick=\"navigate('about_us')\" " + linkStyleStr + ">" +
+						"<img src=\"./pictures/section_aboutus.jpg\" />" +
+						"<div class=\"button text_white slim\">" + getText("section_about_us") + "</div>" +
 					"</div>" +
 				"</div>";
 			break;
@@ -865,6 +912,11 @@ window.start = function() {
 	// ensure that upon clicking "back" and "forward" in the browser, something actually happens ;)
 	window.addEventListener('popstate', window.interpretUrl);
 	window.addEventListener('replacestate', window.interpretUrl);
+
+	// ensure that layout is responsive to browser size changes
+	window.addEventListener('resize', function(event) {
+		window.redisplay();
+	}, true);
 };
 
 

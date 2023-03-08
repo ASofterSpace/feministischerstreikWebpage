@@ -263,6 +263,18 @@ window.redisplay = function() {
 		mainWidthInner = old_main_text.clientWidth;
 	}
 
+	// resize menuband if necessary
+	var menuband_background = document.getElementById('menuband_background');
+	var menuband_links = document.getElementById('menuband_links');
+	if (menuband_background && menuband_links) {
+		var contentHeight = (menuband_links.offsetTop * 2) + menuband_links.offsetHeight;
+		menuband_background.style.height = contentHeight + "px";
+		var hero_img = document.getElementById("hero_img");
+		if (hero_img) {
+			hero_img.style.top = contentHeight + "px";
+		}
+	}
+
 	switch (window.currentPage) {
 
 		case "home":

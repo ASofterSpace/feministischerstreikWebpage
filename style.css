@@ -190,6 +190,15 @@ div.hero_slim {
 	height: 24vw;
 }
 
+div#menuband_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 34.5pt;
+	background: linear-gradient(114deg, #510060 0%, #952896 35%, #710880 100%);
+}
+
 img#hero_img {
 	width: 100%;
 	height: 100%;

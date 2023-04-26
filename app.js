@@ -141,10 +141,10 @@ window.data_8m = {
 	texts: {
 		section_home_de: "Start",
 		section_home_en: "Home",
-		section_home_es: "Comienzo",
+		section_home_es: "Página de inicio",
 		section_about_us_de: "Über uns",
 		section_about_us_en: "About us",
-		section_about_us_es: "Sobre nosotros",
+		section_about_us_es: "Sobre nosotres",
 		section_fem_streik_de: "Feministischer Streik",
 		section_fem_streik_en: "Feminist Strike",
 		section_fem_streik_es: "Huelga Feminista",
@@ -308,9 +308,9 @@ window.redisplay = function() {
 					containerHTML =
 						"<div id='main_text'>" +
 						"<div class='quote'>«¡Cuando hacemos huelga, el mundo se para!»</div>" +
-						"<p>Bienvenido a la página web de la Alianza Feminista en Huelga de ámbito nacional. Aquí encontrarás información variada, entre otras cosas, sobre nuestros contenidos, cómo nos organizamos y cómo puedes participar activamente y trabajar en red.</p>" +
-						"<p>Somos una federación de diferentes grupos de huelga feminista y alianzas que trabajan en red en toda Alemania y de forma independiente sobre el terreno. Somos quienes realizamos la mayor parte del trabajo de cuidados en la sociedad: crianza de los hijos, cuidados, trabajo social, trabajo sexual, cuidados emocionales y tareas domésticas; ya sea remunerado en el trabajo o no remunerado en el hogar y en el voluntariado. Experimentamos que las condiciones de estos trabajos son cada vez peores y nos acercamos cada vez más a nuestros límites, pero en lugar de compensación recibimos poco salario, nos afecta más a menudo la pobreza en la vejez y la violencia contra nosotras es cada vez peor.</p>" +
-						"<p>Juntas luchamos por superar las relaciones capitalistas y patriarcales hacia una sociedad en la que la atención no se centre en obtener beneficios, sino en cuidarnos unas a otras.<br>" +
+						"<p>Bienvenides a la página web de la Alianza Feminista en Huelga de ámbito nacional. Aquí encontrarás información variada, entre otras cosas, sobre nuestros contenidos, cómo nos organizamos y cómo puedes participar activamente y trabajar en red.</p>" +
+						"<p>Somos una alianza de diferentes grupos de huelga feminista y alianzas que trabajan en red en toda Alemania y de forma independiente. Somos quienes realizamos la mayor parte del trabajo de cuidados en la sociedad: crianza de los hijes, cuidado, trabajo social, trabajo sexual, cuidados emocionales y tareas domésticas; ya sea remunerado en el trabajo o no remunerado en el hogar y en el voluntariado. Experienciamos que las condiciones de estos trabajos son cada vez peores y nos acercamos cada vez más a nuestros límites, pero en lugar de compensación recibimos poco salario, nos afecta más a menudo la pobreza en la vejez y la violencia contra nosotres es cada vez peor.</p>" +
+						"<p>Juntes luchamos por superar las relaciones capitalistas y patriarcales hacia una sociedad en la que la atención no se centre en obtener beneficios, sino en cuidarnos unes a otres.<br>" +
 						"Para nosotras, la huelga feminista es un medio importante en este camino: ¡participa en ella!</p>" +
 						"</div>";
 					break;
@@ -425,10 +425,10 @@ window.redisplay = function() {
 					break;
 				case 'es':
 					largeText =
-						"Somos una federación de diferentes grupos de huelga feminista y alianzas que trabajan en red en toda Alemania y de forma independiente sobre el terreno. Somos una federación de diferentes grupos feministas de toda Alemania, centrados en la huelga feminista como medio común para conseguir reivindicaciones políticas y organización a largo plazo desde abajo.\n" +
+						"Somos una alianza de diferentes grupos de huelga feminista y alianzas que trabajan en red en toda Alemania y de forma independiente. Somos una alianza de diferentes grupos feministas de toda Alemania, centrados en la huelga feminista como medio común para conseguir reivindicaciones políticas y organización a largo plazo desde abajo.\n" +
 						"El trabajo en red a escala nacional se organiza en diferentes comités. Por ejemplo, para la coordinación de fechas, correos, diseño y página web. A corto plazo, también nos reunimos en grupos de trabajo sobre temas específicos. Nos reunimos tanto en línea como en persona. Debatimos, desarrollamos estrategias, nos apoyamos mutuamente en nuestros procesos de construcción y sacamos fuerzas de nuestro movimiento común. No estamos de acuerdo en todos los puntos de contenido y política, por lo que es posible que encuentre términos o puntos de referencia diferentes.\n" +
-						"Lo que tenemos en común, sin embargo, es que la red nacional quiere desarrollar una estrategia común para el (re)establecimiento de la huelga política en Alemania, que se centre en el trabajo de cuidados remunerado y no remunerado y en todos los ámbitos de la sociedad en los que las mujeres, las personas trans*, inter* y no binarias son significativamente activas. Para ganar expresión y fuerza como izquierda feminista, estamos convencidas de que necesitamos una organización a largo plazo y sostenible que debe operar a través de las ciudades y, en última instancia, a través de las fronteras nacionales.\n" +
-						"Hasta ahora, el 8 de marzo ha sido nuestro día de acción central común, en el que queremos reunir a las personas que realizan trabajos de cuidados remunerados y no remunerados, ocupar el espacio público con cuestiones feministas y ser colectivamente visibles a escala nacional e internacional. A lo largo del año, organizamos acciones conjuntas, apoyamos huelgas de negociación colectiva y otras luchas progresistas en solidaridad. Unimos fuerzas con muchos otros actores a nivel local y nacional, trabajamos en o con sindicatos, iniciativas sociopolíticas, climatopolíticas, antirracistas y muchas otras.\n" +
+						"Lo que tenemos en común, sin embargo, es que la red nacional quiere desarrollar una estrategia común para el (re)establecimiento de la huelga política en Alemania, que se centre en el trabajo de cuidados remunerado y no remunerado y en todos los ámbitos de la sociedad en los que las mujeres, las personas trans*, inter* y no binarias son significativamente activas. Para ganar expresión y fuerza como izquierda feminista, estamos convencides de que necesitamos una organización a largo plazo y sostenible que debe operar a través de las ciudades y, en última instancia, a través de las fronteras nacionales.\n" +
+						"Hasta ahora, el 8 de marzo ha sido nuestro día de acción central común, en el que queremos reunir a las personas que realizan trabajos de cuidados remunerados y no remunerados, ocupar el espacio público con cuestiones feministas y ser colectivamente visibles a escala nacional y internacional. A lo largo del año, organizamos acciones conjuntas, apoyamos huelgas de negociación colectiva y otras luchas progresistas en solidaridad. Unimos fuerzas con muchos otres actores a nivel local y nacional, trabajamos en o con sindicatos, iniciativas y  sociales , climatopolíticas, antirracistas y muchas otras.\n" +
 						"Todos los grupos e iniciativas que se sientan conectados con la idea de una huelga feminista y quieran trabajar activamente en ella son bienvenidos.";
 					break;
 				default:
@@ -481,7 +481,7 @@ window.redisplay = function() {
 				case 'es':
 					largeText =
 						"Una huelga feminista combina preocupaciones económicas y políticas. Al igual que en una huelga sindical clásica, en una huelga feminista nos ponemos manos a la obra, pero al hacerlo no sólo creamos presión económica, sino también presión social. No sólo luchamos por una mejora concreta de nuestras condiciones laborales, sino también por un cambio profundo en nuestras condiciones de vida: contra la violencia hacia las mujeres, las personas trans*, inter* y no binarias, los roles binarios de género y las políticas neoliberales de austeridad. Para que el trabajo reproductivo ocupe un lugar más importante en la sociedad y para que todos y todas seamos atendidos.\n" +
-						"¡Huelga significa rechazo! En la huelga feminista, sin embargo, no sólo nos negamos a llevar a cabo nuestro trabajo devaluado y despreciado, sino también otras limitaciones sociales, y esto nos obliga a poner a prueba las utopías. Si hacemos huelga contra la individualización del trabajo de cuidados, esto requiere inevitablemente formas colectivizadas de preparación de comidas, cuidados y atención a los niños. Tenemos que aprender nuevos tipos de trabajo relacional, también por encima de las divisiones sociales, y ya en el aquí y ahora.\n" +
+						"¡Huelga significa rechazo! En la huelga feminista, sin embargo, no sólo nos negamos a llevar a cabo nuestro trabajo devaluado y despreciado, sino también otras limitaciones sociales, y esto nos obliga a poner a prueba las utopías. Si hacemos huelga contra la individualización del trabajo de cuidados, esto requiere inevitablemente formas colectivizadas de preparación de comidas, cuidados y atención a les niñes. Tenemos que aprender nuevos tipos de trabajo relacional, también por encima de las divisiones sociales, y ya en el aquí y ahora.\n" +
 						"Pero no debemos caer en la falacia de que todo pasa por poner trabajo. Por el contrario, debemos entender la práctica de estas utopías como parte de nuestra práctica, en lugar de relegarla a un futuro lejano y mejor. ¡Sólo si consideramos todas las dimensiones sociales y colectivas en esta lucha, la huelga feminista como herramienta podrá desplegar sus múltiples facetas y llevarnos al éxito!";
 					break;
 				default:

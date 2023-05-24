@@ -25,6 +25,15 @@ window.data_8m = {
 				"insta": "femrat_hannover",
 				"facebook": "FeministischerRatHannover",
 			},
+			"Osnabrück": {
+				"title": "Feministisches Streikbündnis Osnabrück",
+				"short": "osn",
+				"x": 409,
+				"y": 783,
+				"mail": "feministischerstreik-os@riseup.net",
+				"insta": "feministischerstreik.os",
+				"facebook": "feministischerstreik.os",
+			},
 			"Oberhausen (NRW)": {
 				"title": "Frauen-Plenum Oberhausen",
 				"short": "ohn",
@@ -519,7 +528,7 @@ window.redisplay = function() {
 				"<div id='main_text'>" +
 				"<h2 style='margin-top:0;'>" + window.data_8m.texts["map_find_" + window.currentLang] + "</h2>" +
 				"<p>" + window.data_8m.texts["map_intro_" + window.currentLang] + "</p>" +
-				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png' />" +
+				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png?v=2' />" +
 				"<div id='map-hover-box' class='yellow'></div>";
 
 			for (const locName in window.data_8m.map.locations) {

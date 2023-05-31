@@ -67,13 +67,23 @@ window.data_8m = {
 				"insta": "feministischer_streik_jena",
 				"facebook": "frauen.streik.jena",
 			},
-			"Köln": {
+			"Köln_1": {
 				"title": "8M Bündnis Köln",
-				"short": "cgn",
+				"short": "cgn8m",
 				"x": 184,
 				"y": 1163,
 				"mail": "8mcgn@riseup.net",
 				"insta": "8m_buendnis_koeln",
+				"linked": "Köln_2",
+			},
+			"Köln_2": {
+				"title": "Feministischer Streik Köln",
+				"short": "cgnfem",
+				"x": 184,
+				"y": 1163,
+				"mail": "f_streik_koeln@posteo.de",
+				"insta": "feministischer_streik_koeln",
+				"linked": "Köln_1",
 			},
 			"Bonn": {
 				"title": "Feministischer Streik Bonn - Feministisches Streikbündnis",
@@ -819,25 +829,12 @@ window.redisplay = function() {
 			if (minDistLoc != null) {
 				var loc = minDistLoc;
 				var hoverBox = document.getElementById('map-hover-box');
-				var html = loc.title;
-				html += "<p style='margin-bottom: 0;'>";
-				if (loc.web) {
-					html += window.data_8m.texts["map_link_web_" + window.currentLang] + ": <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+				var html = window.generateHoverHTMLforLocation(loc);
+
+				if (loc.linked) {
+					html += "<br>" + window.generateHoverHTMLforLocation(window.data_8m.map.locations[loc.linked]);
 				}
-				if (loc.mail) {
-					html += window.data_8m.texts["map_link_mail_" + window.currentLang] + ": <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
-				}
-				if (loc.insta) {
-					html += window.data_8m.texts["map_link_insta_" + window.currentLang] + ": <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
-				}
-				if (loc.facebook) {
-					html += window.data_8m.texts["map_link_facebook_" + window.currentLang] + ": <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
-				}
-				if (loc.twitter) {
-					html += window.data_8m.texts["map_link_twitter_" + window.currentLang] + ": <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
-				}
-				html = html.substring(0, html.length - 4);
-				html += "</p>";
+
 				hoverBox.innerHTML = html;
 				if (loc.x > window.data_8m.map.width / 2) {
 					hoverBox.style.left = "unset";
@@ -870,6 +867,30 @@ window.redisplay = function() {
 	document.getElementById("hero_img").src = "./pictures/" + heroImg + ".jpg";
 
 	window.scrollTo(0, 0);
+};
+
+window.generateHoverHTMLforLocation = function(loc) {
+
+	var html = loc.title;
+	html += "<p style='margin-bottom: 0;'>";
+	if (loc.web) {
+		html += window.data_8m.texts["map_link_web_" + window.currentLang] + ": <a href='https://" + loc.web + "/' target='_blank'>" + loc.web + "</a><br>";
+	}
+	if (loc.mail) {
+		html += window.data_8m.texts["map_link_mail_" + window.currentLang] + ": <a href='mailto:" + loc.mail + "'>" + loc.mail + "</a><br>";
+	}
+	if (loc.insta) {
+		html += window.data_8m.texts["map_link_insta_" + window.currentLang] + ": <a href='https://www.instagram.com/" + loc.insta + "/' target='_blank'>" + loc.insta + "</a><br>";
+	}
+	if (loc.facebook) {
+		html += window.data_8m.texts["map_link_facebook_" + window.currentLang] + ": <a href='https://www.facebook.com/" + loc.facebook + "' target='_blank'>" + loc.facebook + "</a><br>";
+	}
+	if (loc.twitter) {
+		html += window.data_8m.texts["map_link_twitter_" + window.currentLang] + ": <a href='https://twitter.com/" + loc.twitter + "' target='_blank'>" + loc.twitter + "</a><br>";
+	}
+	html = html.substring(0, html.length - 4);
+	html += "</p>";
+	return html;
 };
 
 window.getTextPlain = function(which) {

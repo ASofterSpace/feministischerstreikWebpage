@@ -50,12 +50,24 @@ window.data_8m = {
 				"mail": "streik8m_leipzig@riseup.net",
 				"insta": "8m_leipzig",
 			},
-			"Kassel": {
+			"Kassel_1": {
 				"title": "Arbeitsgruppe feministischer Streik Kassel",
-				"short": "kas",
+				"short": "afsk",
 				"x": 652,
 				"y": 1076,
 				"mail": "feministischerstreikks@riseup.net",
+				"insta": "ag_feministischer_streik_ks",
+				"linked": "Kassel_2",
+			},
+			"Kassel_2": {
+				"title": "Solibündnis Carearbeit Kassel (SCK)",
+				"short": "sck",
+				"x": 652,
+				"y": 1076,
+				"web": "solibuendniscarearbeitks.noblogs.org",
+				"mail": "solibuendnis_care_ks@riseup.net",
+				"insta": "solibuendnis_care_ks",
+				"linked": "Kassel_1",
 			},
 			"Jena": {
 				"title": "Feministischer Streik Jena",

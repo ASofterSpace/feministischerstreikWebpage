@@ -200,6 +200,9 @@ window.data_8m = {
 		section_2023_8m_aufruf_de: "Aufruf 2023",
 		section_2023_8m_aufruf_en: "",
 		section_2023_8m_aufruf_es: "",
+		section_2023_koeln_mobi_de: "Mobilisierung zu den Protesten gegen den „Marsch fürs Leben“",
+		section_2023_koeln_mobi_en: "",
+		section_2023_koeln_mobi_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -399,7 +402,7 @@ window.redisplay = function() {
 
 			var htmlBlock1 =
 					"<div class=\"picture_link_block " + leftLinksClass + "\" " + styleStr + ">" +
-						"<div class=\"linkpic purple link\" onclick=\"navigate('2023_8m_aufruf')\" " + linkStyleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('2023_koeln_mobi')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
 							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
 						"</div>";
@@ -614,7 +617,17 @@ window.redisplay = function() {
 						"<div id='main_text'>" +
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
-						"<h2>Aufruf 2023</h2>" +
+
+						"<h2>" + getText("section_2023_koeln_mobi") + "</h2>" +
+						"<p>Was zur Hölle?! Am 16. September findet erstmals in Köln der „Marsch für das Leben“ statt. " +
+						"Unter dem Motto „Einzigartig. Leben wagen“ wollen christliche Fundamentalist:innen, " +
+						"Ultrakonservative, Abtreibungsgegner:innen, Burschenschaftler und Faschist:innen durch " +
+						"die Kölner Innenstadt laufen. Dieselben Akteure haben in den letzten Jahren versucht, ihre " +
+						"Märsche vor allem in Münster und Berlin zu etablieren. Dabei sind sie mitunter auf " +
+						"erfolgreiche Blockaden gestoßen. Nun wollen sie in Köln Fuß fassen.</p>" +
+						"<p><a onclick='navigate(\"2023_koeln_mobi\")'>Weiterlesen...</a></p>" +
+
+						"<h2>" + getText("section_2023_8m_aufruf") + "</h2>" +
 						"<p>Ni una menos – nicht eine Einzige weniger! Mit diesem Slogan gegen patriarchale Gewalt " +
 						"und Femizide hat 2015 die feministische Streikbewegung Argentiniens die Welt entflammt. In " +
 						"wenigen Jahren wuchs diese Bewegung rasant an. Der Slogan „Jin Jiyan Azadi“ (Frauen Leben " +
@@ -627,6 +640,60 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2023_koeln_mobi":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText =
+						"This page has not yet been translated, sorry!";
+					break;
+				case 'es':
+					largeText =
+						"Este texto aún no ha sido traducido, lo sentimos.";
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<h2 class='button text_white'>FEMINISMUS IN DIE OFFENSIVE</h2>" +
+						"<p>Was zur Hölle?! Am 16. September findet erstmals in Köln der „Marsch für das Leben“ statt. " +
+						"Unter dem Motto „Einzigartig. Leben wagen“ wollen christliche Fundamentalist:innen, " +
+						"Ultrakonservative, Abtreibungsgegner:innen, Burschenschaftler und Faschist:innen durch " +
+						"die Kölner Innenstadt laufen. Dieselben Akteure haben in den letzten Jahren versucht, ihre " +
+						"Märsche vor allem in Münster und Berlin zu etablieren. Dabei sind sie mitunter auf " +
+						"erfolgreiche Blockaden gestoßen. Nun wollen sie in Köln Fuß fassen. Mit ihrer als " +
+						"„Gebets- und Trauermarsch“ getarnten Demonstration wollen sie insbesondere gegen das " +
+						"Selbstbestimmungsrecht schwangerer Menschen hetzen. Sie propagieren reaktionäre " +
+						"Vorstellungen von Geschlecht, Sexualität und Familienleben: Queere Identitäten werden " +
+						"abgelehnt, Homosexualität und alle Formen des Begehrens abseits der heterosexuellen " +
+						"Zweierbeziehung verachtet. Sex soll ihrer Meinung nach vor allem der Fortpflanzung " +
+						"dienen und nur in der Ehe stattfinden. Abtreibungen setzen sie mit Euthanasie gleich.</p>" +
+						"<p>Hinter dem Label der selbsternannten „Lebensschützer:innen“ steht ein Zusammenschluss " +
+						"aus diversen Organisationen der sogenannten „Lebensrechtsbewegung“. Diese wurde in " +
+						"vergangenen Jahren von Teilen der CDU/CSU, AfD und von bekennenden " +
+						"Rechtsextremen unterstützt. Auch das Erzbistum Köln ist tief in die Organisationsstruktur " +
+						"eingebunden. Internationale Vertreter dieser Bewegung nehmen Euthanasie- und " +
+						"Holocaustvergleiche vor. Aber auch die bundesdeutschen Märsche zeigten mit Mottos wie " +
+						"„Ja zum Leben - für ein Europa ohne Abtreibung und Euthanasie“, wofür sie stehen." +
+						"Auch wenn sie sich mit ihrem diesjährigen Motto einen gemäßigteren Anstrich geben " +
+						"wollen, stehen das gleiche Weltbild und die gleiche Konsequenz für Betroffene ihrer " +
+						"„Lebensschutzmaßnahmen“ dahinter: Einschränkung der körperlichen Selbstbestimmung " +
+						"bezüglich der Gebärfähigkeit und Sterbehilfe und direkte Verbindungen oder " +
+						"Anschlussfähigkeit zu antisemitischer, rassistischer, nationalistischer, Frauen- und LGBTI*-" +
+						"feindlicher Ideologie.</p>" +
+						"<p>Sie geben sich als familienfreundliche Lebensschützer:innen, fordern jedoch die Kontrolle " +
+						"über weibliche und queere Körper und nehmen damit bedrohte Lebensrealitäten und " +
+						"letztlich Tode billigend in Kauf. Sie spitzen den gesellschaftlich ohnehin prekären status " +
+						"quo selbstbestimmter Reproduktion ins Unerträgliche zu. Damit bilden sie eine " +
+						"Scharnierfunktion innerhalb des antifeministischen Rollbacks und des rechten Kulturkampfes.</p>" +
+						"<p>Dagegen stellen wir uns als Bündnis ProChoice Köln mit aller Entschlossenheit: " +
+						"Marsch für das Leben nerven, stören, verhindern! Für ein selbstbestimmtes Leben!</p>" +
+						"<p class='download_block'><a target='_blank' href='files/2023/MFLAufruf-2023.pdf'><img class='download_sign' src='pictures/download.png'/>" +
+						"Aufruf zur Gegendemo als PDF herunterladen</a></p>" +
+						"</div>";
 					break;
 			}
 			break;

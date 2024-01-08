@@ -269,7 +269,7 @@ div.quote {
 	margin-bottom: 30pt;
 }
 
-div.button, h2.button {
+div.button, h2.button, div#main_text > h2.button {
 	transform: rotate(-2deg);
 	padding: 3pt 12pt;
 	text-align: center;

@@ -794,8 +794,8 @@ window.redisplay = function() {
 						"<div id='main_text'>" +
 						"<p>Editor:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
-						"Bad Nauheimer Str. 4<br>" +
-						"64289 Darmstadt<br>" +
+						"Kiesstr. 84<br>" +
+						"64287 Darmstadt<br>" +
 						"Germany<br>" +
 						"<br>" +
 						"Contact regarding the website itself:<br>" +
@@ -810,8 +810,8 @@ window.redisplay = function() {
 						"<div id='main_text'>" +
 						"<p>Editor:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
-						"Bad Nauheimer Str. 4<br>" +
-						"64289 Darmstadt<br>" +
+						"Kiesstr. 84<br>" +
+						"64287 Darmstadt<br>" +
 						"Alemania<br>" +
 						"<br>" +
 						"Contacto en relación con el sitio web en sí:<br>" +
@@ -826,8 +826,8 @@ window.redisplay = function() {
 						"<div id='main_text'>" +
 						"<p>Herausgeber*in:<br>" +
 						"A Softer Space DE, Inhaber*in Moya Schiller<br>" +
-						"Bad Nauheimer Str. 4<br>" +
-						"64289 Darmstadt<br>" +
+						"Kiesstr. 84<br>" +
+						"64287 Darmstadt<br>" +
 						"Deutschland<br>" +
 						"<br>" +
 						"Kontakt bezüglich der Webseite selbst:<br>" +

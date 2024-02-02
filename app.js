@@ -203,6 +203,9 @@ window.data_8m = {
 		section_2023_koeln_mobi_de: "Mobilisierung zu den Protesten gegen den „Marsch fürs Leben“",
 		section_2023_koeln_mobi_en: "",
 		section_2023_koeln_mobi_es: "",
+		section_2024_8m_aufruf_de: "Aufruf 2024",
+		section_2024_8m_aufruf_en: "",
+		section_2024_8m_aufruf_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -402,7 +405,7 @@ window.redisplay = function() {
 
 			var htmlBlock1 =
 					"<div class=\"picture_link_block " + leftLinksClass + "\" " + styleStr + ">" +
-						"<div class=\"linkpic purple link\" onclick=\"navigate('2023_koeln_mobi')\" " + linkStyleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('2024_8m_aufruf')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
 							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
 						"</div>";
@@ -618,6 +621,17 @@ window.redisplay = function() {
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 
+						"<h2>" + getText("section_2024_8m_aufruf") + "</h2>" +
+						"<p><b>1. Unsere Utopie</b></p>" +
+						"<p>Ich bin eine Stadt, in der viele verschiedene Menschen leben, hier ist viel los. " +
+						"Alle können dem nachgehen, was sie für sich und andere ein erfülltes Leben nennen, " +
+						"unabhängig von Hautfarbe, Religion und Sprache. Hier muss sich niemand Sorgen über Leistungsdruck, " +
+						"die Gesundheit und die Sicherheit machen.</p>" +
+						"<p>Ich habe Platz zum Wohnen für alle und es gibt für alle genug zu essen.</p>" +
+						"<p>Ich habe eine nachhaltige Versorgungsstruktur, die so organisiert ist, dass sie " +
+						"für alle kostenfrei und verfügbar ist.</p>" +
+						"<p><a onclick='navigate(\"2024_8m_aufruf\")'>Weiterlesen...</a></p>" +
+
 						"<h2>" + getText("section_2023_koeln_mobi") + "</h2>" +
 						"<p>Was zur Hölle?! Am 16. September findet erstmals in Köln der „Marsch für das Leben“ statt. " +
 						"Unter dem Motto „Einzigartig. Leben wagen“ wollen christliche Fundamentalist:innen, " +
@@ -640,6 +654,54 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2024_8m_aufruf":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText =
+						"This page has not yet been translated, sorry!";
+					break;
+				case 'es':
+					largeText =
+						"Este texto aún no ha sido traducido, lo sentimos.";
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<h2 class='button text_white'>Wir lassen uns nicht kaputt sparen - feministisch kämpfen jetzt!</h2>" +
+						"<h2><i>1. Unsere Utopie</i></h2>" +
+						"<p><i>Ich bin eine Stadt, in der viele verschiedene  Menschen leben, hier ist viel los. Alle können dem nachgehen, was sie für sich und andere ein erfülltes Leben nennen, unabhängig von Hautfarbe, Religion und Sprache. Hier muss sich niemand Sorgen über Leistungsdruck, die Gesundheit und die Sicherheit machen.</i></p>" +
+						"<p><i>Ich habe Platz zum Wohnen für alle und es gibt für alle genug zu essen.</i></p>" +
+						"<p><i>Ich habe eine nachhaltige Versorgungsstruktur, die so organisiert ist, dass sie für alle kostenfrei und verfügbar ist. Zum Krankenhaus, Pflegeeinrichtungen und anderen medizinischen Orten haben alle bedingungslos Zugang. Alle Menschen haben ein Recht darauf sich wohlzufühlen und sich in Ruhe zu erholen. Menschen, die sich um andere Menschen sorgen, tragen mich als Stadt und werden für ihre Arbeit ausreichend entlohnt, finanziell sowie auch mit Zeit für Erholung. Alle Menschen, die in mir leben, tragen die Verantwortung für ein gemeinsam bestimmtes und solidarisches Leben.</i></p>" +
+						"<p><i>Kinder haben das Recht auf tägliche Fürsorge, Zeit zum spielen und lernen, in einem Umfeld ohne Angst und Stress. Alte Menschen sind gut umsorgt und nicht alleine. Menschen, die neu hinzuziehen, erhalten Unterstützung und genug Zeit, um in Ruhe anzukommen.</i></p>" +
+						"<p><i>Ich habe kulturelle Orte geschaffen, in denen sich frei und selbstbestimmt weiterentwickelt werden kann.</i></p>" +
+						"<p><i>Die Nachbarschaft ist solidarisch, bedürfnisorientiert, respektvoll und friedlich. Alle überlegen zusammen, welche Bedürfnisse gerade wichtig sind und entscheiden demokratisch, wie sie gemeinsam gestillt werden können.</i></p>" +
+						"<p><i>Deswegen nenne ich mich eine solidarische Stadt.</i></p>" +
+						"<p><i>Ich kämpfe dafür, dass wir eine solidarische Welt werden – in der es weder Krieg noch Ausbeutung gibt, in der sich Menschen frei und ohne Grenzen bewegen können und in der Umwelt und Klima geschützt sind.</i></p>" +
+						"<h2>2. Die aktuelle Realität</h2>" +
+						"<p>Wenn wir aber die Augen aufmachen, sehen wir wie in den elementarsten Bereichen unserer Gesellschaft, der Gesundheitsversorgung, der Bildung, der Absicherung von Rentner*innen und Kindern, gespart wird. Die Folgen spüren wir alle:</p>" +
+						"<p>Von fehlenden Pflegeplätzen für unsere Großeltern bis zur Kita, die geschlossen bleibt, weil die wenigen Erzieher*innen bei der Überlastung krank geworden sind. Von Jugendlichen, die keine Wohnung finden können, bis hin zu hoffnungslos überfüllten Wohnungslosenunterkünften. Mütter landen in der Altersarmutsfalle und in den Frauenhäusern gibt es schon lange keine freien Plätze mehr. Gelder und Stellen werden so gekürzt, dass es Beratungsstellen für Migrant:innen, queere Menschen und von Gewalt betroffene Frauen betrifft.</p>" +
+						"<p>Wir sind angewiesen auf gut ausgebildete (Kranken)Pfleger:innen, Sozialarbeiter:innen, und auf Fachkräfte in all diesen Bereichen, ohne die unsere Gesellschaft nicht funktionieren kann. Trotzdem sind genau diese chronisch unterfinanziert, die Löhne viel zu niedrig und die Arbeitsbedingungen katastrophal. In der Pflege haben im Jahr 2022 4.000 Menschen weniger die Ausbildung begonnen, gleichzeitig wird bis 2055 der Pflegebedarf um 37% steigen. So werden 2035 rund 307.000 Pflegekräfte fehlen.</p>" +
+						"<p>Seit den 1990er Jahren wurden soziale Einrichtung, Wohnungsbau sowie Energie- und Wasserversorgung zunehmend and private Eigentümer:innen verkauft. Aus Arbeitnehmer:innenperspektive sind hauptsächlich „klassische Frauenberufe“ wie im Gesundheitswesen oder der Reinigungsbranche betroffen. Sorgende Tätigkeiten und Daseinsfürsorge werden immer weiter in prekäre Beschäftigungsverhältnisse ausgelagert – häufig an ausländische oder migrantische Arbeitnehmer*innen. Damit unterliegen große Teile der öffentlichen Daseinsfürsorge und ihre Arbeitsbedingungen dem kapitalistischen Wettbewerb und Profit. Die Einrichtungen, die noch in öffentlicher Hand bestehen, sind sarnierungsbedürftig und ebenfalls gezwungen, Profite zu erwirtschaften.</p>" +
+						"<p>Die Politik erzählt uns, es sei kein Geld für all diese Dinge da, doch das ist nicht wahr: Das vermeintlich gesparte Geld landet stattdessen in der Rüstungsindustrie und beutet somit vom Krieg betroffene Länder noch weiter aus. Wo die öffentliche Fürsorge nicht in die kapitalistische Verwertungslogik eingesogen wird, muss sie oft und zunehmend privat aufgefangen und von Familien und Einzelpersonen gestemmt werden. Die Sorgearbeit fällt dort dann meist auf Frauen, trans*, inter*, nichtbinäre und agender Personen zurück. Durch Lohnarbeit und Sorgearbeit werden <b>Frauen (FLINTA) und queere Personen</b> doppelt ausgebeutet: Sie arbeiten unbezahlt im Haushalt, in der Kindererziehung, der Pflege von Angehörigen, und leisten Lohnarbeit, die schlechter bezahlt wird.</p>" +
+						"<h2>3. Analyse</h2>" +
+						"<p>Die aktuelle politische und gesellschaftliche Stimmung zeigt, dass zunehmend rassistische Ideologien, Hetze gegen Migrant:innen, aber auch der Abbau von Sozialleistungen als vermeintliche Antworten auf die weltweiten Krisen dienen. Dies wirkt bis in die Mitte der Gesellschaft und werden einfach akzeptiert. Migrant:innen und Geflüchtete, aber auch Sozialhilfeempfänger:innen und andere werden seitens der Parteien - von AfD bis hin zur Ampelregierung - als Sündenböcke der gesellschaftlichen Krisen missbraucht. Asylsuchende werden abgeschoben, die Stimmung gegenüber geflüchteten Menschen verschlechtert sich zunehmend, der Fremdenhass nimmt zu. <b>Im Endeffekt profitieren die Konzerne und regierenden Parteien, da sie ungestört Sozialabbau betreiben können.</b></p>" +
+						"<p>Rechte und reaktionäre Weltbilder richten sich auch direkt gegen Frauen, trans*, inter*, nichtbinäre und agender Personen: indem ihre reproduktiven Rechte beschränkt werden, werden Frauen zunehmend in die Rolle als Hausfrauen und Mütter gedrängt. Die Existenz von trans*, inter*, nichtbinären und agender Personen wird verleugnet oder ihre Zugänge zu medizinischer Versorgung kriminalisiert und erschwert.</p>" +
+						"<p>In Zeiten des wachsenden Einflusses rechter Ideologie und Parteien ist es deshalb wichtiger denn je, dass wir uns gegenseitig stärken, aktiv und sichtbar unsere Stimmen erheben und solidarisch mit allen Betroffenen von Rassismus stehen. Wir müssen entschieden gegen rassistische und rechte Positionen vorgehen und für unsere Idee von einer solidarischen Gesellschaft weiterkämpfen!</p>" +
+						"<h2>4. Feministisch streiken jetzt!</h2>" +
+						"<p>Es liegt in unserer Hand, die Welt zu verändern: Mit der Verweigerung unserer Arbeit können wir den kapitalistischen Alltag direkt stören und damit unseren Forderungen Nachdruck verleihen - dabei geht es um mehr als nur eine Demonstration! Denn: Wenn wir streiken, steht die Welt nicht nur still - sie wird sich verändern.</p>" +
+						"<p>Internationale feministische Kämpfe, von den landesweiten Frauen*streiks in Island und im Baskenland 2023, über den feministischen Aufstand im Iran, bis hin zur Frauenrevolutionen in Rojava, dienen uns als Vorbilder und sind Teil unserer Vision.</p>" +
+						"<p>Gemeinsam gehen wir auf die Straße, gegen Krieg und Faschismus, für kostenlose und ausreichende Kitaplätze, für eine Rekommunalisierung von Hauswirtschaft und Reinigung, für eine feministische Gesundheitsversorgung und für Geschlechtergerechtigkeit. Als feministische Streikvernetzung wollen wir uns auf den Weg zum feministischen Generalstreik machen. Das kann nur gemeinsam gelingen. Deshalb werden wir nicht schweigen!</p>" +
+						"<p>Wir kämpfen weiter für eine sorgende Gesellschaft, die ein gutes und respektvolles Miteinander in den Vordergrund stellt.</p>" +
+						"<p>Kommt am 8. März gemeinsam mit uns auf die Straßen eurer Stadt!</p>" +
+						"<p class='download_block'><a target='_blank' href='files/2024/FStreik-8M-2024.pdf'>" +
+						"<img class='download_sign' src='pictures/download.png'/>" +
+						"8M 2024 Aufruf als PDF herunterladen</a></p>" +
+						"</div>";
 					break;
 			}
 			break;
@@ -691,7 +753,8 @@ window.redisplay = function() {
 						"Scharnierfunktion innerhalb des antifeministischen Rollbacks und des rechten Kulturkampfes.</p>" +
 						"<p>Dagegen stellen wir uns als Bündnis ProChoice Köln mit aller Entschlossenheit: " +
 						"Marsch für das Leben nerven, stören, verhindern! Für ein selbstbestimmtes Leben!</p>" +
-						"<p class='download_block'><a target='_blank' href='files/2023/MFLAufruf-2023.pdf'><img class='download_sign' src='pictures/download.png'/>" +
+						"<p class='download_block'><a target='_blank' href='files/2023/MFLAufruf-2023.pdf'>" +
+						"<img class='download_sign' src='pictures/download.png'/>" +
 						"Aufruf zur Gegendemo als PDF herunterladen</a></p>" +
 						"</div>";
 					break;
@@ -780,7 +843,8 @@ window.redisplay = function() {
 						"führen können. Eine Gesellschaft, in der die Unterdrückung des Menschen durch den Menschen " +
 						"der Geschichte angehört.</p>" +
 						"<p><a id='footnote-1' name='footnote-1'></a>1: FLINTA für Frauen, Lesben, Inter, Trans, Agender</p>" +
-						"<p class='download_block'><a target='_blank' href='files/2023/FStreik-8M-2023.pdf'><img class='download_sign' src='pictures/download.png'/>" +
+						"<p class='download_block'><a target='_blank' href='files/2023/FStreik-8M-2023.pdf'>" +
+						"<img class='download_sign' src='pictures/download.png'/>" +
 						"8M 2023 Aufruf als PDF herunterladen</a></p>" +
 						"</div>";
 					break;

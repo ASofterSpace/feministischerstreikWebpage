@@ -150,13 +150,24 @@ window.data_8m = {
 				"insta": "feministischer.streik_aux",
 				"facebook": "Feministisches Streikkomitee Augsburg",
 			},
-			"München": {
+			"München_1": {
 				"title": "Feministischer Streik München",
 				"short": "mun",
 				"x": 1006,
 				"y": 1990,
 				"mail": "frauenstreik.muenchen@gmail.com",
 				"insta": "feministischer.streik_muenchen",
+				"linked": "München_2",
+			},
+			"München_2": {
+				"title": "Offenes Frauentreffen München",
+				"short": "ofm",
+				"x": 1006,
+				"y": 1990,
+				"web": "frauentreffen.noblogs.org",
+				"mail": "offenesfrauentreffen@riseup.net",
+				"insta": "frauentreffen_muc",
+				"linked": "München_1",
 			},
 			"Freiburg": {
 				"title": "Feministischer & Frauenstreik Freiburg",

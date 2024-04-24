@@ -2,6 +2,7 @@ window.currentPage = null;
 window.currentLang = 'de';
 
 window.data_8m = {
+	redisplayOnResize: true,
 	map: {
 		width: 1689,
 		height: 2232,
@@ -217,6 +218,9 @@ window.data_8m = {
 		section_2024_8m_aufruf_de: "Aufruf 2024",
 		section_2024_8m_aufruf_en: "",
 		section_2024_8m_aufruf_es: "",
+		section_2024_8m_review_de: "Rückblick 8. März 2024 und Aufruf zum 1. Mai",
+		section_2024_8m_review_en: "",
+		section_2024_8m_revirew_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -257,6 +261,7 @@ window.navigate = function(where) {
 	// update history so that the url bar reflects the currently selected subpage
 	window.history.pushState({}, "", "?p=" + where + "&l=" + window.currentLang);
 
+	console.log("DEBUG redisplay due to: navigate");
 	window.redisplay();
 };
 
@@ -281,6 +286,7 @@ window.redisplay = function() {
 	} else {
 		window.setTimeout(function() {
 			window.currentLang = "de";
+			console.log("DEBUG redisplay due to: lang to default");
 			window.redisplay();
 		}, 20);
 	}
@@ -416,7 +422,7 @@ window.redisplay = function() {
 
 			var htmlBlock1 =
 					"<div class=\"picture_link_block " + leftLinksClass + "\" " + styleStr + ">" +
-						"<div class=\"linkpic purple link\" onclick=\"navigate('2024_8m_aufruf')\" " + linkStyleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('2024_8m_review')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
 							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
 						"</div>";
@@ -632,6 +638,11 @@ window.redisplay = function() {
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 
+						"<h2>" + getText("section_2024_8m_review") + "</h2>" +
+						"<p>Als bundesweite feministische Streikvernetzung waren wir am 8. März auf der Straße um unsere feministische Perspektive greifbar zu machen und für eine bessere Welt zu kämpfen!</p>" +
+						"<p>Aber unser Kampf beschränkt sich nicht nur auf den 8. März! Wir müssen jeden Tag gegen das unterdrückerische System mit all seinen Auswüchsen kämpfen!</p>" +
+						"<p><a onclick='navigate(\"2024_8m_review\")'>Weiterlesen...</a></p>" +
+
 						"<h2>" + getText("section_2024_8m_aufruf") + "</h2>" +
 						"<p><b>1. Unsere Utopie</b></p>" +
 						"<p>Ich bin eine Stadt, in der viele verschiedene Menschen leben, hier ist viel los. " +
@@ -665,6 +676,42 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2024_8m_review":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText =
+						"This page has not yet been translated, sorry!";
+					break;
+				case 'es':
+					largeText =
+						"Este texto aún no ha sido traducido, lo sentimos.";
+					break;
+				default:
+					window.setTimeout(function() {
+						window.data_8m.redisplayOnResize = true;
+					}, 2000);
+					window.data_8m.redisplayOnResize = false;
+					containerHTML =
+						"<div id='main_text'>" +
+						"<div id='videoholder'><video style='max-width:100%;' controls src='videos/2024_8m_review.mp4'>Schau dir gern das <a href='videos/2024_8m_review.mp4'>Video</a> an!</video></div>" +
+						"<p>Als bundesweite feministische Streikvernetzung waren wir am 8. März auf der Straße um unsere feministische Perspektive greifbar zu machen und für eine bessere Welt zu kämpfen!</p>" +
+						"<p>Aber unser Kampf beschränkt sich nicht nur auf den 8. März! Wir müssen jeden Tag gegen das unterdrückerische System mit all seinen Auswüchsen kämpfen!</p>" +
+						"<p>Auch am 1. Mai gehen wir als Feminist:innen auf die Straße. Denn auch wir sind Teil der Lohnabhängigen Klasse und werden zusätzlich im privaten durch unsere unbezahlte Reproduktionsarbeit ausgebeutet. Diese doppelte Ausbeutung drängt uns in prekärere Lebensverhältnisse. Das nehmen wir nicht hin! Wir werden jeden Tag dagegen kämpfen und am 1.Mai ist es unerlässlich diese feministische Perspektive aufzuzeigen. Deswegen geht in eurer Stadt auf die Straße!</p>" +
+						"<p>Für ein Ende der Ausbeutung in allen Bereichen!</p>" +
+						"<p>Für den feministischen Streik!!</p>" +
+						"</div>";
+
+						/*
+						document.getElementById('videoholder').innerHTML = "<video controls>" +
+						"  <source src='videos/2024_8m_review.mp4' type='video/mp4' />" +
+						"  Schau dir das Video an: <a href='videos/2024_8m_review.mp4' download='videos/2024_8m_review.mp4'>Link zum Video</a>" +
+						"</video>";
+						*/
 					break;
 			}
 			break;
@@ -942,6 +989,7 @@ window.redisplay = function() {
 			console.log("Ooops - navigating to a page that does not exist: '" + window.currentPage + "'!");
 			window.setTimeout(function() {
 				window.currentPage = "home";
+				console.log("DEBUG redisplay due to: oops");
 				window.redisplay();
 			}, 20);
 			return;
@@ -1100,6 +1148,7 @@ window.interpretUrl = function() {
 		window.currentPage = page;
 	}
 
+	console.log("DEBUG redisplay due to: interpretUrl");
 	window.redisplay();
 };
 
@@ -1112,7 +1161,10 @@ window.start = function() {
 
 	// ensure that layout is responsive to browser size changes
 	window.addEventListener('resize', function(event) {
-		window.redisplay();
+		if (window.data_8m.redisplayOnResize) {
+			console.log("DEBUG redisplay due to: resize");
+			window.redisplay();
+		}
 	}, true);
 };
 

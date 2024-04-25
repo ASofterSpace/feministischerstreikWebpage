@@ -2,7 +2,6 @@ window.currentPage = null;
 window.currentLang = 'de';
 
 window.data_8m = {
-	redisplayOnResize: true,
 	map: {
 		width: 1689,
 		height: 2232,
@@ -692,10 +691,6 @@ window.redisplay = function() {
 						"Este texto aún no ha sido traducido, lo sentimos.";
 					break;
 				default:
-					window.setTimeout(function() {
-						window.data_8m.redisplayOnResize = true;
-					}, 2000);
-					window.data_8m.redisplayOnResize = false;
 					containerHTML =
 						"<div id='main_text'>" +
 						"<div id='videoholder'><video style='max-width:100%;' controls src='videos/2024_8m_review.mp4'>Schau dir gern das <a href='videos/2024_8m_review.mp4'>Video</a> an!</video></div>" +
@@ -1159,6 +1154,7 @@ window.start = function() {
 	window.addEventListener('popstate', window.interpretUrl);
 	window.addEventListener('replacestate', window.interpretUrl);
 
+	/* TAKEN OUT - IN FIREFOX ON SMARTPHONE, EVERY TOUCH SLIGHTLY RESIZES THE PAGE AND SO EVERY SCROLL REDISPLAYED AND SCROLLED TO TOP X_X
 	// ensure that layout is responsive to browser size changes
 	window.addEventListener('resize', function(event) {
 		if (window.data_8m.redisplayOnResize) {
@@ -1166,6 +1162,7 @@ window.start = function() {
 			window.redisplay();
 		}
 	}, true);
+	*/
 };
 
 

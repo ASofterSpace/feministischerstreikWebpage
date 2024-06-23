@@ -1,5 +1,6 @@
 window.currentPage = null;
 window.currentLang = 'de';
+window.currentSortOrder = 'none';
 
 window.data_8m = {
 	map: {
@@ -124,13 +125,6 @@ window.data_8m = {
 				"insta": "feministischer_streik_da",
 				"facebook": "fstreikda",
 			},
-			"Nürnberg": {
-				"title": "FLINTA* Komitee für einen feministischen Streik in Nürnberg",
-				"short": "nur",
-				"x": 936,
-				"y": 1585,
-				"mail": "fq-streik-nbg@riseup.net",
-			},
 			"Stuttgart": {
 				"title": "Aktionsbündnis 8. März Stuttgart",
 				"short": "stg",
@@ -235,6 +229,9 @@ window.data_8m = {
 		map_intro_de: "An diesen Orten kannst du mitmachen:",
 		map_intro_en: "You can participate in these places:",
 		map_intro_es: "Puedes participar en estos lugares:",
+		map_sort_label_de: "Aktuelle Sortierung: ",
+		map_sort_label_en: "Current sort order: ",
+		map_sort_label_es: "",
 		map_link_web_de: "Web",
 		map_link_web_en: "Website",
 		map_link_web_es: "Sitio web",
@@ -258,7 +255,11 @@ window.navigate = function(where) {
 	window.currentPage = where;
 
 	// update history so that the url bar reflects the currently selected subpage
-	window.history.pushState({}, "", "?p=" + where + "&l=" + window.currentLang);
+	var sortStr = "";
+	if (window.currentSortOrder) {
+		sortStr = "&s=" + window.currentSortOrder;
+	}
+	window.history.pushState({}, "", "?p=" + where + "&l=" + window.currentLang + sortStr);
 
 	console.log("DEBUG redisplay due to: navigate");
 	window.redisplay();
@@ -288,6 +289,7 @@ window.redisplay = function() {
 			console.log("DEBUG redisplay due to: lang to default");
 			window.redisplay();
 		}, 20);
+		return;
 	}
 
 	resetMainsel('home');
@@ -572,11 +574,26 @@ window.redisplay = function() {
 				"<div id='main_text'>" +
 				"<h2 style='margin-top:0;'>" + window.data_8m.texts["map_find_" + window.currentLang] + "</h2>" +
 				"<p>" + window.data_8m.texts["map_intro_" + window.currentLang] + "</p>" +
-				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png?v=2' />" +
+				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png?v=3' />" +
 				"<div id='map-hover-box' class='yellow'></div>";
 
+			var locNames = [];
 			for (const locName in window.data_8m.map.locations) {
-				var loc = window.data_8m.map.locations[locName];
+				locNames.push(locName);
+			}
+
+			// if we have alphabetical sorting, then do that ^^
+			if (window.currentSortOrder && (window.currentSortOrder.indexOf("a") == 0)) {
+				locNames.sort();
+				html += "<p>" + window.data_8m.texts["map_sort_label_" + window.currentLang] + "Alphabetisch";
+				html += "</p><div class='button midi text_purple' style='position: unset;width: unset;transform: unset;' onclick='sortGeo();'>Von Nord nach Süd sortieren</div>";
+			} else {
+				html += "<p>" + window.data_8m.texts["map_sort_label_" + window.currentLang] + "Nord nach Süd";
+				html += "</p><div class='button midi text_purple' style='position: unset;width: unset;transform: unset;' onclick='sortAlph();'>Alphabetisch sortieren</div>";
+			}
+
+			for (var i = 0; i < locNames.length; i++) {
+				var loc = window.data_8m.map.locations[locNames[i]];
 				html += "<h2 id='location-" + loc.short + "'>" + loc.title + "</h2>";
 				html += "<p>";
 				if (loc.web) {
@@ -1143,8 +1160,26 @@ window.interpretUrl = function() {
 		window.currentPage = page;
 	}
 
+	var sortOrder = params.get("s");
+	if (sortOrder == null) {
+		sortOrder = params.get("sort");
+	}
+	if (sortOrder != null) {
+		window.currentSortOrder = sortOrder;
+	}
+
 	console.log("DEBUG redisplay due to: interpretUrl");
 	window.redisplay();
+};
+
+window.sortGeo = function() {
+	window.currentSortOrder = null;
+	window.navigate(window.currentPage);
+};
+
+window.sortAlph = function() {
+	window.currentSortOrder = "alpha";
+	window.navigate(window.currentPage);
 };
 
 window.start = function() {

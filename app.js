@@ -213,7 +213,10 @@ window.data_8m = {
 		section_2024_8m_aufruf_es: "",
 		section_2024_8m_review_de: "Rückblick 8. März 2024 und Aufruf zum 1. Mai",
 		section_2024_8m_review_en: "",
-		section_2024_8m_revirew_es: "",
+		section_2024_8m_review_es: "",
+		section_2024_demo_koeln_de: "Aufruf zur Demo in Köln am 21.09.",
+		section_2024_demo_koeln_en: "",
+		section_2024_demo_koeln_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -251,6 +254,10 @@ window.data_8m = {
 };
 
 window.navigate = function(where) {
+
+	if (where == 'IN_AKTION') {
+		where = '2024_demo_koeln';
+	}
 
 	window.currentPage = where;
 
@@ -372,6 +379,7 @@ window.redisplay = function() {
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
+						"<h2 onclick='navigate(" + '"IN_AKTION"' + ")' class='button text_white clickable'>Aktuell: Aufruf zur Demo am 21.09. in Köln<br>Für mehr Infos hier klicken...</h2>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
 						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
@@ -423,7 +431,7 @@ window.redisplay = function() {
 
 			var htmlBlock1 =
 					"<div class=\"picture_link_block " + leftLinksClass + "\" " + styleStr + ">" +
-						"<div class=\"linkpic purple link\" onclick=\"navigate('2024_8m_review')\" " + linkStyleStr + ">" +
+						"<div class=\"linkpic purple link\" onclick=\"navigate('IN_AKTION')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_2023_8m_aufruf_cut.jpg\" />" +
 							"<div class=\"button text_white midi\"><img class=\"button_8m\" src='pictures/logo_white.png'/> " + getText("section_in_action") + "</div>" +
 						"</div>";
@@ -641,18 +649,20 @@ window.redisplay = function() {
 			heroImg = "section_archiv";
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					largeText = 'MISSING_TRANS';
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					largeText = 'MISSING_TRANS';
 					break;
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
+
+						"<h2>" + getText("section_2024_demo_koeln") + "</h2>" +
+						"<p>In Köln findet am 21.09.2024 zum zweiten Mal der sogenannte „Marsch für das Leben“ statt, bei dem christliche Fundamentalist*innen Hand in Hand mit Neonazis und AfDlern durch Köln laufen wollen.</p>" +
+						"<p><a onclick='navigate(\"2024_demo_koeln\")'>Weiterlesen...</a></p>" +
 
 						"<h2>" + getText("section_2024_8m_review") + "</h2>" +
 						"<p>Als bundesweite feministische Streikvernetzung waren wir am 8. März auf der Straße um unsere feministische Perspektive greifbar zu machen und für eine bessere Welt zu kämpfen!</p>" +
@@ -696,16 +706,37 @@ window.redisplay = function() {
 			}
 			break;
 
+		case "2024_demo_koeln":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<p>In Köln findet am 21.09.2024 zum zweiten Mal der sogenannte „Marsch für das Leben“ statt, bei dem christliche Fundamentalist*innen Hand in Hand mit Neonazis und AfDlern durch Köln laufen wollen.</p>" +
+						"<p>Im letzten Jahr konnte der Marsch erfolgreich blockiert werden, auch dank der Unterstützung vieler Menschen aus anderen Städten und Gruppen. Auch dieses Jahr ist das Pro-Choice-Bündnis wieder aktiv und organisiert einen lauten Gegenprotest – und wir freuen uns über alle von euch, die dabei sind!</p>" +
+						"<p>Unsere Demonstration findet um 12:00 am Ottoplatz statt. Das ist direkt beim Bahnhof Deutz. Um 13:00 wird losgelaufen. Es wird eine kämpferische Demonstration; wir stellen uns auf einen langen Tag ein, also denkt an genügend Wasser und trinken!</p>" +
+						"<p>Lasst uns gemeinsam kreativ und stark sein!</p>" +
+						"<p>Hier gibt es weitere Informationen: <a target='_blank' href='https://www.prochoicekoeln.org/'>prochoicekoeln.org</a></p>" +
+						"<p><img alt='Lilanes Sharepic von pro choice Köln mit den Informationen zur Demo (21. September um 12:00 am Ottoplatz) sowie emporgestreckten Händen und einem Kleiderbügel' src='pictures/2024_demo_koeln_sharepic.png' /></p>" +
+						"</div>";
+					break;
+			}
+			break;
+
 		case "2024_8m_review":
 			heroImg = "section_2023_8m_aufruf";
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					largeText = 'MISSING_TRANS';
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					largeText = 'MISSING_TRANS';
 					break;
 				default:
 					containerHTML =
@@ -732,12 +763,10 @@ window.redisplay = function() {
 			heroImg = "section_2023_8m_aufruf";
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					largeText = 'MISSING_TRANS';
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					largeText = 'MISSING_TRANS';
 					break;
 				default:
 					containerHTML =
@@ -780,12 +809,10 @@ window.redisplay = function() {
 			heroImg = "section_2023_8m_aufruf";
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					largeText = 'MISSING_TRANS';
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					largeText = 'MISSING_TRANS';
 					break;
 				default:
 					containerHTML =
@@ -835,12 +862,10 @@ window.redisplay = function() {
 			heroImg = "section_2023_8m_aufruf";
 			switch (window.currentLang) {
 				case 'en':
-					largeText =
-						"This page has not yet been translated, sorry!";
+					largeText = 'MISSING_TRANS';
 					break;
 				case 'es':
-					largeText =
-						"Este texto aún no ha sido traducido, lo sentimos.";
+					largeText = 'MISSING_TRANS';
 					break;
 				default:
 					containerHTML =
@@ -1005,6 +1030,23 @@ window.redisplay = function() {
 				window.redisplay();
 			}, 20);
 			return;
+	}
+
+	if (largeText === 'MISSING_TRANS') {
+		switch (window.currentLang) {
+			case 'en':
+				largeText =
+					"This page has not yet been translated, sorry!";
+				break;
+			case 'es':
+				largeText =
+					"Este texto aún no ha sido traducido, lo sentimos.";
+				break;
+			default:
+				largeText =
+					"Diese Seite wurde noch nicht übersetzt, sorry!";
+				break;
+		}
 	}
 
 	if (largeText != null) {

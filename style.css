@@ -16,7 +16,7 @@
 	color: #ffffff;
 }
 
-.purple {
+.purple, div#main_text > h2.text_white.clickable:hover {
 	background-color: #710880;
 }
 
@@ -258,6 +258,10 @@ img#map {
 	width: 100%;
 }
 
+div#main_text > img, div#main_text > p > img {
+	max-width: 100%;
+}
+
 div#map-hover-box {
 	position: absolute;
 	display: none;
@@ -282,6 +286,10 @@ div.button, h2.button, div#main_text > h2.button {
 
 h2.button {
 	margin-bottom: 30pt;
+}
+
+.clickable {
+	cursor: pointer;
 }
 
 div.button {

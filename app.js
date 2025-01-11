@@ -217,6 +217,9 @@ window.data_8m = {
 		section_2024_demo_koeln_de: "Aufruf zur Demo in Köln am 21.09.",
 		section_2024_demo_koeln_en: "",
 		section_2024_demo_koeln_es: "",
+		section_2025_8m_aufruf_de: "Aufruf 2025",
+		section_2025_8m_aufruf_en: "",
+		section_2025_8m_aufruf_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -256,7 +259,7 @@ window.data_8m = {
 window.navigate = function(where) {
 
 	if (where == 'IN_AKTION') {
-		where = '2024_demo_koeln';
+		where = '2025_8m_aufruf';
 	}
 
 	window.currentPage = where;
@@ -379,7 +382,7 @@ window.redisplay = function() {
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
-						"<h2 onclick='navigate(" + '"IN_AKTION"' + ")' class='button text_white clickable'>Aktuell: Aufruf zur Demo am 21.09. in Köln<br>Für mehr Infos hier klicken...</h2>" +
+						"<h2 onclick='navigate(" + '"IN_AKTION"' + ")' class='button text_white clickable'>Aktuell: Aufruf zum 8. März 2025<br>Für mehr Infos hier klicken...</h2>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
 						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
@@ -660,6 +663,12 @@ window.redisplay = function() {
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 
+						"<h2>" + getText("section_2025_8m_aufruf") + "</h2>" +
+						"<p><b>Wir kämpfen, wir streiken, wir leben!</b></p>" +
+						"<p><i>Sorgearbeit</i>, was ist das eigentlich? Ganz einfach: Po abputzen, Wäsche waschen, zuhören, Termine managen, Menschen mit Behinderungen unterstützen. Klingt alltäglich? Ist es auch! Ohne Sorgearbeit läuft gar nichts. Ob KiTa, Pflege, Sozialarbeit oder zu Hause: Diese Arbeit hält den Laden am Laufen, wird aber oft übersehen, schlecht bezahlt und hat auch sonst oft miese Arbeitsbedingungen.</p>" +
+						"<p>Aktuell laufen Tarifverhandlungen im öffentlichen Dienst. Das sind viele Berufe, die unser tägliches Leben aufrechterhalten. Zum Beispiel Erzieher:innen in städtischen Kitas oder Pfleger:innen in einem kommunalen Krankenhaus.</p>" +
+						"<p><a onclick='navigate(\"2025_8m_aufruf\")'>Weiterlesen...</a></p>" +
+
 						"<h2>" + getText("section_2024_demo_koeln") + "</h2>" +
 						"<p>In Köln findet am 21.09.2024 zum zweiten Mal der sogenannte „Marsch für das Leben“ statt, bei dem christliche Fundamentalist*innen Hand in Hand mit Neonazis und AfDlern durch Köln laufen wollen.</p>" +
 						"<p><a onclick='navigate(\"2024_demo_koeln\")'>Weiterlesen...</a></p>" +
@@ -702,6 +711,38 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2025_8m_aufruf":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<h2 class='button text_white'>Wir kämpfen, wir streiken, wir leben!</h2>" +
+						"<p><i>Sorgearbeit</i>, was ist das eigentlich? Ganz einfach: Po abputzen, Wäsche waschen, zuhören, Termine managen, Menschen mit Behinderungen unterstützen. Klingt alltäglich? Ist es auch! Ohne Sorgearbeit läuft gar nichts. Ob KiTa, Pflege, Sozialarbeit oder zu Hause: Diese Arbeit hält den Laden am Laufen, wird aber oft übersehen, schlecht bezahlt und hat auch sonst oft miese Arbeitsbedingungen.</p>" +
+						"<p>Aktuell laufen Tarifverhandlungen im öffentlichen Dienst. Das sind viele Berufe, die unser tägliches Leben aufrechterhalten. Zum Beispiel Erzieher:innen in städtischen Kitas oder Pfleger:innen in einem kommunalen Krankenhaus.</p>" +
+						"<h2>Wir kämpfen!</h2>" +
+						"<p>In diesen Berufen arbeiten vor allem Frauen und queere Personen, viele sind migrantisch. Die Forderung nach mehr Lohn? Nach mehr freien Tagen? Absolut gerechtfertigt! Schlechte Bezahlung und Arbeitsbedingungen kommen nicht von ungefähr - sie sind die Folge eines Systems, das nicht daran ausgerichtet ist, was wir brauchen sondern nach Profitlogik funktioniert. Wir kämpfen für eine andere Gesellschaft. Diese Gesellschaft muss feministisch sein, sonst ist sie nicht anders! Sorgearbeit muss als zentrale gesellschaftliche Aufgabe anerkannt werden – und das gilt nicht nur für die bezahlte, sondern auch für all die unbezahlte Sorgearbeit, die jede*r von uns übernimmt.  Der Kapitalismus profitiert von der Arbeit die wir un(ter)bezahlt leisten. Wir wollen uns nicht weiter für die Profite einiger weniger abmühen – wir wollen eine Gesellschaft, in der Zeit für ein gutes Leben ist und in der Sorgearbeit gemeinsam organisiert wird.</p>" +
+						"<h2>Wir streiken!</h2>" +
+						"<p>Wir solidarisieren uns mit allen, die für bessere Bezahlung kämpfen – und fordern mehr: Lasst uns zusammenstehen statt allein zu kämpfen! Ob bezahlt, unbezahlt, mit oder ohne Vertrag – uns eint, dass unsere Arbeit ohne Wertschätzung bleibt, obwohl ohne uns gar nichts funktionieren würde.</p>" +
+						"<p>Überfüllte Kitas, unbezahlbare Mieten, Missstände in Pflege und Gesundheit – was macht die Politik? Sie lenkt mit rechter Hetze von den wirklichen Problemen ab und versucht uns gegeneinander aufzubringen. Die Politik spart im sozialen Bereich. Zeitgleich steckt sie Milliarden in Aufrüstung und Kriege, die weltweit Leid verursachen. Das lassen wir nicht weiter zu!</p>" +
+						"<h2>Wir leben!</h2>" +
+						"<p>Es reicht! Wir schließen uns zusammen! Gemeinsam gehen wir auf die Straße für gerechten Lohn und gute Arbeitsbedingungen. Gemeinsam kämpfen wir für ein Ende der patriarchalen und kapitalistischen Unterdrückung, gegen Krieg und Faschismus. Diese Kämpfe führen wir nicht alleine, sondern gemeinsam mit Frauen und queeren Menschen weltweit. Das gibt uns Kraft und Mut: <b>Für eine Gesellschaft, in der Zeit für ein gutes Leben ist!</b></p>" +
+						/*
+						"<p class='download_block'><a target='_blank' href='files/2025/FStreik-8M-2025.pdf'>" +
+						"<img class='download_sign' src='pictures/download.png'/>" +
+						"8M 2025 Aufruf als PDF herunterladen</a></p>" +
+						*/
+						"</div>";
 					break;
 			}
 			break;

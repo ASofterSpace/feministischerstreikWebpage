@@ -7,6 +7,14 @@ window.data_8m = {
 		width: 1689,
 		height: 2232,
 		locations: {
+			"Lübeck": {
+				"title": "Fem*Streik Lübeck",
+				"short": "lue",
+				"x": 874,
+				"y": 380,
+				"mail": "femstreik_luebeck@proton.me",
+				"insta": "femstreik_luebeck",
+			},
 			"Berlin": {
 				"title": "Feministischer Streik Berlin",
 				"short": "ber",
@@ -58,7 +66,7 @@ window.data_8m = {
 				"y": 1076,
 				"mail": "feministischerstreikks@riseup.net",
 				"insta": "ag_feministischer_streik_ks",
-				"linked": "Kassel_2",
+				"linked": ["Kassel_2"],
 			},
 			"Kassel_2": {
 				"title": "Solibündnis Carearbeit Kassel (SCK)",
@@ -68,7 +76,7 @@ window.data_8m = {
 				"web": "solibuendniscarearbeitks.noblogs.org",
 				"mail": "solibuendnis_care_ks@riseup.net",
 				"insta": "solibuendnis_care_ks",
-				"linked": "Kassel_1",
+				"linked": ["Kassel_1"],
 			},
 			"Jena": {
 				"title": "Feministischer Streik Jena",
@@ -87,7 +95,7 @@ window.data_8m = {
 				"y": 1163,
 				"mail": "8mcgn@riseup.net",
 				"insta": "8m_buendnis_koeln",
-				"linked": "Köln_2",
+				"linked": ["Köln_2", "Köln_3"]
 			},
 			"Köln_2": {
 				"title": "Feministischer Streik Köln",
@@ -96,7 +104,16 @@ window.data_8m = {
 				"y": 1163,
 				"mail": "f_streik_koeln@posteo.de",
 				"insta": "feministischer_streik_koeln",
-				"linked": "Köln_1",
+				"linked": ["Köln_1", "Köln_3"]
+			},
+			"Köln_3": {
+				"title": "Offenes feministisches Treffen Köln",
+				"short": "cgnoft",
+				"x": 184,
+				"y": 1163,
+				"mail": "oftkoeln@riseup.net",
+				"insta": "oft_koeln",
+				"linked": ["Köln_1", "Köln_2"]
 			},
 			"Bonn": {
 				"title": "Feministischer Streik Bonn - Feministisches Streikbündnis",
@@ -125,6 +142,15 @@ window.data_8m = {
 				"insta": "feministischer_streik_da",
 				"facebook": "fstreikda",
 			},
+			"Karlsruhe": {
+				"title": "Offenes Feministisches Treffen Karlsruhe",
+				"short": "kar",
+				"x": 428,
+				"y": 1705,
+				"web": "offenesfeministischestreffenka.wordpress.com",
+				"mail": "offenesfrauen_treffen@systemli.org",
+				"insta": "feministisches.treffen_ka",
+			},
 			"Stuttgart": {
 				"title": "Aktionsbündnis 8. März Stuttgart",
 				"short": "stg",
@@ -151,7 +177,7 @@ window.data_8m = {
 				"y": 1990,
 				"mail": "frauenstreik.muenchen@gmail.com",
 				"insta": "feministischer.streik_muenchen",
-				"linked": "München_2",
+				"linked": ["München_2"]
 			},
 			"München_2": {
 				"title": "Offenes Frauentreffen München",
@@ -161,7 +187,7 @@ window.data_8m = {
 				"web": "frauentreffen.noblogs.org",
 				"mail": "offenesfrauentreffen@riseup.net",
 				"insta": "frauentreffen_muc",
-				"linked": "München_1",
+				"linked": ["München_1"]
 			},
 			"Freiburg": {
 				"title": "Feministischer & Frauenstreik Freiburg",
@@ -585,7 +611,7 @@ window.redisplay = function() {
 				"<div id='main_text'>" +
 				"<h2 style='margin-top:0;'>" + window.data_8m.texts["map_find_" + window.currentLang] + "</h2>" +
 				"<p>" + window.data_8m.texts["map_intro_" + window.currentLang] + "</p>" +
-				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map.png?v=3' />" +
+				"<img id='map' alt='" + window.data_8m.texts["map_alt_" + window.currentLang] + "' src='pictures/map_2025.png?v=38' />" +
 				"<div id='map-hover-box' class='yellow'></div>";
 
 			var locNames = [];
@@ -742,6 +768,9 @@ window.redisplay = function() {
 						"<img class='download_sign' src='pictures/download.png'/>" +
 						"8M 2025 Aufruf als PDF herunterladen</a></p>" +
 						*/
+						"<h2>Eindrücke aus München</h2>" +
+						"<div id='videoholder'><video style='max-width:100%;' controls src='videos/2025_8m_review_muenchen.mp4'>Schau dir gern das <a href='videos/2025_8m_review_muenchen.mp4'>Video</a> an!</video></div>" +
+						'<p>Wir haben den feministischen Streik in München sichtbar gemacht um einen symbolischen Vorgeschmack zu geben. Wenn wir feministisch streiken liegt nicht nur die Lohnarbeit still, sondern auch die unbezahlte Haus- und Sorgearbeit. Dann streiken wir nicht nur für mehr Lohn sondern für politische Forderungen, die das Leben aller Frauen und queeren Menschen verändern. Ein Streik für politische, feministische Forderungen wie zum Beispiel in Polen, Argentinien oder Island. Um in Deutschland einen solchen Streik aufzubauen, müssen wir uns zusammenschließen und organisieren, privat und in der Arbeit. Wir dürfen uns nicht von dem "Das war doch schon immer so" einschränken lassen.Denn wir haben die Macht die Welt zu verändern. Und es wird höchste Zeit.</p>' +
 						"</div>";
 					break;
 			}
@@ -1129,7 +1158,9 @@ window.redisplay = function() {
 				var html = window.generateHoverHTMLforLocation(loc);
 
 				if (loc.linked) {
-					html += "<br>" + window.generateHoverHTMLforLocation(window.data_8m.map.locations[loc.linked]);
+					for (var linkCur = 0; linkCur < loc.linked.length; linkCur++) {
+						html += "<br>" + window.generateHoverHTMLforLocation(window.data_8m.map.locations[loc.linked[linkCur]]);
+					}
 				}
 
 				hoverBox.innerHTML = html;

@@ -84,7 +84,7 @@ window.data_8m = {
 				"x": 1033,
 				"y": 1159,
 				"web": "femstreikenjena.noblogs.org",
-				"mail": "frauen_streik-jena@riseup.net",
+				"mail": "femstreik-jena@systemli.org",
 				"insta": "feministischer_streik_jena",
 				"facebook": "frauen.streik.jena",
 			},
@@ -246,6 +246,9 @@ window.data_8m = {
 		section_2025_8m_aufruf_de: "Aufruf 2025",
 		section_2025_8m_aufruf_en: "",
 		section_2025_8m_aufruf_es: "",
+		section_2026_8m_review_de: "Rückblick 8. März 2026",
+		section_2026_8m_review_en: "",
+		section_2026_8m_review_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -408,7 +411,7 @@ window.redisplay = function() {
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
-						"<h2 onclick='navigate(" + '"IN_AKTION"' + ")' class='button text_white clickable'>Aktuell: Aufruf zum 8. März 2025<br>Für mehr Infos hier klicken...</h2>" +
+						"<h2 onclick='navigate(" + '"2026_8m_review"' + ")' class='button text_white clickable'>Aktuell: Rückschau auf den 8. März 2026<br>Für mehr Infos hier klicken...</h2>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
 						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
@@ -689,6 +692,11 @@ window.redisplay = function() {
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 
+						"<h2>" + getText("section_2026_8m_review") + "</h2>" +
+						"<p>Wir sind ein bundesweites Bündnis, welches seit 2019 gemeinsam zum Feministischen Streik arbeitet. Wir sind überzeugt vom Streik als Druckmittel feministischer Kämpfe.</p>" +
+						"<p>Gleichzeitig sehen wir die Arbeitskämpfe im Care-Bereich als zentrale Orte, an denen für feministische Errungenschaften gekämpft wird. Dafür unterstützen und politisieren wir Arbeitskämpfe im Care-Bereich.</p>" +
+						"<p><a onclick='navigate(\"2026_8m_review\")'>Weiterlesen...</a></p>" +
+
 						"<h2>" + getText("section_2025_8m_aufruf") + "</h2>" +
 						"<p><b>Wir kämpfen, wir streiken, wir leben!</b></p>" +
 						"<p><i>Sorgearbeit</i>, was ist das eigentlich? Ganz einfach: Po abputzen, Wäsche waschen, zuhören, Termine managen, Menschen mit Behinderungen unterstützen. Klingt alltäglich? Ist es auch! Ohne Sorgearbeit läuft gar nichts. Ob KiTa, Pflege, Sozialarbeit oder zu Hause: Diese Arbeit hält den Laden am Laufen, wird aber oft übersehen, schlecht bezahlt und hat auch sonst oft miese Arbeitsbedingungen.</p>" +
@@ -737,6 +745,35 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2026_8m_review":
+			heroImg = "section_2023_8m_aufruf";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<p>Wir sind ein bundesweites Bündnis, welches seit 2019 gemeinsam zum Feministischen Streik arbeitet. Wir sind überzeugt vom Streik als Druckmittel feministischer Kämpfe. Gleichzeitig sehen wir die Arbeitskämpfe im Care-Bereich als zentrale Orte, an denen für feministische Errungenschaften gekämpft wird. Dafür unterstützen und politisieren wir Arbeitskämpfe im Care-Bereich.</p>" +
+						"<p>Dabei verstehen wir uns nicht nur als Aktivist*innen, die Arbeitskämpfe unterstützen. Wir verstehen diese Kämpfe als unsere eigenen. Denn: Wir alle gehen unbezahlter Care-Arbeit nach, die meisten von uns lohnarbeiten auch im Care-Bereich - vor allem in Sozialer Arbeit, Kitas, Assistenz und im politischen Bildungsbereich.</p>" +
+						"<p>Unser Ziel ist eine geschlechtergerechte Arbeitsverteilung. Care-Arbeit soll nicht auf Profitinteressen basieren, sondern auf den Bedürfnissen der Menschen. Wir kämpfen für eine Gesellschaft in der nicht Profit, sondern gegenseitige Fürsorge im Zentrum steht.</p>" +
+						"<p>Am 8. und 9. März sind Feminist:innen in ganz Deutschland auf die Straße gegangen. 08. März ist alle Tage! Schließt euch den feministischen Streikgruppen eurer Städte an und arbeitet mit uns auf einen noch größeren feministischen Streik 2027 hin. Gemeinsam können wir Care-Arbeit und unsere Gesellschaft verändern!</p>" +
+						"<p><img alt='Foto der 8. März Demo in Köln' src='pictures/2026_koeln.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Kassel' src='pictures/2026_kassel.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Jena' src='pictures/2026_jena.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Karlsruhe' src='pictures/2026_karlsruhe.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Stuttgart' src='pictures/2026_stuttgart.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Bonn' src='pictures/2026_bonn.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in München' src='pictures/2026_muenchen.jpeg' /></p>" +
+						"<p><img alt='Foto der 8. März Demo in Darmstadt' src='pictures/2026_darmstadt.jpeg' /></p>" +
+						"</div>";
 					break;
 			}
 			break;

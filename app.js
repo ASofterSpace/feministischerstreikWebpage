@@ -120,7 +120,7 @@ window.data_8m = {
 				"short": "bnn",
 				"x": 214,
 				"y": 1214,
-				"mail": "frauenstreik-bonn@riseup.net",
+				"mail": "feministischerstreik-bonn@riseup.net",
 				"insta": "feministischer_streik_bonn",
 			},
 			"Frankfurt am Main": {

@@ -249,6 +249,9 @@ window.data_8m = {
 		section_2026_8m_review_de: "Rückblick 8. März 2026",
 		section_2026_8m_review_en: "",
 		section_2026_8m_review_es: "",
+		section_2026_protest_mit_verdi_de: "Am 10.6. raus zu den Protesten mit ver.di!",
+		section_2026_protest_mit_verdi_en: "",
+		section_2026_protest_mit_verdi_es: "",
 		hero_text_mainpage_top_de: "Feministischer Streik",
 		hero_text_mainpage_top_en: "Feminist Strike",
 		hero_text_mainpage_top_es: "Huelga Feminista",
@@ -411,7 +414,7 @@ window.redisplay = function() {
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
-						"<h2 onclick='navigate(" + '"2026_8m_review"' + ")' class='button text_white clickable'>Aktuell: Rückschau auf den 8. März 2026<br>Für mehr Infos hier klicken...</h2>" +
+						"<h2 onclick='navigate(" + '"2026_protest_mit_verdi"' + ")' class='button text_white clickable'>Aktuell: Am 10.6. raus zu den Protesten mit ver.di!<br>Für mehr Infos hier klicken...</h2>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
 						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
@@ -692,6 +695,11 @@ window.redisplay = function() {
 						"<p>In unserem Archiv könnt ihr vergangene Aufrufe und Aktionen " +
 						"nachlesen.</p>" +
 
+						"<h2>" + getText("section_2026_protest_mit_verdi") + "</h2>" +
+						"<p>Die geplanten Reformen im Gesundheitswesen sind hoch gefährlich und reihen sich ein in die derzeitigen Angriffe auf unsere öffentliche Daseinsfürsorge. Das trifft uns FLINTA mit beosnderer Härte. Der soziale Kahlschlag trifft viele Bereiche, in denen überwiegend FLINTA arbeiten, wie Kinderbetreuung, Sozialarbeit, aber auch das Gesundheitswesen.</p>" +
+						"<p>Wenn weniger Geld in diese Bereiche investiert wird, bedeutet das Reallohnverlust, noch mehr Personalmangel, eine erhöhte Arbeitsbelastung oder gar Jobverlust. Daneben wird die Arbeit, die nicht mehr öffentlich getragen wird, auch wieder auf uns FLINTA im privaten ausgelagert.</p>" +
+						"<p><a onclick='navigate(\"2026_protest_mit_verdi\")'>Weiterlesen...</a></p>" +
+
 						"<h2>" + getText("section_2026_8m_review") + "</h2>" +
 						"<p>Wir sind ein bundesweites Bündnis, welches seit 2019 gemeinsam zum Feministischen Streik arbeitet. Wir sind überzeugt vom Streik als Druckmittel feministischer Kämpfe.</p>" +
 						"<p>Gleichzeitig sehen wir die Arbeitskämpfe im Care-Bereich als zentrale Orte, an denen für feministische Errungenschaften gekämpft wird. Dafür unterstützen und politisieren wir Arbeitskämpfe im Care-Bereich.</p>" +
@@ -745,6 +753,32 @@ window.redisplay = function() {
 						"</div>";
 						// TODO :: vielleicht ältere Aufrufe mit einpflegen, wie bspw.:
 						// https://web.archive.org/web/20210310213128/https://frauenstreik.org/aufruf-2018/
+					break;
+			}
+			break;
+
+		case "2026_protest_mit_verdi":
+			heroImg = "2026_protest_mit_verdi";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<h2 class='button text_white'>Gegen die Angriffe auf unsere Gesundheitsversorgung und den sozialen Kahlschlag!</h2>" +
+						"<p>Zum Beispiel hier:</p>" +
+						"<p>Kassel<br>Busanreise mit ver.di zur Gesundheitsminister:innenkoferenz nach Hannover<br>Mehr infos: <a href='https://www.instagram.com/solibuendnis_care_ks'>https://www.instagram.com/solibuendnis_care_ks</a></p>" +
+						"<p>München<br>17 Uhr Odeonsplatz Kundgebung</p>" +
+						"<p>Karlsruhe<br>17 Uhr am ver.di Haus, Rüppurer Str. 1A<br>Kundgebung und Demo</p>" +
+						"<p>Die geplanten Reformen im Gesundheitswesen sind hoch gefährlich und reihen sich ein in die derzeitigen Angriffe auf unsere öffentliche Daseinsfürsorge. Das trifft uns FLINTA mit beosnderer Härte. Der soziale Kahlschlag trifft viele Bereiche, in denen überwiegend FLINTA arbeiten, wie Kinderbetreuung, Sozialarbeit, aber auch das Gesundheitswesen. Wenn weniger Geld in diese Bereiche investiert wird, bedeutet das Reallohnverlust, noch mehr Personalmangel, eine erhöhte Arbeitsbelastung oder gar Jobverlust. Daneben wird die Arbeit, die nicht mehr öffentlich getragen wird, auch wieder auf uns FLINTA im privaten ausgelagert. Noch immer sind überwiegend wir es, die mit den Kindern zu Hause bleiben und Angehörige pflegen. Und nicht zuletzt leiden wir auch direkt darunter, wenn soziale Angebote wegfallen, wie beispielsweise Unterstützung für Alleinerziehende (die meist Frauen sind) oder Hilfsangebote für Betroffene von geschlechtsspezifischer Gewalt.</p>" +
+						"<p>Außerdem sehen wir, dass der Sozialabbau im direkten Zusammenhang mit Aufrüstung und Militarisierung steht, denn während Milliarden in Kriegsvorbereitung gesteckt werden, wird bei unserem Leben gekürzt was das Zeug hält. Mühsam erkämpfte Arbeiter:innenrechte und soziale Absicherungen werden schon jetzt beschnitten, um die Gesellschaft auf den Kriegsfall vorzubereiten, in dem wir dann an allen Fronten für die Absatzmärkte und Profite einiger weniger schuften oder gar sterben sollen. Für uns als feministische Streikvernetzung steht fest, dass wir diese Angriffe auf unsere Daseinsfürsorge nicht stillschweigend hinnehmen werden.</p>" +
+						"<p>Informiert euch, was in eurer Stadt stattfindet und beteiligt euch!</p>" +
+						"<p><img alt='Foto von Aktivist_innen mit lila Westen und zwei Bannern auf denen steht: Gesundheit statt Profite, sowie: Feministisch streiken!' src='pictures/2026_protest_mit_verdi.jpg' /></p>" +
+						"</div>";
 					break;
 			}
 			break;

@@ -249,6 +249,9 @@ window.data_8m = {
 		section_2026_8m_review_de: "Rückblick 8. März 2026",
 		section_2026_8m_review_en: "",
 		section_2026_8m_review_es: "",
+		section_2026_jena_treffen_bericht_de: "Bericht von unserem Präsenztreffen 9.-10. Mai 2026",
+		section_2026_jena_treffen_bericht_en: "",
+		section_2026_jena_treffen_bericht_es: "",
 		section_2026_protest_mit_verdi_de: "Am 10.6. raus zu den Protesten mit ver.di!",
 		section_2026_protest_mit_verdi_en: "",
 		section_2026_protest_mit_verdi_es: "",
@@ -696,9 +699,14 @@ window.redisplay = function() {
 						"nachlesen.</p>" +
 
 						"<h2>" + getText("section_2026_protest_mit_verdi") + "</h2>" +
+						"<p>Am 9. und 10. Mai 2026 sind wir wieder als Delegierte aus den Lokalgruppen zusammengekommen. Diesmal haben wir uns in Jena getroffen. Es waren Aktive aus Köln, Bonn, München, Darmstadt, Kassel, Stuttgart, Karlsruhe und natürlich Jena mit dabei.</p>" +
+						"<p>Unsere Präsenztreffen finden halbjährlich statt und sind ein wichtiges Element unserer Arbeit. Dort diskutieren wir unsere politischen Inhalte und Strategien, immer im Kontext der aktuellen politische Lage.</p>" +
+						"<p><a onclick='navigate(\"2026_protest_mit_verdi\")'>Weiterlesen...</a></p>" +
+
+						"<h2>" + getText("section_2026_jena_treffen_bericht") + "</h2>" +
 						"<p>Die geplanten Reformen im Gesundheitswesen sind hoch gefährlich und reihen sich ein in die derzeitigen Angriffe auf unsere öffentliche Daseinsfürsorge. Das trifft uns FLINTA mit beosnderer Härte. Der soziale Kahlschlag trifft viele Bereiche, in denen überwiegend FLINTA arbeiten, wie Kinderbetreuung, Sozialarbeit, aber auch das Gesundheitswesen.</p>" +
 						"<p>Wenn weniger Geld in diese Bereiche investiert wird, bedeutet das Reallohnverlust, noch mehr Personalmangel, eine erhöhte Arbeitsbelastung oder gar Jobverlust. Daneben wird die Arbeit, die nicht mehr öffentlich getragen wird, auch wieder auf uns FLINTA im privaten ausgelagert.</p>" +
-						"<p><a onclick='navigate(\"2026_protest_mit_verdi\")'>Weiterlesen...</a></p>" +
+						"<p><a onclick='navigate(\"2026_jena_treffen_bericht\")'>Weiterlesen...</a></p>" +
 
 						"<h2>" + getText("section_2026_8m_review") + "</h2>" +
 						"<p>Wir sind ein bundesweites Bündnis, welches seit 2019 gemeinsam zum Feministischen Streik arbeitet. Wir sind überzeugt vom Streik als Druckmittel feministischer Kämpfe.</p>" +
@@ -778,6 +786,32 @@ window.redisplay = function() {
 						"<p>Außerdem sehen wir, dass der Sozialabbau im direkten Zusammenhang mit Aufrüstung und Militarisierung steht, denn während Milliarden in Kriegsvorbereitung gesteckt werden, wird bei unserem Leben gekürzt was das Zeug hält. Mühsam erkämpfte Arbeiter:innenrechte und soziale Absicherungen werden schon jetzt beschnitten, um die Gesellschaft auf den Kriegsfall vorzubereiten, in dem wir dann an allen Fronten für die Absatzmärkte und Profite einiger weniger schuften oder gar sterben sollen. Für uns als feministische Streikvernetzung steht fest, dass wir diese Angriffe auf unsere Daseinsfürsorge nicht stillschweigend hinnehmen werden.</p>" +
 						"<p>Informiert euch, was in eurer Stadt stattfindet und beteiligt euch!</p>" +
 						"<p><img alt='Foto von Aktivist_innen mit lila Westen und zwei Bannern auf denen steht: Gesundheit statt Profite, sowie: Feministisch streiken!' src='pictures/2026_protest_mit_verdi.jpg' /></p>" +
+						"</div>";
+					break;
+			}
+			break;
+
+		case "2026_jena_treffen_bericht":
+			heroImg = "2026_protest_mit_verdi";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						"<p><img alt='Foto von Aktivist_innen mit lila Westen und zwei Bannern auf denen steht: Gesundheit statt Profite, sowie: Feministisch streiken!' src='pictures/2026_protest_mit_verdi.jpg' /></p>" +
+						"<p>Am 9. und 10. Mai 2026 sind wir wieder als Delegierte aus den Lokalgruppen zusammengekommen. Diesmal haben wir uns in Jena getroffen. Es waren Aktive aus Köln, Bonn, München, Darmstadt, Kassel, Stuttgart, Karlsruhe und natürlich Jena mit dabei.</p>" +
+						"<p>Unsere Präsenztreffen finden halbjährlich statt und sind ein wichtiges Element unserer Arbeit. Dort diskutieren wir unsere politischen Inhalte und Strategien, immer im Kontext der aktuellen politische Lage. Wir werten vergangene Aktivitäten aus, planen unsere nächsten Schritte und legen Arbeitsweisen fest. Daneben liegt ein großer Wert dieser Treffen darin, dass wir Erfahrungen aus den Lokalgruppen austauschen und voneinander lernen können.</p>" +
+						"<p>Bei unserem Treffen im Mai 2026 war ein wichtiger Punkt die neu aufgekommenen Frauenstreik-Initiativen, die rund um den 9. März auch öffentlich präsent waren. Uns ist es wichtig mit diesen Initiativen im Austausch zu sein und ein solidarisches Verhältnis zu haben. Dennoch ändert sich an unserer grundlegenden Arbeitsweise als bundesweite Streikvernetzung nichts. Wir wollen weiterhin gemeinsam mit den Gewerkschaften zusammenarbeiten, um Lohn- und Arbeitskämpfe in weiblich dominierten Bereichen zu unterstützen. (Anmerkung K: Über den zweiten Teil bin ich ein bisschen wegen der Grammatik gestolpert. Dabei zielen unsere feministischen Forderungen sowohl auf die bezahlte wie auch die unbezahlte Care-Arbeit ab, denn für eine Verbesserung müssen beide Bereiche zusammengedacht werden. Unser langfristiges Ziel ist, den feministischen Streik zu erkämpfen. Deswegen werden wir als feministischer Streik zu den Tarifrunden im öffenltichen Dienst 2027 und 2028 arbeiten. Wir unterstützen die Arbeitskämpfe unsere Kolleg:innen und tragen unsere feministischen Forderungen in die Streiks.</p>" +
+						"<p>Neben unserem Plan für die Tarifrunden wurde in unseren Diskussionen klar, dass sich der aktuell rasant voranschreitenden Sozialabbau in allen Städten aufdrängt. Der soziale Kahlschlag trifft viele Bereiche, in denen überwiegend Frauen arbeiten, wie die Kinderbetreuung, Soziale Arbeit, aber auch das Gesundheitswesen. Wenn weniger Geld in diese Bereiche investiert wird, bedeutet das Reallohnverlust, noch mehr Personalmangel, eine erhöhte Arbeitsbelastung oder gar Jobverlust. Daneben wird die Arbeit, die nicht mehr öffentlich getragen wird, auch wieder auf uns FLINTA im Privaten ausgelagert. Noch immer sind überwiegend wir es, die mit den Kindern zu Hause bleiben und Angehörige pflegen. Und nicht zuletzt leiden wir auch direkt darunter, wenn soziale Angebote wegfallen, wie beispielsweise Unterstützung für Alleinerziehende (die meist Frauen sind) oder Hilfsangebote für Betroffene von geschlechtsspezifischer Gewalt. Außerdem sehen wir, dass der Sozialabbau im direkten Zusammenhang mit Aufrüstung und Militarisierung steht, denn während Milliarden in Kriegsvorbereitung gesteckt werden, wird bei unserem Leben gekürzt was das Zeug hält. Mühsam erkämpfte Arbeiter:innenrechte uns soziale Absicherungen werden schon jetzt beschnitten, um die Gesellschaft auf den Kriegsfall vorzubereiten, in dem wir dann an allen Fronten für die Absatzmärkte und Profite einiger weniger schuften oder gar sterben sollen. Für uns als feministische Streikvernetzung war schnell klar, dass wir diese Angriffe auf unsere Daseinsfürsorge nicht stillschweigend hinnehmen werden.</p>" +
+						"<p>Einige Lokalgruppen beteiligen sich derzeit an den Protesten mit ver.di, wie zum Beispiel am 10. Juni. Weitere Proteste werden folgen, also informiert euch in euren Städten und beteiligt euch.</p>" +
+						"<p>Außerdem haben wir beschlossen mit einer <b>Aktionswoche vom 22. bis 28.06.2026</b> den feministischen Streik in unseren Städten präsent zu machen. Anlass dazu ist der internationale Tag der öffentlichen Daseinsfürsorge am 23. Juni. Freut euch auf zahlreiche Aktionen und informiert euch bei den feministischen Streikgruppen in eurer Stadt!</p>" +
+						"<p>Dazu wollen wir unsere Arbeit als feministische Streikvernetzung sichtbarer machen. Dazu ist jetzt unsere Instagram-Kanal online und wir wollen die Webseite regelmäßiger aktualisieren! Also bleibt dran, haltet euch auf dem Laufenden.</p>" +
+						"<p>Trotz oder vielleicht auch gerade wegen viel Diskussion und Planung sind für uns alle die Präsenztreffen immer sehr bestärkend und motivierend. Wir spüren bei diesen Treffen, dass wir gemeinsam kämpfen, dass wir trotz aller Hürden und Frustrationen auf unser Ziel des feministischen Streiks hinarbeiten und dabei nicht vereinzelt sind. Und genau das ist ja schon ein Anfang. Solidarität wird für uns greifbar und mit diesem Gefühl fahren wir alle Sonntag Mittag zurück in unsere Städte, um die Arbeit lokal voranzutreiben. Wir freuen uns auf die kommenden Aktivitäten und sind gespannt auf deren Auswertung im Herbst!</p>" +
 						"</div>";
 					break;
 			}

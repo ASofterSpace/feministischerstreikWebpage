@@ -210,9 +210,12 @@ window.data_8m = {
 		section_fem_streik_de: "Feministischer Streik",
 		section_fem_streik_en: "Feminist Strike",
 		section_fem_streik_es: "Huelga Feminista",
-		section_mitmachen_de: "Mitmachen & Unterstützen",
-		section_mitmachen_en: "Participate & Support",
-		section_mitmachen_es: "Participa y Apoya",
+		section_demands_de: "Forderungen",
+		section_demands_en: "Demands",
+		section_demands_es: "Demandas",
+		section_mitmachen_de: "Mitmachen",
+		section_mitmachen_en: "Participate",
+		section_mitmachen_es: "Participa",
 		section_kontakt_de: "Kontakt",
 		section_kontakt_en: "Contact",
 		section_kontakt_es: "Contacto",
@@ -294,7 +297,7 @@ window.data_8m = {
 window.navigate = function(where) {
 
 	if (where == 'IN_AKTION') {
-		where = '2025_8m_aufruf';
+		where = '2026_protest_mit_verdi';
 	}
 
 	window.currentPage = where;
@@ -339,7 +342,7 @@ window.redisplay = function() {
 
 	resetMainsel('home');
 	resetMainsel('about_us');
-	resetMainsel('fem_streik');
+	resetMainsel('demands');
 	resetMainsel('mitmachen');
 	resetMainsel('kontakt');
 	resetMainsel('archiv');
@@ -417,7 +420,7 @@ window.redisplay = function() {
 				default:
 					containerHTML =
 						"<div id='main_text'>" +
-						"<h2 onclick='navigate(" + '"2026_protest_mit_verdi"' + ")' class='button text_white clickable'>Aktuell: Am 10.6. raus zu den Protesten mit ver.di!<br>Für mehr Infos hier klicken...</h2>" +
+						"<h2 onclick='navigate(" + '"IN_AKTION"' + ")' class='button text_white clickable'>Aktuell: Am 10.6. raus zu den Protesten mit ver.di!<br>Für mehr Infos hier klicken...</h2>" +
 						"<div class='quote'>„Wenn wir streiken, steht die Welt still!“</div>" +
 						"<p>Herzlich willkommen auf der Internetseite des bundesweiten Feministischen " +
 						"Streik Bündnis'. Hier findest du verschiedene Informationen unter anderem " +
@@ -522,7 +525,11 @@ window.redisplay = function() {
 						"The countrywide networking is organized in different committees. For example for coordination of dates, mails, design and website. At short notice, we also come together in topic-specific working groups. We meet online as well as in presence. We discuss, develop strategies, support each other in our building processes and draw strength from our common movement. We do not agree on all content-related and political points - which is why you may come across different terms or points of reference.\n" +
 						"What we have in common, however, is that the countrywide network wants to develop a common strategy for the (re-)establishment of the political strike in Germany, which focuses on paid and unpaid care work and all social areas in which women, trans*, inter* and non-binary persons are significantly active. In order to gain expression and strength as a feminist left, we are convinced that we need long-term and sustainable organizing that must operate across cities and ultimately across national borders.\n" +
 						"March 8 has so far been our common central day of action, where we want to bring together people in paid and unpaid care work, occupy public space with feminist issues, and be collectively visible countrywide and internationally. Throughout the year, we organize joint actions, support collective bargaining strikes and other progressive struggles in solidarity. We join forces with many other actors on a local and national level, work in or with trade unions, socio-political, climate-political, anti-racist and many other initiatives.\n" +
-						"All groups and initiatives that feel connected to the idea of a feminist strike and want to actively work on it are welcome to join.";
+						"All groups and initiatives that feel connected to the idea of a feminist strike and want to actively work on it are welcome to join." +
+						"<h2>" + getText("section_fem_streik") + "</h2>\n" +
+						"A feminist strike combines both economic and political concerns. As in a classic trade union strike, in a feminist strike we refuse to do  work - but in doing so we generate not only economic, but also social pressure. We then fight not only for a concrete improvement of our working conditions, but also for a profound change of our living conditions: against violence against women, trans*, inter* and non-binary persons,binary gender roles and neoliberal austerity policies. For reproductive work to be given a more important place in society and for all to be provided for by all.\n" +
+						"Strike means refusal! In the feminist strike, we not only refuse to carry out our devalued and disregarded work, but also other social constraints - and this requires us to test utopias. If we strike at the individualization of care work, this inevitably requires collectivized forms of meal preparation, caregiving, and childcare. We need to learn new kinds of relational work, even across social divides- and already in the here and now.\n" +
+						"But we must not fall into the fallacy that everything happens just by refusing to go to work. Instead, we must understand the practice of these utopias as part of our practice, rather than relegating it to a distant, better future. Only if we consider all social and collective dimensions in this struggle can the feminist strike as a tool unfold its many facets and lead us to success!";
 					break;
 				case 'es':
 					largeText =
@@ -530,7 +537,11 @@ window.redisplay = function() {
 						"El trabajo en red a escala nacional se organiza en diferentes comités. Por ejemplo, para la coordinación de fechas, correos, diseño y página web. A corto plazo, también nos reunimos en grupos de trabajo sobre temas específicos. Nos reunimos tanto en línea como en persona. Debatimos, desarrollamos estrategias, nos apoyamos mutuamente en nuestros procesos de construcción y sacamos fuerzas de nuestro movimiento común. No estamos de acuerdo en todos los puntos de contenido y política, por lo que es posible que encuentre términos o puntos de referencia diferentes.\n" +
 						"Lo que tenemos en común, sin embargo, es que la red nacional quiere desarrollar una estrategia común para el (re)establecimiento de la huelga política en Alemania, que se centre en el trabajo de cuidados remunerado y no remunerado y en todos los ámbitos de la sociedad en los que las mujeres, las personas trans*, inter* y no binarias son significativamente activas. Para ganar expresión y fuerza como izquierda feminista, estamos convencides de que necesitamos una organización a largo plazo y sostenible que debe operar a través de las ciudades y, en última instancia, a través de las fronteras nacionales.\n" +
 						"Hasta ahora, el 8 de marzo ha sido nuestro día de acción central común, en el que queremos reunir a las personas que realizan trabajos de cuidados remunerados y no remunerados, ocupar el espacio público con cuestiones feministas y ser colectivamente visibles a escala nacional y internacional. A lo largo del año, organizamos acciones conjuntas, apoyamos huelgas de negociación colectiva y otras luchas progresistas en solidaridad. Unimos fuerzas con muchos otres actores a nivel local y nacional, trabajamos en o con sindicatos, iniciativas y  sociales , climatopolíticas, antirracistas y muchas otras.\n" +
-						"Todos los grupos e iniciativas que se sientan conectados con la idea de una huelga feminista y quieran trabajar activamente en ella son bienvenidos.";
+						"Todos los grupos e iniciativas que se sientan conectados con la idea de una huelga feminista y quieran trabajar activamente en ella son bienvenidos." +
+						"<h2>" + getText("section_fem_streik") + "</h2>\n" +
+						"Una huelga feminista combina preocupaciones económicas y políticas. Al igual que en una huelga sindical clásica, en una huelga feminista nos ponemos manos a la obra, pero al hacerlo no sólo creamos presión económica, sino también presión social. No sólo luchamos por una mejora concreta de nuestras condiciones laborales, sino también por un cambio profundo en nuestras condiciones de vida: contra la violencia hacia las mujeres, las personas trans*, inter* y no binarias, los roles binarios de género y las políticas neoliberales de austeridad. Para que el trabajo reproductivo ocupe un lugar más importante en la sociedad y para que todos y todas seamos atendidos.\n" +
+						"¡Huelga significa rechazo! En la huelga feminista, sin embargo, no sólo nos negamos a llevar a cabo nuestro trabajo devaluado y despreciado, sino también otras limitaciones sociales, y esto nos obliga a poner a prueba las utopías. Si hacemos huelga contra la individualización del trabajo de cuidados, esto requiere inevitablemente formas colectivizadas de preparación de comidas, cuidados y atención a les niñes. Tenemos que aprender nuevos tipos de trabajo relacional, también por encima de las divisiones sociales, y ya en el aquí y ahora.\n" +
+						"Pero no debemos caer en la falacia de que todo pasa por poner trabajo. Por el contrario, debemos entender la práctica de estas utopías como parte de nuestra práctica, en lugar de relegarla a un futuro lejano y mejor. ¡Sólo si consideramos todas las dimensiones sociales y colectivas en esta lucha, la huelga feminista como herramienta podrá desplegar sus múltiples facetas y llevarnos al éxito!";
 					break;
 				default:
 					largeText =
@@ -565,28 +576,8 @@ window.redisplay = function() {
 						"oder mit Gewerkschaften, sozialpolitischen, klimapolitischen, antirassistischen und " +
 						"vielen weiteren Initiativen.\n" +
 						"Alle Gruppen und Initiativen, die sich der Idee eines feministischen Streiks verbunden " +
-						"fühlen und aktiv daran mitarbeiten wollen, sind herzlich eingeladen sich anzuschließen.";
-					break;
-			}
-			break;
-
-		case "fem_streik":
-			heroImg = "section_femstreik";
-			switch (window.currentLang) {
-				case 'en':
-					largeText =
-						"A feminist strike combines both economic and political concerns. As in a classic trade union strike, in a feminist strike we refuse to do  work - but in doing so we generate not only economic, but also social pressure. We then fight not only for a concrete improvement of our working conditions, but also for a profound change of our living conditions: against violence against women, trans*, inter* and non-binary persons,binary gender roles and neoliberal austerity policies. For reproductive work to be given a more important place in society and for all to be provided for by all.\n" +
-						"Strike means refusal! In the feminist strike, we not only refuse to carry out our devalued and disregarded work, but also other social constraints - and this requires us to test utopias. If we strike at the individualization of care work, this inevitably requires collectivized forms of meal preparation, caregiving, and childcare. We need to learn new kinds of relational work, even across social divides- and already in the here and now.\n" +
-						"But we must not fall into the fallacy that everything happens just by refusing to go to work. Instead, we must understand the practice of these utopias as part of our practice, rather than relegating it to a distant, better future. Only if we consider all social and collective dimensions in this struggle can the feminist strike as a tool unfold its many facets and lead us to success!";
-					break;
-				case 'es':
-					largeText =
-						"Una huelga feminista combina preocupaciones económicas y políticas. Al igual que en una huelga sindical clásica, en una huelga feminista nos ponemos manos a la obra, pero al hacerlo no sólo creamos presión económica, sino también presión social. No sólo luchamos por una mejora concreta de nuestras condiciones laborales, sino también por un cambio profundo en nuestras condiciones de vida: contra la violencia hacia las mujeres, las personas trans*, inter* y no binarias, los roles binarios de género y las políticas neoliberales de austeridad. Para que el trabajo reproductivo ocupe un lugar más importante en la sociedad y para que todos y todas seamos atendidos.\n" +
-						"¡Huelga significa rechazo! En la huelga feminista, sin embargo, no sólo nos negamos a llevar a cabo nuestro trabajo devaluado y despreciado, sino también otras limitaciones sociales, y esto nos obliga a poner a prueba las utopías. Si hacemos huelga contra la individualización del trabajo de cuidados, esto requiere inevitablemente formas colectivizadas de preparación de comidas, cuidados y atención a les niñes. Tenemos que aprender nuevos tipos de trabajo relacional, también por encima de las divisiones sociales, y ya en el aquí y ahora.\n" +
-						"Pero no debemos caer en la falacia de que todo pasa por poner trabajo. Por el contrario, debemos entender la práctica de estas utopías como parte de nuestra práctica, en lugar de relegarla a un futuro lejano y mejor. ¡Sólo si consideramos todas las dimensiones sociales y colectivas en esta lucha, la huelga feminista como herramienta podrá desplegar sus múltiples facetas y llevarnos al éxito!";
-					break;
-				default:
-					largeText =
+						"fühlen und aktiv daran mitarbeiten wollen, sind herzlich eingeladen sich anzuschließen." +
+						"<h2>Was ist eigentlich der feministische Streik?</h2>\n" +
 						"Ein feministischer Streik verbindet sowohl ökonomische " +
 						"als auch politische Anliegen. Wie bei einem klassischen gewerkschaftlichen " +
 						"Streik legen wir beim feministischen Streik unsere Arbeit nieder – " +

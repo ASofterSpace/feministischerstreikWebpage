@@ -617,6 +617,60 @@ window.redisplay = function() {
 			}
 			break;
 
+		case "demands":
+			heroImg = "section_femstreik";
+			switch (window.currentLang) {
+				case 'en':
+					largeText = 'MISSING_TRANS';
+					break;
+				case 'es':
+					largeText = 'MISSING_TRANS';
+					break;
+				default:
+					containerHTML =
+						"<div id='main_text'>" +
+						// "<h1>Die politischen Forderungen der Bundesweiten Vernetzung des Feministischen Streiks</h1>" +
+						"<h2>Für die TvöD-Runde 2027 und die SuE-Runde 2028</h2>" +
+						"<p>Tarifliche Forderungen sind wichtig, doch für eine Bewältigung der Care-Krise und ein besseres " +
+						"Leben für alle braucht es grundlegendere Veränderungen! Als bundesweite Vernetzung " +
+						"feministischer Streikbündnisse fordern wir:</p>" +
+						"<h2>Bedürfnisse statt Profite - Gesundheit, Soziales und Bildung in öffentliche Hand!</h2>" +
+						"<p>Krankenhäuser, Soziale Dienste, Pflegeeinrichtungen und Kitas gehören nicht in die Hände von " +
+						"Konzernen! Wir fordern die Entprivatisierung des Gesundheitssystems, denn Care-Arbeit darf nicht " +
+						"auf Profit ausgerichtet sein, sondern muss sich daran orientieren, was die Menschen " +
+						"brauchen. Das bedeutet ganz konkret: weg vom Fallpauschalensystem, höhere Personalschlüssel, " +
+						"mehr Zeit und höhere Löhne. Die Leistungen müssen für alle zugänglich sein - unabhängig von " +
+						"Einkommen, Aufenthaltsstitel oder Krankenversicherung.</p>" +
+						"<h2>30-Stunden-Woche - Überlastung stoppen!</h2>" +
+						"<p>In vielen Care-Berufen ist die Belastung zu hoch für eine 40-Stunden-Woche! Zusätzlich leisten " +
+						"insbesondere FLINTA* unbezahlt Care-Arbeit für Freund*innen und Familie, während sie " +
+						"gleichzeitig Vollzeit arbeiten - das ist zu viel! Wir kämpfen für eine geschlechtergerechte Verteilung " +
+						"von unbezahlter Care-Arbeit und eine Entlastung bei der bezahlten Arbeit. Deshalb fordern wir eine " +
+						"30-Stunden-Woche bei vollem Lohn- und Personalausgleich! Das darf nicht bedeuten, dass dann " +
+						"in der kurzen Zeit noch mehr geleistet werden muss. Wir wollen eine realistische Personalplanung " +
+						"und ein Ende unbezahlter Extra-Aufgaben, wie sie in Care-Berufen Alltag sind. Wir brauchen mehr " +
+						"Zeit für unbezahlte Care-Arbeit, für Erholung und für politische Beteiligung. Mehr Zeit für unser " +
+						"Leben neben der Lohnarbeit!</p>" +
+						"<h2>Nein zu Militarisierung und Krieg - Zukunft braucht Care!</h2>" +
+						"<p>Aufrüstung und Militarisierung sind nicht in unserem Interesse! Krieg stärkt immer das Patriarchat, " +
+						"und drängt uns zurück in traditionelle Rollenbilder. Wir wollen uns nicht aufopfern für's " + '"Vaterland"' + ". " +
+						"Wir wollen internationale Solidarität und ein freies, selbstbestimmtes Leben. Wir sind gegen den " +
+						"Aufbau der Kriegsindustrie, das Schaffen von Feindbildern und das Schüren von Angst. Für eine " +
+						"bessere, solidarische Zukunft brauchen wir eine Stärkung der Arbeiten, die dafür sorgen, dass es " +
+						"allen gut geht. Mehr Geld für Care, statt für's Militär!</p>" +
+						"<h2>Für ein Leben ohne patriarchale Gewalt!</h2>" +
+						"<p>Wir geben uns nicht mit einem Leben zufrieden, in dem wir Gewalt von unseren Partnern, " +
+						"Familienmitgliedern, Kollegen und Fremden erleben müssen! Für den Kampf gegen patriarchale " +
+						"Gewalt muss auch die Care-Arbeit gestärkt werden, die Betroffene schützt, begleitet und " +
+						"unterstützt. Das bedeutet: mehr Geld für Frauenhäuser und Notunterkünfte, sowie Beratungs- und " +
+						"Unterstützungsangebote für Betroffene. Doch das reicht nicht aus! Solange patriarchale Strukturen " +
+						"bestehen, wird Gewalt weiter ausgeübt und normalisiert. Deshalb müssen wir zusammenkommen, " +
+						"uns organisieren und zusammen für einen grundlegenden gesellschaftlichen Wandel kämpfen!</p>" +
+						"</div>";
+					break;
+			}
+			break;
+
 		case "mitmachen":
 			heroImg = "section_mitmachen";
 			var html =

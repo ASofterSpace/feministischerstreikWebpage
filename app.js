@@ -514,9 +514,11 @@ window.redisplay = function() {
 					"</div>";
 
 			if (bodyWidth > mainWidth * 2) {
-				main_nav_container.innerHTML = htmlBlock1+htmlBlockArc+htmlBlock2+htmlBlockDemands+htmlBlock3+htmlBlockInsta;
+				main_nav_container.innerHTML =
+					htmlBlock1+htmlBlockArc+htmlBlock2+htmlBlockDemands+htmlBlockInsta+htmlBlock3;
 			} else {
-				containerHTML += htmlBlock1+htmlBlockDemands+htmlBlock2+htmlBlockArc+htmlBlock3+htmlBlockInsta;
+				containerHTML +=
+					htmlBlock1+htmlBlockDemands+htmlBlock2+htmlBlockArc+htmlBlockInsta+htmlBlock3;
 			}
 
 			containerHTML +=

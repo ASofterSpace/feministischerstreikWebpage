@@ -213,6 +213,9 @@ window.data_8m = {
 		section_demands_de: "Forderungen",
 		section_demands_en: "Demands",
 		section_demands_es: "Demandas",
+		section_insta_de: "Instagram",
+		section_insta_en: "Instagram",
+		section_insta_es: "Instagram",
 		section_mitmachen_de: "Mitmachen",
 		section_mitmachen_en: "Participate",
 		section_mitmachen_es: "Participa",
@@ -298,6 +301,9 @@ window.navigate = function(where) {
 
 	if (where == 'IN_AKTION') {
 		where = '2026_protest_mit_verdi';
+	}
+	if (where == 'insta') {
+		window.location = 'https://www.instagram.com/feministischer.streik';
 	}
 
 	window.currentPage = where;
@@ -489,22 +495,28 @@ window.redisplay = function() {
 					"<div class=\"picture_link_block " + rightLinksClass + "\" " + styleStr + ">" +
 						"<div class=\"linkpic purple link\" onclick=\"navigate('mitmachen')\" " + linkStyleStr + ">" +
 							"<img src=\"./pictures/section_mitmachen.jpg\" />" +
-							"<div class=\"button text_white two_rows midi\">" + getText("section_mitmachen") + "</div>" +
+							"<div class=\"button text_white slim\">" + getText("section_mitmachen") + "</div>" +
 						"</div>";
 
-			var htmlBlockFemS =
-						"<div class=\"linkpic purple link\" onclick=\"navigate('fem_streik')\" " + linkStyleStrRight + ">" +
+			var htmlBlockDemands =
+						"<div class=\"linkpic purple link\" onclick=\"navigate('demands')\" " + linkStyleStrRight + ">" +
 							"<img src=\"./pictures/section_femstreik.jpg\" />" +
-							"<div class=\"button text_white\">" + getText("section_fem_streik") + "</div>" +
+							"<div class=\"button text_white midi\">" + getText("section_demands") + "</div>" +
+						"</div>";
+
+			var htmlBlockInsta =
+						"<div class=\"linkpic purple link\" onclick=\"navigate('insta')\" " + linkStyleStrRight + ">" +
+							"<img src=\"./pictures/section_insta.png\" />" +
+							"<div class=\"button text_white midi\">" + getText("section_insta") + "</div>" +
 						"</div>";
 
 			var htmlBlock3 =
 					"</div>";
 
 			if (bodyWidth > mainWidth * 2) {
-				main_nav_container.innerHTML = htmlBlock1+htmlBlockArc+htmlBlock2+htmlBlockFemS+htmlBlock3;
+				main_nav_container.innerHTML = htmlBlock1+htmlBlockArc+htmlBlock2+htmlBlockDemands+htmlBlock3+htmlBlockInsta;
 			} else {
-				containerHTML += htmlBlock1+htmlBlockFemS+htmlBlock2+htmlBlockArc+htmlBlock3;
+				containerHTML += htmlBlock1+htmlBlockDemands+htmlBlock2+htmlBlockArc+htmlBlock3+htmlBlockInsta;
 			}
 
 			containerHTML +=
